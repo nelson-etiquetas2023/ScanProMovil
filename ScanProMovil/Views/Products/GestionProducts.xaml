@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScanProMovil.Views.Products.GestionProducts"
+             xmlns:viewmodel="clr-namespace:ScanProMovil.ViewModels"
+             x:DataType="viewmodel:ProductsViewModel"
+             Title="Gestion de Productos"
+             xmlns:model="clr-namespace:ScanProMovil.Models">
+
+
+    <Grid RowDefinitions="Auto,Auto,250,70"
+          ColumnDefinitions="80*,20*">
+        
+        <Entry x:Name="search" Grid.ColumnSpan="2" 
+               Grid.Row="0"
+               Placeholder="Busqueda de Productos..."
+               Text="{Binding SearchText}"/>
+        
+        <HorizontalStackLayout Spacing="10" Grid.Row="1" HorizontalOptions="Center" Grid.ColumnSpan="2">
+            <Button Text="Buscar" Command="{Binding BuscarProductosCommand}"/>
+            <Button Text="Cargar" Command="{Binding GetProductsCommand}" />
+            <Button Text="Guardar" />
+
+        </HorizontalStackLayout>
+        
+        <CollectionView ItemsSource="{Binding Products}"
+             SelectionMode="None"
+             Grid.ColumnSpan="2"
+             Grid.Row="2"
+             >
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Product">
+                    <Border Stroke="Gray" 
+                        StrokeThickness="2" 
+                        Padding="5" 
+                        Margin="5"
+                        HeightRequest="150">
+                        <Grid ColumnDefinitions="1*,8*,1*">
+                            <Image Grid.Column="0" Source="package_delivery_logistics_50px.png" 
+                               WidthRequest="50" 
+                               HeightRequest="50"/>
+                            <VerticalStackLayout Grid.Column="1" Spacing="2" Margin="10">
+                                <Label Text="{Binding Product_Name}" FontAttributes="Bold"/>
+                                <VerticalStackLayout>
+                                    <Label Text="{Binding Product_Type, StringFormat='Categoria: {0}'}"/>
+                                    <HorizontalStackLayout Spacing="2">
+                                        <Label Text="{Binding Price, StringFormat='Precio:  {0:C} '}"/>
+                                        <Label Text="{Binding Unidad, StringFormat='Und: {0}'}"/>
+                                    </HorizontalStackLayout>
+                                    
+                                </VerticalStackLayout>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout Grid.Column="2">
+                                <Image Source="icons8_edit.ico" WidthRequest="40" HeightRequest="40" />
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <HorizontalStackLayout Grid.Row="3">
+            <VerticalStackLayout>
+                <Label Grid.Column="0" 
+                    Text="{Binding TotalProducts, StringFormat='Total Productos: {0}'}" 
+                    FontAttributes="Bold" />
+                <Label Text="Ultima Actualización: " FontSize="8"/>
+                <Label Text="{Binding LastUpdated}" 
+                       TextColor="gray" 
+                       FontSize="8"/>
+            </VerticalStackLayout>
+            
+            <Image Source="data_recovery_50px.png" Grid.Column="1" Margin="80,0,0,0" />
+        </HorizontalStackLayout>
+    </Grid>
+    
+        
+    
+      
+    
+   
+</ContentPage>
+            
+            
+      

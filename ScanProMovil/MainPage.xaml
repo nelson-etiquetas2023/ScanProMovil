@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScanProMovil.MainPage">
+
+    <AbsoluteLayout>
+        <ScrollView  AbsoluteLayout.LayoutBounds="0,0,1,1"
+          AbsoluteLayout.LayoutFlags="All">
+            <Grid 
+                RowDefinitions="Auto,Auto,Auto,Auto" 
+                ColumnDefinitions="*,*" 
+                Padding="3" 
+                RowSpacing="3" 
+                ColumnSpacing="3" 
+                Background="#f0f0f0">
+                <!--Sqlite -->
+                <VerticalStackLayout 
+                    Grid.Row="0" 
+                    Grid.Column="0" 
+                    HorizontalOptions="Center">
+                    <Image Source="search_in_cloud_50px.png" WidthRequest="100" HeightRequest="100" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="SqliteModule" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Sqlite" FontSize="16" FontAttributes="Bold" HorizontalOptions="Center" />
+                </VerticalStackLayout>
+                <!--Products-->
+                <VerticalStackLayout 
+                    Grid.Row="0" 
+                    Grid.Column="1" 
+                    HorizontalOptions="Center">
+                    <Image Source="account_50px.png" WidthRequest="100" HeightRequest="100">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTapUsers" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Products" FontSize="16" FontAttributes="Bold" />
+                </VerticalStackLayout>
+                <!--Api-->
+                <VerticalStackLayout 
+                    Grid.Row="1" 
+                    Grid.Column="0" 
+                    HorizontalOptions="Center">
+                    <Image Source="rest_api_50px.png" WidthRequest="100" HeightRequest="100">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTapApiModule" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Test Api" FontSize="16" FontAttributes="Bold" HorizontalOptions="Center" />
+                </VerticalStackLayout>
+                <!--Orders-->
+                <VerticalStackLayout 
+                    Grid.Row="1" 
+                    Grid.Column="1" 
+                    HorizontalOptions="Center">
+                    <Image Source="purchase_order_50px.png" WidthRequest="100" HeightRequest="100">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTapOrdersModule" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Orders" FontSize="16" FontAttributes="Bold" HorizontalOptions="Center" />
+                </VerticalStackLayout>
+                <!--Codigo QR.-->
+                <VerticalStackLayout 
+                    Grid.Row="2" 
+                    Grid.Column="0" 
+                    HorizontalOptions="Center">
+                    <Image Source="qr_code_50px.png"  WidthRequest="100" HeightRequest="100">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTapScanQrCode" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Codigo QR." FontSize="16" FontAttributes="Bold" HorizontalOptions="Center" />
+                </VerticalStackLayout>
+                <!--Setting-->
+                <VerticalStackLayout 
+                    Grid.Row="2" 
+                    Grid.Column="1" 
+                    HorizontalOptions="Center">
+                    <Image Source="settings_50px.png" WidthRequest="100" HeightRequest="100">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTapSetting" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Setting" FontSize="16" FontAttributes="Bold" HorizontalOptions="Center" />
+                </VerticalStackLayout>
+                <!--Sincronizacion data-->
+                <VerticalStackLayout 
+                    Grid.Row="3" 
+                    Grid.Column="0" 
+                    HorizontalOptions="Center">
+                    <Image Source="database_daily_export_50px.png" WidthRequest="100" HeightRequest="100">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTapSincroData" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Sincro Data" FontSize="16" FontAttributes="Bold" HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Grid>
+        </ScrollView>
+        <!--Boton flotante de Login-->
+        <ImageButton 
+            Source="add_key_50px.png"
+            WidthRequest="80"
+            HeightRequest="80"
+            BackgroundColor="DeepSkyBlue"
+            CornerRadius="40"
+            AbsoluteLayout.LayoutBounds="1,1,60,60"
+            Margin="0,0,40,80"
+            Padding="8,8,10,15"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Clicked="OnLoginUsers"/>
+    </AbsoluteLayout> 
+    
+    
+    
+</ContentPage>
