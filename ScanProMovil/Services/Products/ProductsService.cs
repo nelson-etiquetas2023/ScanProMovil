@@ -1,4 +1,6 @@
 ﻿using ScanProMovil.Models;
+using System.Runtime.InteropServices.Marshalling;
+using System.Text;
 using System.Text.Json;
 
 namespace ScanProMovil.Services.Products
@@ -44,9 +46,24 @@ namespace ScanProMovil.Services.Products
             throw new NotImplementedException();
         }
 
-        public bool UpdateProducts(string productid, Product producto)
+        public async Task<bool> UpdateProducts(int id, Product producto)
         {
-            throw new NotImplementedException();
+            //utilizo una tupla para pasar 2 parametros a la api.
+            var parametros = new ParametrosUpdateProducts(id, producto);
+            var url = $"api/products/updateproducts";
+            var json = JsonSerializer.Serialize(parametros, jsonOptions);
+            var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+            var clientHttp = httpClient.CreateClient("scanpro");
+            var response = await clientHttp.PutAsync(url, jsonContent);
+            response.EnsureSuccessStatusCode();
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

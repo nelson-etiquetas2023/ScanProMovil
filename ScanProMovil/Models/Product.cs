@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace ScanProMovil.Models
 {
@@ -11,5 +12,6 @@ namespace ScanProMovil.Models
         public string Unidad { get; set; } = string.Empty;
         public decimal Price { get; set; }
         public string CodeBar { get; set; } = string.Empty;
+        public ObservableCollection<ProductImagen> Images { get; set; } = new();
     }
 }

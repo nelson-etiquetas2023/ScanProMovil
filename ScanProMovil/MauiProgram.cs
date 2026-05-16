@@ -8,9 +8,15 @@ namespace ScanProMovil
 {
     public static class MauiProgram
     {
+
+        // Exponemos el ServiceProvider para usarlo en cualquier parte
+        public static IServiceProvider? Services { get; private set; }
+
         public static MauiApp CreateMauiApp()
         {
-            var deployLocalApi = "http://192.168.10.13:8080";
+            Preferences.Set("FileServerBaseUrlImages", "https://scanapi.dpdns.org/uploads/");
+
+            var deployLocalApi = "https://scanapi.dpdns.org:443";
             var builder = MauiApp.CreateBuilder();
 
 
@@ -21,8 +27,11 @@ namespace ScanProMovil
             });
 
             builder.Services.AddSingleton <IProductsService, ProductsService>();
-            builder.Services.AddSingleton<ProductsViewModel>();
-            builder.Services.AddSingleton<GestionProducts>();
+            builder.Services.AddTransient<ProductsViewModel>();
+            
+            builder.Services.AddTransient<GestionProducts>();
+            builder.Services.AddTransient<ProductDetails>();
+
             builder.Services.AddSingleton<MainPage>();
             
             builder
@@ -39,7 +48,12 @@ namespace ScanProMovil
     		builder.Logging.AddDebug();
 #endif
 
-            return builder.Build();
+            var app = builder.Build();
+            // Guardamos el ServiceProvider
+            Services = app.Services;
+
+            return app;
+
         }
     }
 }

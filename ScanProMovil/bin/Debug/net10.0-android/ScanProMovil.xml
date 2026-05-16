@@ -4,6 +4,19 @@
         <name>ScanProMovil</name>
     </assembly>
     <members>
+        <member name="T:ScanProMovil.ViewModels.ProductDetailsViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.ProductDetailsViewModel.Producto">
+            <inheritdoc cref="F:ScanProMovil.ViewModels.ProductDetailsViewModel.producto"/>
+        </member>
+        <member name="F:ScanProMovil.ViewModels.ProductDetailsViewModel.saveProductsCommand">
+            <summary>The backing field for <see cref="P:ScanProMovil.ViewModels.ProductDetailsViewModel.SaveProductsCommand"/>.</summary>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.ProductDetailsViewModel.SaveProductsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:ScanProMovil.ViewModels.ProductDetailsViewModel.SaveProductsAsync"/>.</summary>
+        </member>
         <member name="T:ScanProMovil.ViewModels.ProductsViewModel">
             <inheritdoc/>
             <inheritdoc/>
@@ -182,6 +195,9 @@
             for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
             </summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Producto">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Producto" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TotalProducts">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TotalProducts" generated properties.</summary>
         </member>
@@ -199,6 +215,9 @@
             A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
             for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
             </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Producto">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Producto" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TotalProducts">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TotalProducts" generated properties.</summary>

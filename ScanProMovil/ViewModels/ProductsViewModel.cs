@@ -4,7 +4,6 @@ using ScanProMovil.Models;
 using ScanProMovil.Services.Products;
 using System.Collections.ObjectModel;
 
-
 namespace ScanProMovil.ViewModels
 {
     public partial class ProductsViewModel : ObservableObject
@@ -42,6 +41,7 @@ namespace ScanProMovil.ViewModels
             //se actualizan los datos cantidad de producto y ultima Actualizacion
             TotalProducts = Products.Count();
             LastUpdated = DateTime.Now;
+            SearchText = "";
         }
 
         [RelayCommand]
@@ -67,5 +67,6 @@ namespace ScanProMovil.ViewModels
                 LastUpdated = DateTime.Now;
             }
         }
+
     }
 }

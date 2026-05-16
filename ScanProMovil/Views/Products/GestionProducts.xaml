@@ -4,7 +4,7 @@
              x:Class="ScanProMovil.Views.Products.GestionProducts"
              xmlns:viewmodel="clr-namespace:ScanProMovil.ViewModels"
              x:DataType="viewmodel:ProductsViewModel"
-             Title="Gestion de Productos"
+             Title="Gestion de Productos" 
              xmlns:model="clr-namespace:ScanProMovil.Models">
 
 
@@ -31,29 +31,29 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:Product">
                     <Border Stroke="Gray" 
+                        StrokeShape="RoundRectangle 20"    
                         StrokeThickness="2" 
                         Padding="5" 
                         Margin="5"
                         HeightRequest="150">
-                        <Grid ColumnDefinitions="1*,8*,1*">
+                        <Grid ColumnDefinitions="3*,7*">
                             <Image Grid.Column="0" Source="package_delivery_logistics_50px.png" 
                                WidthRequest="50" 
                                HeightRequest="50"/>
+                            <!-- descripción del producto -->
                             <VerticalStackLayout Grid.Column="1" Spacing="2" Margin="10">
-                                <Label Text="{Binding Product_Name}" FontAttributes="Bold"/>
+                                <Label Text="{Binding Product_Name}" FontAttributes="Bold" FontSize="15"/>
+                                <!--detalles del produco -->
                                 <VerticalStackLayout>
-                                    <Label Text="{Binding Product_Type, StringFormat='Categoria: {0}'}"/>
-                                    <HorizontalStackLayout Spacing="2">
-                                        <Label Text="{Binding Price, StringFormat='Precio:  {0:C} '}"/>
-                                        <Label Text="{Binding Unidad, StringFormat='Und: {0}'}"/>
-                                    </HorizontalStackLayout>
-                                    
+                                    <Label Text="{Binding Product_Type, StringFormat='Categoria: {0}'}" FontSize="10" />
+                                    <Label Text="{Binding Price, StringFormat='Precio:  {0:C} '}" FontSize="10"/>
+                                    <Label Text="{Binding Unidad, StringFormat='Unidad: {0}'}" FontSize="10"/>
                                 </VerticalStackLayout>
                             </VerticalStackLayout>
-                            <VerticalStackLayout Grid.Column="2">
-                                <Image Source="icons8_edit.ico" WidthRequest="40" HeightRequest="40" />
-                            </VerticalStackLayout>
                         </Grid>
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnGoToDetailsProduct" />
+                        </Border.GestureRecognizers>
                     </Border>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

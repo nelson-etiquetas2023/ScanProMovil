@@ -9,7 +9,7 @@ namespace ScanProMovil
             InitializeComponent();
         }
 
-        private async void OnTapUsers(object? sender, TappedEventArgs e)
+        public async void OnTapProducts(object? sender, TappedEventArgs e)
         {
             if (sender is Image img)
             {

@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:ScanProMovil"
     Title="ScanProMovil">
 
-    <ShellContent
+	<ShellContent
         Title="Scan Pro 2026."
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />

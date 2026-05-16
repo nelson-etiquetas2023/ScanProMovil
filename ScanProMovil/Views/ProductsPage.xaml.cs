@@ -33,7 +33,7 @@ public partial class ProductsPage : ContentPage
         {
             var originalColor = layout.Background;
             layout.Background = Colors.LimeGreen;
-            await Task.Delay(200);
+            await Task.Delay(50);
             layout.Background = originalColor;
         }
     }

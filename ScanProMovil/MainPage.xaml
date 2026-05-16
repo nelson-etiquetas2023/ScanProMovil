@@ -32,7 +32,7 @@
                     HorizontalOptions="Center">
                     <Image Source="account_50px.png" WidthRequest="100" HeightRequest="100">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnTapUsers" />
+                            <TapGestureRecognizer Tapped="OnTapProducts" />
                         </Image.GestureRecognizers>
                     </Image>
                     <Label Text="Products" FontSize="16" FontAttributes="Bold" />

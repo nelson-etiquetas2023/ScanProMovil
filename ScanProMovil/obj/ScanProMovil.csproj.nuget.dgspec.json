@@ -34,19 +34,23 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net10.0-android36.0": {
+          "net10.0-android": {
+            "framework": "net10.0-android36.0",
             "targetAlias": "net10.0-android",
             "projectReferences": {}
           },
-          "net10.0-ios26.2": {
+          "net10.0-ios": {
+            "framework": "net10.0-ios26.2",
             "targetAlias": "net10.0-ios",
             "projectReferences": {}
           },
-          "net10.0-maccatalyst26.2": {
+          "net10.0-maccatalyst": {
+            "framework": "net10.0-maccatalyst26.2",
             "targetAlias": "net10.0-maccatalyst",
             "projectReferences": {}
           },
-          "net10.0-windows10.0.19041": {
+          "net10.0-windows10.0.19041.0": {
+            "framework": "net10.0-windows10.0.19041",
             "targetAlias": "net10.0-windows10.0.19041.0",
             "projectReferences": {}
           }
@@ -61,15 +65,16 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
-        "net10.0-android36.0": {
+        "net10.0-android": {
+          "framework": "net10.0-android36.0",
           "targetAlias": "net10.0-android",
           "dependencies": {
             "CommunityToolkit.Maui": {
               "target": "Package",
-              "version": "[14.0.1, )"
+              "version": "[14.1.1, )"
             },
             "CommunityToolkit.Mvvm": {
               "target": "Package",
@@ -77,24 +82,24 @@
             },
             "Microsoft.Data.Sqlite": {
               "target": "Package",
-              "version": "[10.0.5, )"
+              "version": "[10.0.8, )"
             },
             "Microsoft.Extensions.Http": {
               "target": "Package",
-              "version": "[10.0.5, )"
+              "version": "[10.0.8, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[10.0.5, )"
+              "version": "[10.0.8, )"
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[10.0.51, )"
+              "version": "[10.0.60, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[10.0.5, )",
+              "version": "[10.0.8, )",
               "autoReferenced": true
             }
           },
@@ -120,7 +125,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -396,12 +401,13 @@
             "System.Xml.XPath.XDocument": "(,5.0.32767]"
           }
         },
-        "net10.0-ios26.2": {
+        "net10.0-ios": {
+          "framework": "net10.0-ios26.2",
           "targetAlias": "net10.0-ios",
           "dependencies": {
             "CommunityToolkit.Maui": {
               "target": "Package",
-              "version": "[14.0.1, )"
+              "version": "[14.1.1, )"
             },
             "CommunityToolkit.Mvvm": {
               "target": "Package",
@@ -409,24 +415,24 @@
             },
             "Microsoft.Data.Sqlite": {
               "target": "Package",
-              "version": "[10.0.5, )"
+              "version": "[10.0.8, )"
             },
             "Microsoft.Extensions.Http": {
               "target": "Package",
-              "version": "[10.0.5, )"
+              "version": "[10.0.8, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[10.0.5, )"
+              "version": "[10.0.8, )"
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[10.0.51, )"
+              "version": "[10.0.60, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[10.0.5, )",
+              "version": "[10.0.8, )",
               "autoReferenced": true
             }
           },
@@ -452,7 +458,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -728,12 +734,13 @@
             "System.Xml.XPath.XDocument": "(,5.0.32767]"
           }
         },
-        "net10.0-maccatalyst26.2": {
+        "net10.0-maccatalyst": {
+          "framework": "net10.0-maccatalyst26.2",
           "targetAlias": "net10.0-maccatalyst",
           "dependencies": {
             "CommunityToolkit.Maui": {
               "target": "Package",
-              "version": "[14.0.1, )"
+              "version": "[14.1.1, )"
             },
             "CommunityToolkit.Mvvm": {
               "target": "Package",
@@ -741,24 +748,24 @@
             },
             "Microsoft.Data.Sqlite": {
               "target": "Package",
-              "version": "[10.0.5, )"
+              "version": "[10.0.8, )"
             },
             "Microsoft.Extensions.Http": {
               "target": "Package",
-              "version": "[10.0.5, )"
+              "version": "[10.0.8, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[10.0.5, )"
+              "version": "[10.0.8, )"
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[10.0.51, )"
+              "version": "[10.0.60, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[10.0.5, )",
+              "version": "[10.0.8, )",
               "autoReferenced": true
             }
           },
@@ -785,7 +792,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -1061,12 +1068,13 @@
             "System.Xml.XPath.XDocument": "(,5.0.32767]"
           }
         },
-        "net10.0-windows10.0.19041": {
+        "net10.0-windows10.0.19041.0": {
+          "framework": "net10.0-windows10.0.19041",
           "targetAlias": "net10.0-windows10.0.19041.0",
           "dependencies": {
             "CommunityToolkit.Maui": {
               "target": "Package",
-              "version": "[14.0.1, )"
+              "version": "[14.1.1, )"
             },
             "CommunityToolkit.Mvvm": {
               "target": "Package",
@@ -1074,19 +1082,19 @@
             },
             "Microsoft.Data.Sqlite": {
               "target": "Package",
-              "version": "[10.0.5, )"
+              "version": "[10.0.8, )"
             },
             "Microsoft.Extensions.Http": {
               "target": "Package",
-              "version": "[10.0.5, )"
+              "version": "[10.0.8, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[10.0.5, )"
+              "version": "[10.0.8, )"
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[10.0.51, )"
+              "version": "[10.0.60, )"
             }
           },
           "imports": [
@@ -1114,7 +1122,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
