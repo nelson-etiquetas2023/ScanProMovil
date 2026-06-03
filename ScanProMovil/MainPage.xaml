@@ -13,6 +13,7 @@
                 RowSpacing="3" 
                 ColumnSpacing="3" 
                 Background="#f0f0f0">
+                
                 <!--Sqlite -->
                 <VerticalStackLayout 
                     Grid.Row="0" 
@@ -71,7 +72,7 @@
                             <TapGestureRecognizer Tapped="OnTapScanQrCode" />
                         </Image.GestureRecognizers>
                     </Image>
-                    <Label Text="Codigo QR." FontSize="16" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Label Text="Compras" FontSize="16" FontAttributes="Bold" HorizontalOptions="Center" />
                 </VerticalStackLayout>
                 <!--Setting-->
                 <VerticalStackLayout 
@@ -97,9 +98,23 @@
                     </Image>
                     <Label Text="Sincro Data" FontSize="16" FontAttributes="Bold" HorizontalOptions="Center" />
                 </VerticalStackLayout>
+                <!--Compras-->
+                <VerticalStackLayout 
+                    Grid.Row="3" 
+                    Grid.Column="1" 
+                    HorizontalOptions="Center">
+                    <Image Source="buying.png" WidthRequest="100" HeightRequest="100">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTapShopping" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Compras" FontSize="16" FontAttributes="Bold" HorizontalOptions="Center" />
+                </VerticalStackLayout>
+
+
             </Grid>
         </ScrollView>
-        <!--Boton flotante de Login-->
+        <!--Boton flotante de Login--><!--
         <ImageButton 
             Source="add_key_50px.png"
             WidthRequest="80"
@@ -110,7 +125,7 @@
             Margin="0,0,40,80"
             Padding="8,8,10,15"
             AbsoluteLayout.LayoutFlags="PositionProportional"
-            Clicked="OnLoginUsers"/>
+            Clicked="OnLoginUsers"/>-->
     </AbsoluteLayout> 
     
     

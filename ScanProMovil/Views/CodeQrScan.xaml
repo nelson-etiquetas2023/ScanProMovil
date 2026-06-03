@@ -3,10 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScanProMovil.Views.CodeQrScan"
              Title="CodeQrScan">
-    <VerticalStackLayout>
+    <VerticalStackLayout Padding="10">
         <Label 
-            Text="Scan Codigo QR."
+            Text="Gestion de Compras"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+
+        <HorizontalStackLayout>
+            <ImageButton Source="cloud_document_50px.png" ></ImageButton>
+            <ImageButton Source="icons8_edit_48.png" ></ImageButton>
+            <ImageButton Source="trash.png" ></ImageButton>
+            <ImageButton Source="lock.png" ></ImageButton>
+        </HorizontalStackLayout>
+        
+        
+        
     </VerticalStackLayout>
 </ContentPage>

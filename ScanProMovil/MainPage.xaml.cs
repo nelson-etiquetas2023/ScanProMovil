@@ -36,7 +36,9 @@ namespace ScanProMovil
                 await img.FadeToAsync(0.5, 100); // baja opacidad
                 await img.FadeToAsync(1, 100);   // vuelve a normal
             }
-            await Navigation.PushAsync(new OrdersPage());
+
+            var  page = MauiProgram.Services!.GetService<OrdersPage>();
+            await Navigation.PushAsync(page!);
         }
 
         private async  void OnTapApiModule(object? sender, TappedEventArgs e)
@@ -83,6 +85,19 @@ namespace ScanProMovil
         private async void OnLoginUsers(object? sender, EventArgs e)
         {
             await DisplayAlertAsync("mensaje", "modulo de login...", "OK");
+        }
+
+        private async void OnTapShopping(object sender, TappedEventArgs e)
+        {
+            if (sender is Image img)
+            {
+                await img.FadeToAsync(0.5, 100); // baja opacidad
+                await img.FadeToAsync(1, 100);   // vuelve a normal
+            }
+
+            var page = MauiProgram.Services!.GetService<ShoppingPage>();
+            await Navigation.PushAsync(page!);
+            
         }
     }
 }

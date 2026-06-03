@@ -1,8 +1,10 @@
 ﻿using Microsoft.Extensions.Logging;
 using CommunityToolkit.Maui;
 using ScanProMovil.Services.Products;
+using ScanProMovil.Services.Orders;
 using ScanProMovil.ViewModels;
 using ScanProMovil.Views.Products;
+using ScanProMovil.Views;
 
 namespace ScanProMovil
 {
@@ -27,10 +29,15 @@ namespace ScanProMovil
             });
 
             builder.Services.AddSingleton <IProductsService, ProductsService>();
+            builder.Services.AddSingleton <IOrderServices, OrderService>();
             builder.Services.AddTransient<ProductsViewModel>();
-            
+            builder.Services.AddTransient<OrderViewModel>();
+
             builder.Services.AddTransient<GestionProducts>();
             builder.Services.AddTransient<ProductDetails>();
+            builder.Services.AddTransient<OrdersPage>();
+            builder.Services.AddTransient<ShoppingPage>();
+
 
             builder.Services.AddSingleton<MainPage>();
             
