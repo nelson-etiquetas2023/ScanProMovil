@@ -48,17 +48,21 @@
                 <ColumnDefinition Width=".3*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Border Grid.Column="0"
-            Margin="0,5,0,0"
-            Stroke="gray"
-            StrokeThickness="1"
-            Background="White">
+                Margin="0,5,0,0"
+                Stroke="gray"
+                StrokeThickness="1"
+                Background="White">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="10"></RoundRectangle>
                 </Border.StrokeShape>
                 <SearchBar 
-            Placeholder="Buscar Ordenes..." FontAttributes="Bold"/>
+                    Text="{Binding SearchText}"
+                    SearchCommand="{Binding SearchOrdersCommand}"
+                    Placeholder="Buscar Ordenes..." 
+                    FontAttributes="Bold"/>
             </Border>
-            <Label Text="{Binding Ordenes.Count, StringFormat='{0} Items.'}" 
+            <!--Total de Ordenes--> 
+            <Label Text="0 Ordenes" 
            Grid.Column="1" 
            FontSize="10" 
            FontAttributes="Bold" VerticalTextAlignment="Center" 

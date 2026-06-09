@@ -13,13 +13,22 @@ namespace ScanProMovil.ViewModels
     {
 
         [ObservableProperty]
+        private string searchText = string.Empty;
+
+        [ObservableProperty]
         public bool isLoading;
 
         [ObservableProperty]
         private string loadingMessage = string.Empty;
 
+
+        private List<Order> _allOrders = new();
+
         [ObservableProperty]
         private ObservableCollection<Order> ordenes = [];
+
+        [ObservableProperty]
+        public ObservableCollection<Order> FilteredOrders { get; } = new();
 
         [ObservableProperty]
         private ObservableCollection<OrderDetails> _productos = [];
@@ -29,7 +38,6 @@ namespace ScanProMovil.ViewModels
         public OrderViewModel(IOrderServices Service)
         {
             services = Service;
-            CreateTablesOrders();
         }
 
         [RelayCommand]
@@ -46,9 +54,12 @@ namespace ScanProMovil.ViewModels
 
                 await Task.Delay(1000);
 
+                var result = await services.GetOrdersLocalSqliteAsync();
+                _allOrders = result;
+
                 Ordenes = new 
-                    ObservableCollection<Order>(await services.GetOrdersLocalSqliteAsync());
-            
+                    ObservableCollection<Order>(_allOrders);
+
             }
             catch (Exception ex)
             {
@@ -62,22 +73,34 @@ namespace ScanProMovil.ViewModels
             }
         }
 
-        public void LoadDataFake() 
-        {
-           
-        }
-        
         [RelayCommand]
         private async void SaveOrdersAsync() 
         {
             var toast = Toast.Make("Se guardo la orden correctamente");
         }
-        
-        public void CreateTablesOrders() 
+
+        private void FilterOrders(string searchText) 
         {
-          
+            if (string.IsNullOrEmpty(searchText)) 
+            {
+                Ordenes = new ObservableCollection<Order>(_allOrders);
+                return;
+            }
+
+            var filtered = _allOrders.Where(o => o.OrderNumber.Contains(searchText,
+                StringComparison.OrdinalIgnoreCase)).ToList();
+
+            Ordenes = new ObservableCollection<Order>(filtered);
+
         }
-        
-     
+
+        partial void OnSearchTextChanged(string value)
+        {
+            FilterOrders(value);
+        }   
+
+
+
+
     }
 }
