@@ -347,10 +347,6 @@ C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-maccatalyst\maccatal
 C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\libxamarin-dotnet-nativeaot.a
 C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\libxamarin-dotnet.a
 C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\libxamarin-dotnet.dylib
-C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.Controls.HotReload.Forms.dll
-C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
-C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.VisualStudio.DesignTools.TapContract.dll
-C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.VisualStudio.DesignTools.XamlTapContract.dll
 C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.resources.zip
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\XamlC.stamp
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\ScanProM.8A96FA36.Up2Date
@@ -359,3 +355,7 @@ C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-maccatalyst\maccatal
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\ScanProMovil.pdb
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\ScanProMovil.genruntimeconfig.cache
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\ref\ScanProMovil.dll
+C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.Controls.HotReload.Forms.dll
+C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
+C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.VisualStudio.DesignTools.TapContract.dll
+C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.VisualStudio.DesignTools.XamlTapContract.dll

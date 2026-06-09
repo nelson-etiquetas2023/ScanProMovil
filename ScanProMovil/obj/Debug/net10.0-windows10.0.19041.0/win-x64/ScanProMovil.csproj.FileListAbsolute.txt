@@ -491,10 +491,6 @@ C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\
 C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\e_sqlite3.dll
 C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Windows.SDK.NET.dll
 C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\WinRT.Runtime.dll
-C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Maui.Controls.HotReload.Forms.dll
-C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
-C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.VisualStudio.DesignTools.TapContract.dll
-C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.VisualStudio.DesignTools.XamlTapContract.dll
 C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Web.WebView2.Core.Projection.dll
 C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.UI.pri
 C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.UI.Xaml.Controls.pri
@@ -634,3 +630,7 @@ C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-windows10.0.19041.0\
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-windows10.0.19041.0\win-x64\qualifiers.txt
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-windows10.0.19041.0\win-x64\qualifiers.txt.intermediate
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-windows10.0.19041.0\win-x64\MultipleQualifiersPerDimensionFound.txt
+C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Maui.Controls.HotReload.Forms.dll
+C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
+C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.VisualStudio.DesignTools.TapContract.dll
+C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.VisualStudio.DesignTools.XamlTapContract.dll

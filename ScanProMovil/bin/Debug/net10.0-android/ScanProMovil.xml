@@ -54,12 +54,25 @@
         <member name="T:ScanProMovil.ViewModels.OrderViewModel">
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.OrderViewModel.IsLoading">
+            <inheritdoc cref="F:ScanProMovil.ViewModels.OrderViewModel.isLoading"/>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.OrderViewModel.LoadingMessage">
+            <inheritdoc cref="F:ScanProMovil.ViewModels.OrderViewModel.loadingMessage"/>
         </member>
         <member name="P:ScanProMovil.ViewModels.OrderViewModel.Ordenes">
-            <inheritdoc cref="F:ScanProMovil.ViewModels.OrderViewModel._ordenes"/>
+            <inheritdoc cref="F:ScanProMovil.ViewModels.OrderViewModel.ordenes"/>
         </member>
         <member name="P:ScanProMovil.ViewModels.OrderViewModel.Productos">
             <inheritdoc cref="F:ScanProMovil.ViewModels.OrderViewModel._productos"/>
+        </member>
+        <member name="F:ScanProMovil.ViewModels.OrderViewModel.getOrdersLocalSqliteCommand">
+            <summary>The backing field for <see cref="P:ScanProMovil.ViewModels.OrderViewModel.GetOrdersLocalSqliteCommand"/>.</summary>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.OrderViewModel.GetOrdersLocalSqliteCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:ScanProMovil.ViewModels.OrderViewModel.GetOrdersLocalSqlite"/>.</summary>
         </member>
         <member name="F:ScanProMovil.ViewModels.OrderViewModel.saveOrdersAsyncCommand">
             <summary>The backing field for <see cref="P:ScanProMovil.ViewModels.OrderViewModel.SaveOrdersAsyncCommand"/>.</summary>
@@ -267,6 +280,12 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedOrder">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedOrder" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsLoading">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsLoading" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.LoadingMessage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "LoadingMessage" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Ordenes">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Ordenes" generated properties.</summary>
         </member>
@@ -302,6 +321,12 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedOrder">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedOrder" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsLoading">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsLoading" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.LoadingMessage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "LoadingMessage" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Ordenes">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Ordenes" generated properties.</summary>

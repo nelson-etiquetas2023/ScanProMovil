@@ -4,12 +4,13 @@ namespace ScanProMovil.Services.Orders
 {
     public interface IOrderServices
     {
-        Task<List<Order>> GetOrders();
+        Task<List<Order>> GetOrdersLocalSqliteAsync();
+        Task<List<Product>> GetProductsRemoteApi();
         Task<Order> GetOrderById(string orderid);
-        Task<bool> SaveOrder(Order order);
+        Task<bool> SaveOrdersLocalSqliteAsync(Order order);
         Task<bool> UpdateOrder(Order order);
         Task<bool> DeleteOrder(string idorder);
-        Task<bool> CreateTableOrders();
-        Task<List<Product>> GetProducts();
+        void CreateTableOrdersLocalSqlite();
+        List<Order>LoadDataFake();
     }
 }

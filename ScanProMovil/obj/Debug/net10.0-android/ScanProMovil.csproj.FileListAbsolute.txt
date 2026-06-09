@@ -162,12 +162,7 @@ C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-android\com.companyn
 C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-android\com.companyname.scanpromovil-Signed.aab
 C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-android\com.companyname.scanpromovil-Signed.apk
 C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-android\com.companyname.scanpromovil-Signed.apk.idsig
-C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-android\Microsoft.Maui.Controls.HotReload.Forms.dll
-C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-android\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
-C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-android\Microsoft.VisualStudio.DesignTools.TapContract.dll
-C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-android\Microsoft.VisualStudio.DesignTools.XamlTapContract.dll
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-android\XamlC.stamp
-C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-android\ScanProM.8A96FA36.Up2Date
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-android\ScanProMovil.dll
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-android\ScanProMovil.pdb
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-android\ScanProMovil.genruntimeconfig.cache
@@ -1715,3 +1710,8 @@ C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-android\stamp\_Conve
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-android\stamp\_ResolveLibraryProjectImports.stamp
+C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-android\Microsoft.Maui.Controls.HotReload.Forms.dll
+C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-android\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
+C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-android\Microsoft.VisualStudio.DesignTools.TapContract.dll
+C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-android\Microsoft.VisualStudio.DesignTools.XamlTapContract.dll
+C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-android\ScanProM.8A96FA36.Up2Date

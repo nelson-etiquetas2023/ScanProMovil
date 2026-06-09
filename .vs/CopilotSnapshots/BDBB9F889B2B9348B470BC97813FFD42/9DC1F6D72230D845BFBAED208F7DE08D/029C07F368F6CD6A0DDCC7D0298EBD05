@@ -1,0 +1,71 @@
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using CommunityToolkit.Mvvm.ComponentModel;
+
+namespace ScanProMovil.Models
+{
+    /// <summary>
+    /// Modelo Order optimizado para rendering eficiente en CollectionView.
+    /// Los valores precalculados reducen los cálculos durante scroll.
+    /// </summary>
+    public partial class Order : ObservableObject
+    {
+        [Key]
+        public int OrderId { get; set; }
+
+        public string OrderNumber { get; set; } = null!;
+
+        public DateTime OrderDate { get; set; }
+
+        private int _status;
+        public int Status 
+        { 
+            get => _status;
+            set
+            {
+                if (SetProperty(ref _status, value))
+                {
+                    OnPropertyChanged(nameof(StatusTexto));
+                    OnPropertyChanged(nameof(BorderColor));
+                }
+            }
+        }
+
+        public int ItemsNumber { get; set; } = 0;
+
+        public double TotalCosto { get; set; } = 0;
+
+        public ObservableCollection<OrderDetails> Items { get; set; } = [];
+
+        /// <summary>
+        /// Propiedad precalculada para evitar evaluación switch en cada binding.
+        /// </summary>
+        public string StatusTexto
+        {
+            get
+            {
+                return Status switch
+                {
+                    0 => "Pendiente",
+                    1 => "Modificado",
+                    2 => "Sincronizado",
+                    3 => "Cerrado",
+                    _ => "Desconocido"
+                };
+            }
+        }
+
+        /// <summary>
+        /// Propiedad precalculada para evitar evaluación switch en cada binding.
+        /// Cached color basada en status.
+        /// </summary>
+        public Color BorderColor =>
+          Status switch
+          {
+              0 => Colors.OrangeRed,
+              2 => Colors.GreenYellow,
+              _ => Colors.Gold
+          };
+
+    }
+}

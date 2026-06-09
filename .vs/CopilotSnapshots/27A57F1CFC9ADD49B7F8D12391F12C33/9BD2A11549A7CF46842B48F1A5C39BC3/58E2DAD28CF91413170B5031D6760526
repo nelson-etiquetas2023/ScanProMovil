@@ -1,0 +1,332 @@
+﻿
+using ScanProMovil.Models;
+using Microsoft.Data.Sqlite;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+
+namespace ScanProMovil.Services.Orders
+{
+    public class OrderService : IOrderServices
+    {
+        private readonly string dbPath = Path.Combine(FileSystem.AppDataDirectory, "scanpro.db");
+        private readonly string connectionString;
+
+        public OrderService()
+        {
+            connectionString = $"Data Source={dbPath}";
+        }
+
+        public async Task<List<Order>> GetOrders()
+        {
+            var orders = new List<Order>();
+
+            try
+            {
+                using (var connection = new SqliteConnection(connectionString))
+                {
+                    await connection.OpenAsync();
+
+                    // Obtener órdenes principales
+                    using (var command = connection.CreateCommand())
+                    {
+                        command.CommandText = @"SELECT OrderId, OrderNumber, OrderDate, Status, 
+                                               COUNT(DISTINCT OrderId) OVER (PARTITION BY OrderId) as ItemsNumber
+                                               FROM Invoice
+                                               ORDER BY OrderDate DESC";
+
+                        using (var reader = await command.ExecuteReaderAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                var order = new Order
+                                {
+                                    OrderId = Convert.ToInt32(reader["OrderId"]),
+                                    OrderNumber = reader["OrderNumber"].ToString() ?? "",
+                                    OrderDate = Convert.ToDateTime(reader["OrderDate"]),
+                                    Status = reader["Status"] != DBNull.Value ? Convert.ToInt32(reader["Status"]) : 0,
+                                    ItemsNumber = reader["ItemsNumber"] != DBNull.Value ? Convert.ToInt32(reader["ItemsNumber"]) : 0,
+                                    Items = new ObservableCollection<OrderDetails>()
+                                };
+
+                                orders.Add(order);
+                            }
+                        }
+                    }
+
+                    // Obtener detalles para cada orden
+                    foreach (var order in orders)
+                    {
+                        using (var command = connection.CreateCommand())
+                        {
+                            command.CommandText = @"SELECT DetailId, OrderId, OrderNumber, ProductId, Cantidad 
+                                                   FROM InvoiceDetails 
+                                                   WHERE OrderId = $orderId";
+                            command.Parameters.AddWithValue("$orderId", order.OrderId);
+
+                            using (var reader = await command.ExecuteReaderAsync())
+                            {
+                                double totalCosto = 0;
+                                int itemCount = 0;
+
+                                while (await reader.ReadAsync())
+                                {
+                                    var detail = new OrderDetails
+                                    {
+                                        OrderId = Convert.ToInt32(reader["OrderId"]),
+                                        OrderNumer = reader["OrderNumber"].ToString() ?? "",
+                                        productId = reader["ProductId"].ToString() ?? "",
+                                        Cantidad = Convert.ToDouble(reader["Cantidad"])
+                                    };
+
+                                    order.Items.Add(detail);
+                                    totalCosto += detail.Cantidad;
+                                    itemCount++;
+                                }
+
+                                order.ItemsNumber = itemCount;
+                                order.TotalCosto = totalCosto;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error al obtener órdenes: {ex.Message}");
+            }
+
+            return orders;
+        }
+
+        public async Task<Order> GetOrderById(string orderid)
+        {
+            try
+            {
+                using (var connection = new SqliteConnection(connectionString))
+                {
+                    await connection.OpenAsync();
+
+                    using (var command = connection.CreateCommand())
+                    {
+                        command.CommandText = @"SELECT OrderId, OrderNumber, OrderDate, Status 
+                                               FROM Invoice 
+                                               WHERE OrderId = $orderId";
+                        command.Parameters.AddWithValue("$orderId", orderid);
+
+                        using (var reader = await command.ExecuteReaderAsync())
+                        {
+                            if (await reader.ReadAsync())
+                            {
+                                var order = new Order
+                                {
+                                    OrderId = Convert.ToInt32(reader["OrderId"]),
+                                    OrderNumber = reader["OrderNumber"].ToString() ?? "",
+                                    OrderDate = Convert.ToDateTime(reader["OrderDate"]),
+                                    Status = reader["Status"] != DBNull.Value ? Convert.ToInt32(reader["Status"]) : 0,
+                                    Items = new ObservableCollection<OrderDetails>()
+                                };
+
+                                // Obtener detalles
+                                using (var detailCommand = connection.CreateCommand())
+                                {
+                                    detailCommand.CommandText = @"SELECT DetailId, OrderId, OrderNumber, ProductId, Cantidad 
+                                                                  FROM InvoiceDetails 
+                                                                  WHERE OrderId = $orderId";
+                                    detailCommand.Parameters.AddWithValue("$orderId", order.OrderId);
+
+                                    using (var detailReader = await detailCommand.ExecuteReaderAsync())
+                                    {
+                                        while (await detailReader.ReadAsync())
+                                        {
+                                            var detail = new OrderDetails
+                                            {
+                                                OrderId = Convert.ToInt32(detailReader["OrderId"]),
+                                                OrderNumer = detailReader["OrderNumber"].ToString() ?? "",
+                                                productId = detailReader["ProductId"].ToString() ?? "",
+                                                Cantidad = Convert.ToDouble(detailReader["Cantidad"])
+                                            };
+
+                                            order.Items.Add(detail);
+                                        }
+                                    }
+                                }
+
+                                return order;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error al obtener orden: {ex.Message}");
+            }
+
+            return new Order();
+        }
+
+        public async Task<bool> SaveOrder(Order order)
+        {
+            try
+            {
+                using (var connection = new SqliteConnection(connectionString))
+                {
+                    await connection.OpenAsync();
+
+                    // Guardar encabezado
+                    using (var command = connection.CreateCommand())
+                    {
+                        command.CommandText = @"INSERT INTO Invoice (OrderNumber, OrderDate, Status) 
+                                               VALUES ($orderNumber, $orderDate, $status)";
+                        command.Parameters.AddWithValue("$orderNumber", order.OrderNumber);
+                        command.Parameters.AddWithValue("$orderDate", order.OrderDate);
+                        command.Parameters.AddWithValue("$status", order.Status);
+
+                        await command.ExecuteNonQueryAsync();
+                    }
+
+                    // Obtener el ID insertado
+                    int newOrderId = 0;
+                    using (var command = connection.CreateCommand())
+                    {
+                        command.CommandText = "SELECT last_insert_rowid()";
+                        var result = await command.ExecuteScalarAsync();
+                        newOrderId = Convert.ToInt32(result);
+                    }
+
+                    // Guardar detalles
+                    foreach (var item in order.Items)
+                    {
+                        using (var command = connection.CreateCommand())
+                        {
+                            command.CommandText = @"INSERT INTO InvoiceDetails (OrderId, OrderNumber, ProductId, Cantidad) 
+                                                   VALUES ($orderId, $orderNumber, $productId, $cantidad)";
+                            command.Parameters.AddWithValue("$orderId", newOrderId);
+                            command.Parameters.AddWithValue("$orderNumber", order.OrderNumber);
+                            command.Parameters.AddWithValue("$productId", item.productId);
+                            command.Parameters.AddWithValue("$cantidad", item.Cantidad);
+
+                            await command.ExecuteNonQueryAsync();
+                        }
+                    }
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error al guardar orden: {ex.Message}");
+                return false;
+            }
+        }
+
+        public async Task<bool> UpdateOrder(Order order)
+        {
+            try
+            {
+                using (var connection = new SqliteConnection(connectionString))
+                {
+                    await connection.OpenAsync();
+
+                    using (var command = connection.CreateCommand())
+                    {
+                        command.CommandText = @"UPDATE Invoice 
+                                               SET OrderNumber = $orderNumber, OrderDate = $orderDate, Status = $status 
+                                               WHERE OrderId = $orderId";
+                        command.Parameters.AddWithValue("$orderNumber", order.OrderNumber);
+                        command.Parameters.AddWithValue("$orderDate", order.OrderDate);
+                        command.Parameters.AddWithValue("$status", order.Status);
+                        command.Parameters.AddWithValue("$orderId", order.OrderId);
+
+                        await command.ExecuteNonQueryAsync();
+                    }
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error al actualizar orden: {ex.Message}");
+                return false;
+            }
+        }
+
+        public async Task<bool> DeleteOrder(string idorder)
+        {
+            try
+            {
+                using (var connection = new SqliteConnection(connectionString))
+                {
+                    await connection.OpenAsync();
+
+                    // Habilitar cascada de eliminación
+                    using (var command = connection.CreateCommand())
+                    {
+                        command.CommandText = "PRAGMA foreign_keys = ON";
+                        await command.ExecuteNonQueryAsync();
+                    }
+
+                    // Eliminar orden
+                    using (var command = connection.CreateCommand())
+                    {
+                        command.CommandText = "DELETE FROM Invoice WHERE OrderId = $orderId";
+                        command.Parameters.AddWithValue("$orderId", idorder);
+
+                        await command.ExecuteNonQueryAsync();
+                    }
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error al eliminar orden: {ex.Message}");
+                return false;
+            }
+        }
+
+        public async Task<bool> CreateTableOrders()
+        {
+            try
+            {
+                using (var connection = new SqliteConnection(connectionString))
+                {
+                    await connection.OpenAsync();
+
+                    using (var command = connection.CreateCommand())
+                    {
+                        command.CommandText = @"CREATE TABLE IF NOT EXISTS Invoice(
+                                               OrderId INTEGER PRIMARY KEY AUTOINCREMENT,
+                                               OrderNumber TEXT NOT NULL,
+                                               OrderDate DATETIME,
+                                               Status INTEGER DEFAULT 0);
+
+                                               CREATE TABLE IF NOT EXISTS InvoiceDetails(
+                                               DetailId INTEGER PRIMARY KEY AUTOINCREMENT,
+                                               OrderId INTEGER NOT NULL,
+                                               OrderNumber TEXT NOT NULL,
+                                               ProductId TEXT NOT NULL,
+                                               Cantidad DOUBLE,
+                                               FOREIGN KEY (OrderId) REFERENCES Invoice (OrderId) ON DELETE CASCADE)";
+
+                        await command.ExecuteNonQueryAsync();
+                    }
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error al crear tablas: {ex.Message}");
+                return false;
+            }
+        }
+
+        public async Task<List<Product>> GetProducts()
+        {
+            // Implementación futura para obtener productos
+            await Task.Delay(100);
+            return new List<Product>();
+        }
+    }
+}

@@ -27,7 +27,7 @@
               HorizontalScrollBarVisibility="Never"
               VerticalScrollBarVisibility="Never">
               <CarouselView.ItemTemplate>
-                <DataTemplate>
+                    <DataTemplate x:DataType="models:ProductImagen">
                     <Image Source="{Binding Url}" 
                            Aspect="AspectFit"/>
                 </DataTemplate>

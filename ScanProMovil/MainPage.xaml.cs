@@ -29,7 +29,7 @@ namespace ScanProMovil
             await Navigation.PushAsync(new SettingPage());
         }
 
-        private async void OnTapOrdersModule(object? sender, TappedEventArgs e)
+        private async void OnTapOrdersModule(object? sender, TappedEventArgs? e)
         {
             if (sender is Image img)
             {
@@ -41,7 +41,7 @@ namespace ScanProMovil
             await Navigation.PushAsync(page!);
         }
 
-        private async  void OnTapApiModule(object? sender, TappedEventArgs e)
+        private async  void OnTapApiModule(object? sender, TappedEventArgs? e)
         {
             if (sender is Image img)
             {
@@ -61,7 +61,7 @@ namespace ScanProMovil
             await Navigation.PushAsync(new SqliteCrudPage());
         }
 
-        private async void OnTapScanQrCode(object? sender, TappedEventArgs e)
+        private async void OnTapScanQrCode(object? sender, TappedEventArgs? e)
         {
             if (sender is Image img)
             {
@@ -71,7 +71,7 @@ namespace ScanProMovil
             await Navigation.PushAsync(new CodeQrScan());
         }
 
-        private async void OnTapSincroData(object? sender, TappedEventArgs e)
+        private async void OnTapSincroData(object? sender, TappedEventArgs? e)
         {
             if (sender is Image img)
             {
@@ -82,12 +82,12 @@ namespace ScanProMovil
 
         }
 
-        private async void OnLoginUsers(object? sender, EventArgs e)
+        private async void OnLoginUsers(object? sender, EventArgs? e)
         {
             await DisplayAlertAsync("mensaje", "modulo de login...", "OK");
         }
 
-        private async void OnTapShopping(object sender, TappedEventArgs e)
+        private async void OnTapShopping(object? sender, TappedEventArgs? e)
         {
             if (sender is Image img)
             {

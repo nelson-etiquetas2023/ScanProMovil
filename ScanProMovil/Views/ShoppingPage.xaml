@@ -56,7 +56,7 @@
                     <RoundRectangle CornerRadius="10"></RoundRectangle>
                 </Border.StrokeShape>
                 <SearchBar 
-            Placeholder="Buscar Ordenes..."/>
+            Placeholder="Buscar Ordenes..." FontAttributes="Bold"/>
             </Border>
             <Label Text="{Binding Ordenes.Count, StringFormat='{0} Items.'}" 
            Grid.Column="1" 
@@ -93,14 +93,16 @@
                             </HorizontalStackLayout>
                             <!--Seccion del medio Numero-fecha-tatus -->
                             <VerticalStackLayout Grid.Column="1">
-                                <Label Text="{Binding OrderNumber}" FontAttributes="Bold" FontSize="20"/>
+                                <Label Text="{Binding OrderNumber}" 
+                                       FontAttributes="Bold" 
+                                       FontSize="25"/>
                                 <Label Text="{Binding OrderDate, StringFormat='Fecha: {0:dd-MM-yyyy}'}" />
                                 <HorizontalStackLayout>
                                     <Label Text="Status: " FontAttributes="Bold" FontSize="15" />
                                     <Border 
-                                WidthRequest="90"
-                                Padding="5,5,5,5"
-                                BackgroundColor="{Binding BorderColor}">
+                                        WidthRequest="90"
+                                        Padding="5,5,5,5"
+                                        BackgroundColor="{Binding BorderColor}">
                                         <Border.StrokeShape>
                                             <RoundRectangle CornerRadius="10"></RoundRectangle>
                                         </Border.StrokeShape>
@@ -122,5 +124,34 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        
+        <!--Activity Indicator -->
+        <Grid
+            Grid.RowSpan="3"
+            IsVisible="{Binding IsLoading}"
+            BackgroundColor="#80000000"
+            ZIndex="100"
+            >
+
+            <VerticalStackLayout 
+                HorizontalOptions="Center" 
+                VerticalOptions="Center">
+                
+                <ActivityIndicator IsRunning="{Binding IsLoading}"
+                                   WidthRequest="60" 
+                                   HeightRequest="60"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   />
+
+                <Label Text="Cargando órdenes..."
+                       TextColor="White"/>
+
+            </VerticalStackLayout>
+            
+            
+        </Grid>
+        
+        
     </Grid>
 </ContentPage>

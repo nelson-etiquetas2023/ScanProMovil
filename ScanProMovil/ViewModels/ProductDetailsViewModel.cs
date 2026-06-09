@@ -11,6 +11,7 @@ namespace ScanProMovil.ViewModels
     {
         [ObservableProperty]
         private Product producto;
+
         private IProductsService productService;
 
         public ProductDetailsViewModel(Product producto, IProductsService productService)

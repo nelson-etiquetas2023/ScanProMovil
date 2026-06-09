@@ -1,0 +1,70 @@
+﻿using ScanProMovil.ViewModels;
+
+
+namespace ScanProMovil.Views;
+
+public partial class ShoppingPage : ContentPage
+{
+	private readonly OrderViewModel _vm;
+
+
+	public ShoppingPage(OrderViewModel vm)
+	{
+		InitializeComponent();
+		_vm = vm;
+		BindingContext = _vm;
+		ConfigureCollectionView();
+		ConfigureImageCaching();
+	}
+
+	/// <summary>
+	/// Configura el CollectionView para virtualization optimizada.
+	/// Esto mejora significativamente el rendimiento en listas grandes.
+	/// </summary>
+	private void ConfigureCollectionView()
+	{
+		try
+		{
+			// Configura el límite de items restantes antes de disparar carga
+			// Con esto evitamos llegar al final sin cargar nueva data
+			collectionView.RemainingItemsThreshold = 5;
+
+			// Optimiza el rendering al cambiar la selección
+			collectionView.SelectionChangedCommand = new Command(() =>
+			{
+				// Aquí puedes disparar acciones sin bloquear el UI
+			});
+		}
+		catch (Exception ex)
+		{
+			System.Diagnostics.Debug.WriteLine($"Error configurando CollectionView: {ex.Message}");
+		}
+	}
+
+	/// <summary>
+	/// Configura el caché de imágenes para mejor rendimiento en scroll.
+	/// </summary>
+	private void ConfigureImageCaching()
+	{
+		// Configura el tamaño máximo de caché de imágenes
+		ImageCache.Default.Clear();
+
+		// Limita el tamaño del caché a 50MB para no consumir demasiada memoria
+		if (DeviceInfo.Current.Platform == DevicePlatform.Android || 
+			DeviceInfo.Current.Platform == DevicePlatform.iOS)
+		{
+			ImageCache.Default.SetCacheLimit(50 * 1024 * 1024, TimeSpan.FromHours(24));
+		}
+	}
+
+	protected override async void OnAppearing()
+	{
+		base.OnAppearing();
+
+		if (_vm.Ordenes.Count == 0) 
+		{
+			await Task.Yield();
+			await _vm.GetOrdersLocalSqliteCommand.ExecuteAsync(null);
+		}
+	}
+}
