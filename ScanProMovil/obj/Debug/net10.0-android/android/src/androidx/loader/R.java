@@ -52,18 +52,18 @@ public final class R {
 		public static final int notification_top_pad_large_text = 0x7f06031c;
 	}
 	public static final class drawable {
-		public static final int notification_action_background = 0x7f0700ed;
-		public static final int notification_bg = 0x7f0700ee;
-		public static final int notification_bg_low = 0x7f0700ef;
-		public static final int notification_bg_low_normal = 0x7f0700f0;
-		public static final int notification_bg_low_pressed = 0x7f0700f1;
-		public static final int notification_bg_normal = 0x7f0700f2;
-		public static final int notification_bg_normal_pressed = 0x7f0700f3;
-		public static final int notification_icon_background = 0x7f0700f4;
-		public static final int notification_template_icon_bg = 0x7f0700f6;
-		public static final int notification_template_icon_low_bg = 0x7f0700f7;
-		public static final int notification_tile_bg = 0x7f0700f8;
-		public static final int notify_panel_notification_icon_bg = 0x7f0700f9;
+		public static final int notification_action_background = 0x7f0700f3;
+		public static final int notification_bg = 0x7f0700f4;
+		public static final int notification_bg_low = 0x7f0700f5;
+		public static final int notification_bg_low_normal = 0x7f0700f6;
+		public static final int notification_bg_low_pressed = 0x7f0700f7;
+		public static final int notification_bg_normal = 0x7f0700f8;
+		public static final int notification_bg_normal_pressed = 0x7f0700f9;
+		public static final int notification_icon_background = 0x7f0700fa;
+		public static final int notification_template_icon_bg = 0x7f0700fc;
+		public static final int notification_template_icon_low_bg = 0x7f0700fd;
+		public static final int notification_tile_bg = 0x7f0700fe;
+		public static final int notify_panel_notification_icon_bg = 0x7f0700ff;
 	}
 	public static final class id {
 		public static final int action_container = 0x7f08003b;
@@ -107,7 +107,7 @@ public final class R {
 		public static final int notification_template_part_time = 0x7f0b006c;
 	}
 	public static final class string {
-		public static final int status_bar_notification_info_overflow = 0x7f0f00ae;
+		public static final int status_bar_notification_info_overflow = 0x7f0f00b0;
 	}
 	public static final class style {
 		public static final int TextAppearance_Compat_Notification = 0x7f1001d4;

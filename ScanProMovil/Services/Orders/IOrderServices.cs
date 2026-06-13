@@ -9,7 +9,7 @@ namespace ScanProMovil.Services.Orders
         Task<Order> GetOrderById(string orderid);
         Task<bool> SaveOrdersLocalSqliteAsync(Order order);
         Task<bool> UpdateOrder(Order order);
-        Task<bool> DeleteOrder(string idorder);
+        Task<bool> DeleteOrderLocalSqliteAsync(string idorder);
         void CreateTableOrdersLocalSqlite();
         List<Order>LoadDataFake();
     }

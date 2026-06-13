@@ -3,16 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScanProMovil.Views.OrdersPage"
              Title="OrdersPage"
-             xmlns:vm="clr-namespace:ScanProMovil.ViewModels" >
+             xmlns:models="clr-namespace:ScanProMovil.Models"
+             xmlns:vm="clr-namespace:ScanProMovil.ViewModels" 
+             x:DataType="vm:OrderViewModel">
+                
 
     <ScrollView>
         <VerticalStackLayout>
+            <!--Numero de Orden -->
             <Entry x:Name="txtOrderNumberEntry" 
                    Placeholder="Ingrese el numero de orden" 
                    FontAttributes="Bold" 
-                   Text="{Binding OrderNumber}"/>
+                   Text="{Binding NewOrder.OrderNumber}"/>
+            
             <DatePicker x:Name="txtOrderDateEntry" 
-                        FontAttributes="Bold" Date="{Binding OrderDate}"/>
+                        FontAttributes="Bold" 
+                        Date="{Binding NewOrder.OrderDate}"/>
+            
             <!--Add Product-->
             <Border Margin="5" 
                     Padding="10" 
@@ -46,11 +53,12 @@
                 <CollectionView x:Name="ItemsCollection" 
                         Grid.Row="1" 
                         SelectionMode="None" 
+                        ItemsSource="{Binding NewOrder.Items}"
                         ItemsLayout="VerticalList" 
                         ItemSizingStrategy="MeasureAllItems" 
                         HeightRequest="280" HorizontalOptions="Fill">
                     <CollectionView.ItemTemplate>
-                        <DataTemplate>
+                        <DataTemplate x:DataType="models:OrderDetails">
                             <Grid Padding="15">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="100"></ColumnDefinition>
@@ -87,8 +95,40 @@
             <Label Text="Total Cantidad : "/>
             <Label x:Name="TotalCantEntry" FontAttributes="Bold"/>
 
+
+
+            <HorizontalStackLayout 
+                HorizontalOptions="Center"
+                Margin="10">
+
+                <ActivityIndicator 
+                    x:Name="SavingIndicator"
+                    IsRunning="False"
+                    IsVisible="False"
+                    Color="Blue"
+                    WidthRequest="50"
+                    HeightRequest="50">
+                </ActivityIndicator>
+
+                <Label 
+                    x:Name="SavingLabel"
+                    Text="Guardando..."
+                    IsVisible="false"
+                    VerticalOptions="Center"
+                    TextColor="blue"/>
+
+            </HorizontalStackLayout>
+            
+            
             <HorizontalStackLayout>
-                <Button Text="Guardar"  Margin="20" Command="{Binding SaveOrdersAsyncCommand}" />
+                
+                <Button 
+                    x:Name="Btn_Save_Order"
+                    Text="Guardar"  
+                    Margin="20"
+                    Clicked="Btn_Save_Order_Clicked"
+                    />
+                
                 <Button Text="Cancelar" Margin="20" />
             </HorizontalStackLayout>
         </VerticalStackLayout>

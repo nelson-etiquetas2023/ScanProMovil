@@ -37,8 +37,6 @@ namespace ScanProMovil
             builder.Services.AddTransient<ProductDetails>();
             builder.Services.AddTransient<OrdersPage>();
             builder.Services.AddTransient<ShoppingPage>();
-
-
             builder.Services.AddSingleton<MainPage>();
             
             builder

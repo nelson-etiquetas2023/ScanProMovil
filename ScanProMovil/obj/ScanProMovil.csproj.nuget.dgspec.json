@@ -40,12 +40,12 @@
             "projectReferences": {}
           },
           "net10.0-ios": {
-            "framework": "net10.0-ios26.2",
+            "framework": "net10.0-ios26.5",
             "targetAlias": "net10.0-ios",
             "projectReferences": {}
           },
           "net10.0-maccatalyst": {
-            "framework": "net10.0-maccatalyst26.2",
+            "framework": "net10.0-maccatalyst26.5",
             "targetAlias": "net10.0-maccatalyst",
             "projectReferences": {}
           },
@@ -74,7 +74,7 @@
           "dependencies": {
             "CommunityToolkit.Maui": {
               "target": "Package",
-              "version": "[14.1.1, )"
+              "version": "[14.2.0, )"
             },
             "CommunityToolkit.Mvvm": {
               "target": "Package",
@@ -82,25 +82,29 @@
             },
             "Microsoft.Data.Sqlite": {
               "target": "Package",
-              "version": "[10.0.8, )"
+              "version": "[10.0.9, )"
             },
             "Microsoft.Extensions.Http": {
               "target": "Package",
-              "version": "[10.0.8, )"
+              "version": "[10.0.9, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[10.0.8, )"
+              "version": "[10.0.9, )"
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[10.0.60, )"
+              "version": "[10.0.71, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[10.0.8, )",
+              "version": "[10.0.9, )",
               "autoReferenced": true
+            },
+            "Plugin.Maui.Popup": {
+              "target": "Package",
+              "version": "[2.0.0, )"
             }
           },
           "imports": [
@@ -125,7 +129,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -402,12 +406,12 @@
           }
         },
         "net10.0-ios": {
-          "framework": "net10.0-ios26.2",
+          "framework": "net10.0-ios26.5",
           "targetAlias": "net10.0-ios",
           "dependencies": {
             "CommunityToolkit.Maui": {
               "target": "Package",
-              "version": "[14.1.1, )"
+              "version": "[14.2.0, )"
             },
             "CommunityToolkit.Mvvm": {
               "target": "Package",
@@ -415,25 +419,29 @@
             },
             "Microsoft.Data.Sqlite": {
               "target": "Package",
-              "version": "[10.0.8, )"
+              "version": "[10.0.9, )"
             },
             "Microsoft.Extensions.Http": {
               "target": "Package",
-              "version": "[10.0.8, )"
+              "version": "[10.0.9, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[10.0.8, )"
+              "version": "[10.0.9, )"
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[10.0.60, )"
+              "version": "[10.0.71, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[10.0.8, )",
+              "version": "[10.0.9, )",
               "autoReferenced": true
+            },
+            "Plugin.Maui.Popup": {
+              "target": "Package",
+              "version": "[2.0.0, )"
             }
           },
           "imports": [
@@ -458,7 +466,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -735,12 +743,12 @@
           }
         },
         "net10.0-maccatalyst": {
-          "framework": "net10.0-maccatalyst26.2",
+          "framework": "net10.0-maccatalyst26.5",
           "targetAlias": "net10.0-maccatalyst",
           "dependencies": {
             "CommunityToolkit.Maui": {
               "target": "Package",
-              "version": "[14.1.1, )"
+              "version": "[14.2.0, )"
             },
             "CommunityToolkit.Mvvm": {
               "target": "Package",
@@ -748,25 +756,29 @@
             },
             "Microsoft.Data.Sqlite": {
               "target": "Package",
-              "version": "[10.0.8, )"
+              "version": "[10.0.9, )"
             },
             "Microsoft.Extensions.Http": {
               "target": "Package",
-              "version": "[10.0.8, )"
+              "version": "[10.0.9, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[10.0.8, )"
+              "version": "[10.0.9, )"
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[10.0.60, )"
+              "version": "[10.0.71, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[10.0.8, )",
+              "version": "[10.0.9, )",
               "autoReferenced": true
+            },
+            "Plugin.Maui.Popup": {
+              "target": "Package",
+              "version": "[2.0.0, )"
             }
           },
           "imports": [
@@ -792,7 +804,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -1074,7 +1086,7 @@
           "dependencies": {
             "CommunityToolkit.Maui": {
               "target": "Package",
-              "version": "[14.1.1, )"
+              "version": "[14.2.0, )"
             },
             "CommunityToolkit.Mvvm": {
               "target": "Package",
@@ -1082,19 +1094,23 @@
             },
             "Microsoft.Data.Sqlite": {
               "target": "Package",
-              "version": "[10.0.8, )"
+              "version": "[10.0.9, )"
             },
             "Microsoft.Extensions.Http": {
               "target": "Package",
-              "version": "[10.0.8, )"
+              "version": "[10.0.9, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[10.0.8, )"
+              "version": "[10.0.9, )"
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[10.0.60, )"
+              "version": "[10.0.71, )"
+            },
+            "Plugin.Maui.Popup": {
+              "target": "Package",
+              "version": "[2.0.0, )"
             }
           },
           "imports": [
@@ -1122,7 +1138,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

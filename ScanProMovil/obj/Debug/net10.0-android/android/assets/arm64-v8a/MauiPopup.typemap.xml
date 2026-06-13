@@ -1,0 +1,8 @@
+<api type="debug" assembly-name="MauiPopup" mvid="10ff5b043f40438e89d86348e045dbde">
+  <java-to-managed>
+    <entry java-name="crc645ff52cfc1ab6e2ce/AndroidPopupService_BackButtonKeyListener" managed-name="MauiPopup.Platforms.Android.AndroidPopupService+BackButtonKeyListener, MauiPopup" managed-type-token-id="33554465" />
+  </java-to-managed>
+  <managed-to-java>
+    <entry java-name="crc645ff52cfc1ab6e2ce/AndroidPopupService_BackButtonKeyListener" managed-name="MauiPopup.Platforms.Android.AndroidPopupService+BackButtonKeyListener, MauiPopup" managed-type-token-id="33554465" />
+  </managed-to-java>
+</api>

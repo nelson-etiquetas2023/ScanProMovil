@@ -72,12 +72,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Maui" Version="14.1.1" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="14.2.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
-		<PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.8" />
-		<PackageReference Include="Microsoft.Extensions.Http" Version="10.0.8" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.60" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.8" />
+		<PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.9" />
+		<PackageReference Include="Microsoft.Extensions.Http" Version="10.0.9" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.71" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.9" />
+		<PackageReference Include="Plugin.Maui.Popup" Version="2.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -94,6 +95,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\OrdersPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Orders\OrderDetailsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\ProductsPage.xaml">
@@ -123,7 +127,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Converters\" />
 	  <Folder Include="Views\Compras\" />
 	</ItemGroup>
 

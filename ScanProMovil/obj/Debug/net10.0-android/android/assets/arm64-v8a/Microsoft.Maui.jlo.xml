@@ -46,16 +46,12 @@
         <method name="onKeyUp" method="n_onKeyUp:(ILandroid/view/KeyEvent;)Z:GetOnKeyUp_ILandroid_view_KeyEvent_Handler" jni_signature="(ILandroid/view/KeyEvent;)Z" params="int p0, android.view.KeyEvent p1" retval="boolean" is_dynamically_registered="True" super_call="p0, p1" activate_call="p0, p1" />
       </methods>
     </type>
-    <type name="MauiAppCompatActivity_PredictiveBackCallback" package="crc6488302ad6e9e4df1a" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="java.lang.Object" partial_assembly_qualified_name="Microsoft.Maui.MauiAppCompatActivity+PredictiveBackCallback, Microsoft.Maui">
-      <implemented_interfaces>
-        <interface name="android.window.OnBackInvokedCallback" />
-      </implemented_interfaces>
+    <type name="MauiAppCompatActivity_MauiOnBackPressedCallback" package="crc6488302ad6e9e4df1a" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="androidx.activity.OnBackPressedCallback" partial_assembly_qualified_name="Microsoft.Maui.MauiAppCompatActivity+MauiOnBackPressedCallback, Microsoft.Maui">
       <constructors>
-        <constructor name="MauiAppCompatActivity_PredictiveBackCallback" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
-        <constructor name="MauiAppCompatActivity_PredictiveBackCallback" method="n_.ctor:(Lcrc6488302ad6e9e4df1a/MauiAppCompatActivity;)V:" jni_signature="(Lcrc6488302ad6e9e4df1a/MauiAppCompatActivity;)V" managed_parameters="Microsoft.Maui.MauiAppCompatActivity, Microsoft.Maui" params="crc6488302ad6e9e4df1a.MauiAppCompatActivity p0" retval="void" is_dynamically_registered="True" super_call="" activate_call="p0" />
+        <constructor name="MauiAppCompatActivity_MauiOnBackPressedCallback" method="n_.ctor:(Z)V:" jni_signature="(Z)V" managed_parameters="System.Boolean, System.Private.CoreLib" params="boolean p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
       </constructors>
       <methods>
-        <method name="onBackInvoked" method="n_onBackInvoked:()V:GetOnBackInvokedHandler:Android.Window.IOnBackInvokedCallbackInvoker, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" jni_signature="()V" retval="void" is_dynamically_registered="True" />
+        <method name="handleOnBackPressed" method="n_handleOnBackPressed:()V:GetHandleOnBackPressedHandler" jni_signature="()V" retval="void" is_dynamically_registered="True" />
       </methods>
     </type>
     <type name="MauiApplication" package="crc6488302ad6e9e4df1a" is_abstract="True" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="android.app.Application" is_application="True" partial_assembly_qualified_name="Microsoft.Maui.MauiApplication, Microsoft.Maui" application_constructor="MauiApplication">
@@ -142,6 +138,7 @@
         <constructor name="ContentViewGroup" method="n_.ctor:(Landroid/content/Context;Landroid/util/AttributeSet;II)V:" jni_signature="(Landroid/content/Context;Landroid/util/AttributeSet;II)V" managed_parameters="Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android:System.Int32, System.Private.CoreLib:System.Int32, System.Private.CoreLib" params="android.content.Context p0, android.util.AttributeSet p1, int p2, int p3" retval="void" is_dynamically_registered="True" super_call="p0, p1, p2, p3" activate_call="p0, p1, p2, p3" />
       </constructors>
       <methods>
+        <method name="hasOverlappingRendering" method="n_hasOverlappingRendering:()Z:GetHasOverlappingRenderingHandler" jni_signature="()Z" retval="boolean" is_dynamically_registered="True" />
         <method name="onAttachedToWindow" method="n_onAttachedToWindow:()V:GetOnAttachedToWindowHandler" jni_signature="()V" retval="void" is_dynamically_registered="True" />
         <method name="onDetachedFromWindow" method="n_onDetachedFromWindow:()V:GetOnDetachedFromWindowHandler" jni_signature="()V" retval="void" is_dynamically_registered="True" />
         <method name="onMeasure" method="n_onMeasure:(II)V:GetOnMeasure_IIHandler" jni_signature="(II)V" params="int p0, int p1" retval="void" is_dynamically_registered="True" super_call="p0, p1" activate_call="p0, p1" />
@@ -178,6 +175,7 @@
         <constructor name="LayoutViewGroup" method="n_.ctor:(Landroid/content/Context;Landroid/util/AttributeSet;II)V:" jni_signature="(Landroid/content/Context;Landroid/util/AttributeSet;II)V" managed_parameters="Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android:System.Int32, System.Private.CoreLib:System.Int32, System.Private.CoreLib" params="android.content.Context p0, android.util.AttributeSet p1, int p2, int p3" retval="void" is_dynamically_registered="True" super_call="p0, p1, p2, p3" activate_call="p0, p1, p2, p3" />
       </constructors>
       <methods>
+        <method name="hasOverlappingRendering" method="n_hasOverlappingRendering:()Z:GetHasOverlappingRenderingHandler" jni_signature="()Z" retval="boolean" is_dynamically_registered="True" />
         <method name="onAttachedToWindow" method="n_onAttachedToWindow:()V:GetOnAttachedToWindowHandler" jni_signature="()V" retval="void" is_dynamically_registered="True" />
         <method name="onDetachedFromWindow" method="n_onDetachedFromWindow:()V:GetOnDetachedFromWindowHandler" jni_signature="()V" retval="void" is_dynamically_registered="True" />
         <method name="onMeasure" method="n_onMeasure:(II)V:GetOnMeasure_IIHandler" jni_signature="(II)V" params="int p0, int p1" retval="void" is_dynamically_registered="True" super_call="p0, p1" activate_call="p0, p1" />
@@ -321,6 +319,10 @@
         <constructor name="MauiHybridWebView" method="n_.ctor:(Landroid/content/Context;Landroid/util/AttributeSet;)V:" jni_signature="(Landroid/content/Context;Landroid/util/AttributeSet;)V" managed_parameters="Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android" params="android.content.Context p0, android.util.AttributeSet p1" retval="void" is_dynamically_registered="True" super_call="p0, p1" activate_call="p0, p1" />
         <constructor name="MauiHybridWebView" method="n_.ctor:(Landroid/content/Context;)V:" jni_signature="(Landroid/content/Context;)V" managed_parameters="Android.Content.Context, Mono.Android" params="android.content.Context p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
       </constructors>
+      <methods>
+        <method name="onSizeChanged" method="n_onSizeChanged:(IIII)V:GetOnSizeChanged_IIIIHandler" jni_signature="(IIII)V" params="int p0, int p1, int p2, int p3" retval="void" is_dynamically_registered="True" super_call="p0, p1, p2, p3" activate_call="p0, p1, p2, p3" />
+        <method name="onAttachedToWindow" method="n_onAttachedToWindow:()V:GetOnAttachedToWindowHandler" jni_signature="()V" retval="void" is_dynamically_registered="True" />
+      </methods>
     </type>
     <type name="MauiHybridWebViewClient" package="crc6452ffdc5b34af3a0f" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="android.webkit.WebViewClient" partial_assembly_qualified_name="Microsoft.Maui.Platform.MauiHybridWebViewClient, Microsoft.Maui">
       <constructors>
@@ -425,6 +427,14 @@
       </constructors>
       <methods>
         <method name="onClick" method="n_onClick:(Landroid/view/View;)V:GetOnClick_Landroid_view_View_Handler:Android.Views.View+IOnClickListenerInvoker, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" jni_signature="(Landroid/view/View;)V" params="android.view.View p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+      </methods>
+    </type>
+    <type name="MauiPageControl_IndicatorAccessibilityDelegate" package="crc6452ffdc5b34af3a0f" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="android.view.View.AccessibilityDelegate" partial_assembly_qualified_name="Microsoft.Maui.Platform.MauiPageControl+IndicatorAccessibilityDelegate, Microsoft.Maui">
+      <constructors>
+        <constructor name="MauiPageControl_IndicatorAccessibilityDelegate" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+      </constructors>
+      <methods>
+        <method name="onInitializeAccessibilityNodeInfo" method="n_onInitializeAccessibilityNodeInfo:(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V:GetOnInitializeAccessibilityNodeInfo_Landroid_view_View_Landroid_view_accessibility_AccessibilityNodeInfo_Handler" jni_signature="(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V" params="android.view.View p0, android.view.accessibility.AccessibilityNodeInfo p1" retval="void" is_dynamically_registered="True" super_call="p0, p1" activate_call="p0, p1" />
       </methods>
     </type>
     <type name="MauiPicker" package="crc6452ffdc5b34af3a0f" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="crc6452ffdc5b34af3a0f.MauiPickerBase" partial_assembly_qualified_name="Microsoft.Maui.Platform.MauiPicker, Microsoft.Maui">
@@ -589,6 +599,10 @@
         <constructor name="MauiWebView" method="n_.ctor:(Landroid/content/Context;Landroid/util/AttributeSet;)V:" jni_signature="(Landroid/content/Context;Landroid/util/AttributeSet;)V" managed_parameters="Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android" params="android.content.Context p0, android.util.AttributeSet p1" retval="void" is_dynamically_registered="True" super_call="p0, p1" activate_call="p0, p1" />
         <constructor name="MauiWebView" method="n_.ctor:(Landroid/content/Context;)V:" jni_signature="(Landroid/content/Context;)V" managed_parameters="Android.Content.Context, Mono.Android" params="android.content.Context p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
       </constructors>
+      <methods>
+        <method name="onSizeChanged" method="n_onSizeChanged:(IIII)V:GetOnSizeChanged_IIIIHandler" jni_signature="(IIII)V" params="int p0, int p1, int p2, int p3" retval="void" is_dynamically_registered="True" super_call="p0, p1, p2, p3" activate_call="p0, p1, p2, p3" />
+        <method name="onAttachedToWindow" method="n_onAttachedToWindow:()V:GetOnAttachedToWindowHandler" jni_signature="()V" retval="void" is_dynamically_registered="True" />
+      </methods>
     </type>
     <type name="MauiWebViewClient" package="crc6452ffdc5b34af3a0f" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="android.webkit.WebViewClient" partial_assembly_qualified_name="Microsoft.Maui.Platform.MauiWebViewClient, Microsoft.Maui">
       <constructors>
@@ -739,6 +753,7 @@
         <constructor name="WrapperView" method="n_.ctor:(Landroid/content/Context;)V:" jni_signature="(Landroid/content/Context;)V" managed_parameters="Android.Content.Context, Mono.Android" params="android.content.Context p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
       </constructors>
       <methods>
+        <method name="hasOverlappingRendering" method="n_hasOverlappingRendering:()Z:GetHasOverlappingRenderingHandler" jni_signature="()Z" retval="boolean" is_dynamically_registered="True" />
         <method name="onLayout" method="n_onLayout:(ZIIII)V:GetOnLayout_ZIIIIHandler" jni_signature="(ZIIII)V" params="boolean p0, int p1, int p2, int p3, int p4" retval="void" is_dynamically_registered="True" super_call="p0, p1, p2, p3, p4" activate_call="p0, p1, p2, p3, p4" />
         <method name="dispatchTouchEvent" method="n_dispatchTouchEvent:(Landroid/view/MotionEvent;)Z:GetDispatchTouchEvent_Landroid_view_MotionEvent_Handler" jni_signature="(Landroid/view/MotionEvent;)Z" params="android.view.MotionEvent p0" retval="boolean" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
         <method name="getClipPath" method="n_getClipPath:(II)Landroid/graphics/Path;:GetGetClipPath_IIHandler" jni_signature="(II)Landroid/graphics/Path;" params="int p0, int p1" retval="android.graphics.Path" is_dynamically_registered="True" super_call="p0, p1" activate_call="p0, p1" />
@@ -811,6 +826,28 @@
             <annotation name="android.webkit.JavascriptInterface" />
           </annotations>
         </method>
+      </methods>
+    </type>
+    <type name="SearchBarHandler_QueryEditorTouchListener" package="crc64fcf28c0e24b4cc31" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="java.lang.Object" partial_assembly_qualified_name="Microsoft.Maui.Handlers.SearchBarHandler+QueryEditorTouchListener, Microsoft.Maui">
+      <implemented_interfaces>
+        <interface name="android.view.View.OnTouchListener" />
+      </implemented_interfaces>
+      <constructors>
+        <constructor name="SearchBarHandler_QueryEditorTouchListener" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+      </constructors>
+      <methods>
+        <method name="onTouch" method="n_onTouch:(Landroid/view/View;Landroid/view/MotionEvent;)Z:GetOnTouch_Landroid_view_View_Landroid_view_MotionEvent_Handler:Android.Views.View+IOnTouchListenerInvoker, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" jni_signature="(Landroid/view/View;Landroid/view/MotionEvent;)Z" params="android.view.View p0, android.view.MotionEvent p1" retval="boolean" is_dynamically_registered="True" super_call="p0, p1" activate_call="p0, p1" />
+      </methods>
+    </type>
+    <type name="SearchBarHandler_QueryEditorKeyListener" package="crc64fcf28c0e24b4cc31" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="java.lang.Object" partial_assembly_qualified_name="Microsoft.Maui.Handlers.SearchBarHandler+QueryEditorKeyListener, Microsoft.Maui">
+      <implemented_interfaces>
+        <interface name="android.view.View.OnKeyListener" />
+      </implemented_interfaces>
+      <constructors>
+        <constructor name="SearchBarHandler_QueryEditorKeyListener" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+      </constructors>
+      <methods>
+        <method name="onKey" method="n_onKey:(Landroid/view/View;ILandroid/view/KeyEvent;)Z:GetOnKey_Landroid_view_View_ILandroid_view_KeyEvent_Handler:Android.Views.View+IOnKeyListenerInvoker, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" jni_signature="(Landroid/view/View;ILandroid/view/KeyEvent;)Z" params="android.view.View p0, int p1, android.view.KeyEvent p2" retval="boolean" is_dynamically_registered="True" super_call="p0, p1, p2" activate_call="p0, p1, p2" />
       </methods>
     </type>
     <type name="SearchBarHandler_FocusChangeListener" package="crc64fcf28c0e24b4cc31" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="java.lang.Object" partial_assembly_qualified_name="Microsoft.Maui.Handlers.SearchBarHandler+FocusChangeListener, Microsoft.Maui">
@@ -922,7 +959,7 @@
     <type assembly-qualified-name="Microsoft.Maui.ImageLoaderCallback, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="microsoft.maui.ImageLoaderCallback" java-key="crc6488302ad6e9e4df1a.ImageLoaderCallback" managed-key="Microsoft.Maui.ImageLoaderCallback" partial-assembly-qualified-name="Microsoft.Maui.ImageLoaderCallback, Microsoft.Maui" />
     <type assembly-qualified-name="Microsoft.Maui.ImageLoaderCallbackBase`1, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="microsoft.maui.ImageLoaderCallbackBase_1" java-key="crc6488302ad6e9e4df1a.ImageLoaderCallbackBase_1" managed-key="Microsoft.Maui.ImageLoaderCallbackBase`1" partial-assembly-qualified-name="Microsoft.Maui.ImageLoaderCallbackBase`1, Microsoft.Maui" />
     <type assembly-qualified-name="Microsoft.Maui.MauiAppCompatActivity, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="microsoft.maui.MauiAppCompatActivity" java-key="crc6488302ad6e9e4df1a.MauiAppCompatActivity" managed-key="Microsoft.Maui.MauiAppCompatActivity" partial-assembly-qualified-name="Microsoft.Maui.MauiAppCompatActivity, Microsoft.Maui" />
-    <type assembly-qualified-name="Microsoft.Maui.MauiAppCompatActivity+PredictiveBackCallback, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="microsoft.maui.MauiAppCompatActivity_PredictiveBackCallback" java-key="crc6488302ad6e9e4df1a.MauiAppCompatActivity_PredictiveBackCallback" managed-key="Microsoft.Maui.MauiAppCompatActivity.PredictiveBackCallback" partial-assembly-qualified-name="Microsoft.Maui.MauiAppCompatActivity+PredictiveBackCallback, Microsoft.Maui" />
+    <type assembly-qualified-name="Microsoft.Maui.MauiAppCompatActivity+MauiOnBackPressedCallback, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="microsoft.maui.MauiAppCompatActivity_MauiOnBackPressedCallback" java-key="crc6488302ad6e9e4df1a.MauiAppCompatActivity_MauiOnBackPressedCallback" managed-key="Microsoft.Maui.MauiAppCompatActivity.MauiOnBackPressedCallback" partial-assembly-qualified-name="Microsoft.Maui.MauiAppCompatActivity+MauiOnBackPressedCallback, Microsoft.Maui" />
     <type assembly-qualified-name="Microsoft.Maui.MauiApplication, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="microsoft.maui.MauiApplication" java-key="crc6488302ad6e9e4df1a.MauiApplication" managed-key="Microsoft.Maui.MauiApplication" partial-assembly-qualified-name="Microsoft.Maui.MauiApplication, Microsoft.Maui" />
     <type assembly-qualified-name="Microsoft.Maui.MauiApplication+ActivityLifecycleCallbacks, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="microsoft.maui.MauiApplication_ActivityLifecycleCallbacks" java-key="crc6488302ad6e9e4df1a.MauiApplication_ActivityLifecycleCallbacks" managed-key="Microsoft.Maui.MauiApplication.ActivityLifecycleCallbacks" partial-assembly-qualified-name="Microsoft.Maui.MauiApplication+ActivityLifecycleCallbacks, Microsoft.Maui" />
     <type assembly-qualified-name="Microsoft.Maui.IImageLoaderCallback, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="com.microsoft.maui.ImageLoaderCallback" java-key="com.microsoft.maui.ImageLoaderCallback" managed-key="Microsoft.Maui.IImageLoaderCallback" partial-assembly-qualified-name="Microsoft.Maui.IImageLoaderCallback, Microsoft.Maui" />
@@ -958,6 +995,7 @@
     <type assembly-qualified-name="Microsoft.Maui.Platform.MauiMaterialTimePicker, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="microsoft.maui.platform.MauiMaterialTimePicker" java-key="crc6452ffdc5b34af3a0f.MauiMaterialTimePicker" managed-key="Microsoft.Maui.Platform.MauiMaterialTimePicker" partial-assembly-qualified-name="Microsoft.Maui.Platform.MauiMaterialTimePicker, Microsoft.Maui" />
     <type assembly-qualified-name="Microsoft.Maui.Platform.MauiPageControl, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="microsoft.maui.platform.MauiPageControl" java-key="crc6452ffdc5b34af3a0f.MauiPageControl" managed-key="Microsoft.Maui.Platform.MauiPageControl" partial-assembly-qualified-name="Microsoft.Maui.Platform.MauiPageControl, Microsoft.Maui" />
     <type assembly-qualified-name="Microsoft.Maui.Platform.MauiPageControl+TEditClickListener, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="microsoft.maui.platform.MauiPageControl_TEditClickListener" java-key="crc6452ffdc5b34af3a0f.MauiPageControl_TEditClickListener" managed-key="Microsoft.Maui.Platform.MauiPageControl.TEditClickListener" partial-assembly-qualified-name="Microsoft.Maui.Platform.MauiPageControl+TEditClickListener, Microsoft.Maui" />
+    <type assembly-qualified-name="Microsoft.Maui.Platform.MauiPageControl+IndicatorAccessibilityDelegate, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="microsoft.maui.platform.MauiPageControl_IndicatorAccessibilityDelegate" java-key="crc6452ffdc5b34af3a0f.MauiPageControl_IndicatorAccessibilityDelegate" managed-key="Microsoft.Maui.Platform.MauiPageControl.IndicatorAccessibilityDelegate" partial-assembly-qualified-name="Microsoft.Maui.Platform.MauiPageControl+IndicatorAccessibilityDelegate, Microsoft.Maui" />
     <type assembly-qualified-name="Microsoft.Maui.Platform.MauiPicker, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="microsoft.maui.platform.MauiPicker" java-key="crc6452ffdc5b34af3a0f.MauiPicker" managed-key="Microsoft.Maui.Platform.MauiPicker" partial-assembly-qualified-name="Microsoft.Maui.Platform.MauiPicker, Microsoft.Maui" />
     <type assembly-qualified-name="Microsoft.Maui.Platform.MauiPickerBase, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="microsoft.maui.platform.MauiPickerBase" java-key="crc6452ffdc5b34af3a0f.MauiPickerBase" managed-key="Microsoft.Maui.Platform.MauiPickerBase" partial-assembly-qualified-name="Microsoft.Maui.Platform.MauiPickerBase, Microsoft.Maui" />
     <type assembly-qualified-name="Microsoft.Maui.Platform.MauiScrollView, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="microsoft.maui.platform.MauiScrollView" java-key="crc6452ffdc5b34af3a0f.MauiScrollView" managed-key="Microsoft.Maui.Platform.MauiScrollView" partial-assembly-qualified-name="Microsoft.Maui.Platform.MauiScrollView, Microsoft.Maui" />
@@ -993,6 +1031,8 @@
     <type assembly-qualified-name="Microsoft.Maui.Handlers.MaterialDatePickerDismissListener, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="microsoft.maui.handlers.MaterialDatePickerDismissListener" java-key="crc64fcf28c0e24b4cc31.MaterialDatePickerDismissListener" managed-key="Microsoft.Maui.Handlers.MaterialDatePickerDismissListener" partial-assembly-qualified-name="Microsoft.Maui.Handlers.MaterialDatePickerDismissListener, Microsoft.Maui" />
     <type assembly-qualified-name="Microsoft.Maui.Handlers.EntryHandler2+ClearButtonClickListener, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="microsoft.maui.handlers.EntryHandler2_ClearButtonClickListener" java-key="crc64fcf28c0e24b4cc31.EntryHandler2_ClearButtonClickListener" managed-key="Microsoft.Maui.Handlers.EntryHandler2.ClearButtonClickListener" partial-assembly-qualified-name="Microsoft.Maui.Handlers.EntryHandler2+ClearButtonClickListener, Microsoft.Maui" />
     <type assembly-qualified-name="Microsoft.Maui.Handlers.HybridWebViewHandler+HybridWebViewJavaScriptInterface, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="microsoft.maui.handlers.HybridWebViewHandler_HybridWebViewJavaScriptInterface" java-key="crc64fcf28c0e24b4cc31.HybridWebViewHandler_HybridWebViewJavaScriptInterface" managed-key="Microsoft.Maui.Handlers.HybridWebViewHandler.HybridWebViewJavaScriptInterface" partial-assembly-qualified-name="Microsoft.Maui.Handlers.HybridWebViewHandler+HybridWebViewJavaScriptInterface, Microsoft.Maui" />
+    <type assembly-qualified-name="Microsoft.Maui.Handlers.SearchBarHandler+QueryEditorTouchListener, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="microsoft.maui.handlers.SearchBarHandler_QueryEditorTouchListener" java-key="crc64fcf28c0e24b4cc31.SearchBarHandler_QueryEditorTouchListener" managed-key="Microsoft.Maui.Handlers.SearchBarHandler.QueryEditorTouchListener" partial-assembly-qualified-name="Microsoft.Maui.Handlers.SearchBarHandler+QueryEditorTouchListener, Microsoft.Maui" />
+    <type assembly-qualified-name="Microsoft.Maui.Handlers.SearchBarHandler+QueryEditorKeyListener, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="microsoft.maui.handlers.SearchBarHandler_QueryEditorKeyListener" java-key="crc64fcf28c0e24b4cc31.SearchBarHandler_QueryEditorKeyListener" managed-key="Microsoft.Maui.Handlers.SearchBarHandler.QueryEditorKeyListener" partial-assembly-qualified-name="Microsoft.Maui.Handlers.SearchBarHandler+QueryEditorKeyListener, Microsoft.Maui" />
     <type assembly-qualified-name="Microsoft.Maui.Handlers.SearchBarHandler+FocusChangeListener, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="microsoft.maui.handlers.SearchBarHandler_FocusChangeListener" java-key="crc64fcf28c0e24b4cc31.SearchBarHandler_FocusChangeListener" managed-key="Microsoft.Maui.Handlers.SearchBarHandler.FocusChangeListener" partial-assembly-qualified-name="Microsoft.Maui.Handlers.SearchBarHandler+FocusChangeListener, Microsoft.Maui" />
     <type assembly-qualified-name="Microsoft.Maui.Handlers.SliderHandler+SeekBarChangeListener, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="microsoft.maui.handlers.SliderHandler_SeekBarChangeListener" java-key="crc64fcf28c0e24b4cc31.SliderHandler_SeekBarChangeListener" managed-key="Microsoft.Maui.Handlers.SliderHandler.SeekBarChangeListener" partial-assembly-qualified-name="Microsoft.Maui.Handlers.SliderHandler+SeekBarChangeListener, Microsoft.Maui" />
     <type assembly-qualified-name="Microsoft.Maui.Handlers.SwitchHandler+CheckedChangeListener, Microsoft.Maui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="microsoft.maui.handlers.SwitchHandler_CheckedChangeListener" java-key="crc64fcf28c0e24b4cc31.SwitchHandler_CheckedChangeListener" managed-key="Microsoft.Maui.Handlers.SwitchHandler.CheckedChangeListener" partial-assembly-qualified-name="Microsoft.Maui.Handlers.SwitchHandler+CheckedChangeListener, Microsoft.Maui" />

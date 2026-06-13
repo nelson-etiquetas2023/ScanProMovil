@@ -114,6 +114,16 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
+[C:/Programacion/ScanProMovil/ScanProMovil/Views/Orders/OrderDetailsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ScanProMovil.Views.Orders.OrderDetailsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Orders\OrderDetailsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Orders\OrderDetailsPage.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
 [C:/Programacion/ScanProMovil/ScanProMovil/Views/ProductsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ScanProMovil.Views.ProductsPage.xaml

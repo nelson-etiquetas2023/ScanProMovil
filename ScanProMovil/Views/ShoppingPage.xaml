@@ -14,26 +14,47 @@
                     Orientation="Horizontal">
             <HorizontalStackLayout 
                 Spacing="3">
-                <Button Text="ADD"
-                 ImageSource="add.png"
-                 BackgroundColor="DodgerBlue" 
-                 ContentLayout="Top, 2"
-                 TextColor="White" WidthRequest="80"/>
+                <Button 
+                    x:Name="btnAddOrders"
+                    Text="ADD"       
+                    ImageSource="add.png"
+                    BackgroundColor="DodgerBlue" 
+                    ContentLayout="Top, 2"
+                    TextColor="White" WidthRequest="80"
+                    Clicked="btnAddOrders_Clicked"
+                    />
+
+                <Button 
+                    x:Name="btnDetailsOrders"
+                    Text="INFO"       
+                    ImageSource="document_info.png"
+                    BackgroundColor="DodgerBlue" 
+                    ContentLayout="Top, 2"
+                    TextColor="White" WidthRequest="80"
+                    Clicked="btnDetailsOrders_Clicked" />
+
                 <Button Text="EDIT"
                  ImageSource="edit.png"
                  BackgroundColor="DodgerBlue" 
                  ContentLayout="Top, 2"
                  TextColor="White" WidthRequest="80"/>
+                
                 <Button Text="SINC"
                  ImageSource="uploadcloud.png"
                  BackgroundColor="DodgerBlue" 
                  ContentLayout="Top, 2"
                  TextColor="White" WidthRequest="80"/>
-                <Button Text="DELETE"
-                 ImageSource="delete.png"
-                 BackgroundColor="DodgerBlue" 
-                 ContentLayout="Top, 2"
-                 TextColor="White"  WidthRequest="80"/>
+                
+                <Button 
+                    Text="DELETE"
+                    x:Name="btnDeleteOrder"
+                    ImageSource="delete.png"
+                    BackgroundColor="DodgerBlue" 
+                    ContentLayout="Top, 2"
+                    TextColor="White"  WidthRequest="80"
+                    Clicked="btnDeleteOrder_Clicked"
+                 />
+                
                 <Button Text="CANCEL"
                  ImageSource="cancel.png"
                  BackgroundColor="DodgerBlue" 
@@ -57,17 +78,17 @@
                 </Border.StrokeShape>
                 <SearchBar 
                     Text="{Binding SearchText}"
-                    SearchCommand="{Binding SearchOrdersCommand}"
                     Placeholder="Buscar Ordenes..." 
                     FontAttributes="Bold"/>
             </Border>
             <!--Total de Ordenes--> 
-            <Label Text="0 Ordenes" 
-           Grid.Column="1" 
-           FontSize="10" 
-           FontAttributes="Bold" VerticalTextAlignment="Center" 
-          HorizontalOptions="Center" Background="Gray" 
-          Margin="0,5,0,5" Padding="20,0,20,0"/>
+            <Label Text="{Binding TotalOrders, StringFormat='{0} Items'}" 
+                Grid.Column="1" 
+                FontSize="10"
+                TextColor="White"
+                FontAttributes="Bold" VerticalTextAlignment="Center" 
+                HorizontalOptions="Center" Background="Black" 
+                Margin="0,5,0,5" Padding="20,0,20,0"/>
 
         </Grid>
         <!--Lista de Ordenes -->
@@ -75,8 +96,9 @@
             x:Name="collectionView"
             EmptyView="No Data..."
             ItemsLayout="VerticalList"
-            SelectionMode="Multiple"
-            ItemsSource="{Binding Ordenes}">
+            SelectionMode="Single"
+            ItemsSource="{Binding Ordenes}"
+            SelectedItem="{Binding SelectedOrder, Mode=TwoWay}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Order">
                     <Border Margin="1" 

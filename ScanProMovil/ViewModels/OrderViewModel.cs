@@ -1,17 +1,18 @@
 using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Microsoft.Data.Sqlite;
+using Microsoft.Maui.Controls;
 using ScanProMovil.Models;
 using ScanProMovil.Services.Orders;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 
-
 namespace ScanProMovil.ViewModels
 {
     public partial class OrderViewModel : ObservableObject
     {
-
         [ObservableProperty]
         private string searchText = string.Empty;
 
@@ -20,7 +21,6 @@ namespace ScanProMovil.ViewModels
 
         [ObservableProperty]
         private string loadingMessage = string.Empty;
-
 
         private List<Order> _allOrders = new();
 
@@ -31,13 +31,20 @@ namespace ScanProMovil.ViewModels
         public ObservableCollection<Order> FilteredOrders { get; } = new();
 
         [ObservableProperty]
-        private ObservableCollection<OrderDetails> _productos = [];
+        private int totalOrders;
+
+        [ObservableProperty]
+        private Order newOrder = new();
+
+        [ObservableProperty]
+        private Order? selectedOrder;
 
         IOrderServices services { get; set; }
 
         public OrderViewModel(IOrderServices Service)
         {
             services = Service;
+            newOrder.OrderDate = DateTime.Today;
         }
 
         [RelayCommand]
@@ -60,8 +67,10 @@ namespace ScanProMovil.ViewModels
                 Ordenes = new 
                     ObservableCollection<Order>(_allOrders);
 
+                TotalOrders = _allOrders.Count;
+
             }
-            catch (Exception ex)
+            catch (SqliteException ex)
             {
                 Debug.Write("error al obtener los datos locales, error:" + ex.Message);
             }
@@ -74,9 +83,39 @@ namespace ScanProMovil.ViewModels
         }
 
         [RelayCommand]
-        private async void SaveOrdersAsync() 
+        public async void SaveOrderLocalSqliteAsync() 
         {
-            var toast = Toast.Make("Se guardo la orden correctamente");
+            try
+            {
+                IsLoading = true;
+                await Task.Delay(1000);
+                await services.SaveOrdersLocalSqliteAsync(NewOrder);
+                
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("error al guardar las ordenes: " + ex.Message);
+            }
+            finally 
+            {
+                IsLoading = false;  
+
+            }
+        }
+
+        [RelayCommand]
+        public async Task DeleteOrderLocalSqliteAsync()
+        {
+            if (SelectedOrder!.OrderNumber == null)
+                return;
+
+            bool deleted = await services.DeleteOrderLocalSqliteAsync(SelectedOrder.OrderNumber);
+
+            if (deleted) 
+            {
+                var toast = Toast.Make("Orden eliminada correctamente...",ToastDuration.Short);
+                await toast.Show();
+            }
         }
 
         private void FilterOrders(string searchText) 
@@ -84,6 +123,7 @@ namespace ScanProMovil.ViewModels
             if (string.IsNullOrEmpty(searchText)) 
             {
                 Ordenes = new ObservableCollection<Order>(_allOrders);
+                TotalOrders = Ordenes.Count;
                 return;
             }
 
@@ -92,15 +132,13 @@ namespace ScanProMovil.ViewModels
 
             Ordenes = new ObservableCollection<Order>(filtered);
 
+            TotalOrders = Ordenes.Count;
         }
 
         partial void OnSearchTextChanged(string value)
         {
             FilterOrders(value);
-        }   
-
-
-
+        }
 
     }
 }

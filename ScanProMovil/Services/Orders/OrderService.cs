@@ -34,22 +34,31 @@ namespace ScanProMovil.Services.Orders
 
                 await connection.OpenAsync();
 
+                //hacer mantenimiento borrar las ordenes.
+                //using (var cmd = connection.CreateCommand()) 
+                //{
+                //    cmd.CommandText = "DELETE FROM Invoice;";
+                        
+
+                //    cmd.ExecuteNonQuery();
+                //}
+
                 //Comando sql para extraer las ordenes y items de la bd sqlite.
                 using (var comando = connection.CreateCommand())
                 {
-                    comando.CommandText = @"SELECT a.orderId, a.orderNumber, a.orderDate, b.productId, b.cantidad " + 
-                                           "FROM Invoice a LEFT JOIN InvoiceDetails b ON a.orderId = b.orderId " + 
+                    comando.CommandText = @"SELECT a.orderId, a.orderNumber, a.orderDate, b.productId, b.cantidad " +
+                                           "FROM Invoice a LEFT JOIN InvoiceDetails b ON a.orderId = b.orderId " +
                                            "Order By a.OrderNumber DESC";
 
-                    using (var reader = await comando.ExecuteReaderAsync()) 
+                    using (var reader = await comando.ExecuteReaderAsync())
                     {
-                        while (await reader.ReadAsync()) 
+                        while (await reader.ReadAsync())
                         {
                             var IndexCol = reader.GetOrdinal("orderId");
 
                             var orderId = reader.GetInt32(IndexCol);
 
-                            if (!ordenes.TryGetValue(orderId,out Order? order)) 
+                            if (!ordenes.TryGetValue(orderId, out Order? order))
                             {
                                 //guardar la orden
                                 order = new Order
@@ -63,9 +72,9 @@ namespace ScanProMovil.Services.Orders
                             }
                             //Guardar los items de productos
                             var IndexColProductId = reader.GetOrdinal("productId");
-                            
 
-                            if (!reader.IsDBNull(IndexColProductId)) 
+
+                            if (!reader.IsDBNull(IndexColProductId))
                             {
                                 var ProductIdValue = reader.GetString(IndexColProductId);
                                 var item = new OrderDetails
@@ -73,7 +82,7 @@ namespace ScanProMovil.Services.Orders
                                     productId = ProductIdValue,
                                     Cantidad = reader.GetInt32(reader.GetOrdinal("Cantidad")),
                                     OrderId = orderId,
-                                    OrderNumer = order.OrderNumber
+                                    OrderNumber = order.OrderNumber
                                 };
                                 order.Items.Add(item);
                             }
@@ -126,9 +135,28 @@ namespace ScanProMovil.Services.Orders
             command.ExecuteNonQuery();
         }
 
-        public Task<bool> DeleteOrder(string idorder)
+        public async Task<bool> DeleteOrderLocalSqliteAsync(string idorder)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var connection = new SqliteConnection(connectionString)) 
+                {
+                    await connection.OpenAsync();
+                    using (var comando = connection.CreateCommand()) 
+                    {
+                        comando.CommandText = "DELETE FROM Invoice WHERE OrderNumber = @orderId";
+                        comando.Parameters.AddWithValue("@orderId", idorder);
+
+                        await comando.ExecuteNonQueryAsync();
+                        return true;
+                    }
+                }
+            }
+            catch (SqliteException ex)
+            {
+                Debug.WriteLine("error al borrar orden: " + ex.Message);
+                return false;
+            }
         }
 
         public Task<Order> GetOrderById(string orderid)
@@ -147,12 +175,11 @@ namespace ScanProMovil.Services.Orders
                     //Guardar el Encabezado de la Orden.
                     using (var command1 = connection.CreateCommand())
                     {
-                        command1.CommandText = @"PRAGMA foreign_keys = ON;
-                                                    INSERT INTO Invoice (OrderNumber,OrderDate) 
+                        command1.CommandText = @"INSERT INTO Invoice (OrderNumber,OrderDate) 
                                                     VALUES ($order,$date)";
 
-                        command1.Parameters.AddWithValue("$order", "OrderNumber");
-                        command1.Parameters.AddWithValue("$date", "OrderDate");
+                        command1.Parameters.AddWithValue("$order", order.OrderNumber );
+                        command1.Parameters.AddWithValue("$date", order.OrderDate );
                         await command1.ExecuteNonQueryAsync();
                     }
                     //devolver el id autoincrement de la bd. sqlite.
@@ -181,7 +208,6 @@ namespace ScanProMovil.Services.Orders
                             int rows = 0;
                             while (reader.Read())
                             {
-
                                 Debug.WriteLine(
                                     $"Id: {reader["OrderId"]}, " +
                                     $"Number: {reader["OrderNumber"]}, " +
@@ -203,7 +229,7 @@ namespace ScanProMovil.Services.Orders
                         {
                             command2.Parameters.Clear();
                             command2.Parameters.AddWithValue("$orderId", autoid);
-                            command2.Parameters.AddWithValue("$orderNumber", "OrdenNumber");
+                            command2.Parameters.AddWithValue("$orderNumber", order.OrderNumber);
                             command2.Parameters.AddWithValue("$productid", item.productId);
                             command2.Parameters.AddWithValue("$cantidad", item.Cantidad);
                             await command2.ExecuteNonQueryAsync();
@@ -260,9 +286,9 @@ namespace ScanProMovil.Services.Orders
             orden0.OrderDate = DateTime.Today;
             orden0.ItemsNumber = 23;
             orden0.TotalCosto = 123.45;
-            var producto1 = new OrderDetails { productId = "101", Cantidad = 10, OrderId = 1, OrderNumer = "1000" };
-            var producto2 = new OrderDetails { productId = "102", Cantidad = 11, OrderId = 1, OrderNumer = "1000" };
-            var producto3 = new OrderDetails { productId = "103", Cantidad = 12, OrderId = 1, OrderNumer = "1000" };
+            var producto1 = new OrderDetails { productId = "101", Cantidad = 10, OrderId = 1, OrderNumber = "1000" };
+            var producto2 = new OrderDetails { productId = "102", Cantidad = 11, OrderId = 1, OrderNumber = "1000" };
+            var producto3 = new OrderDetails { productId = "103", Cantidad = 12, OrderId = 1, OrderNumber = "1000" };
             orden0.Items.Add(producto1);
             orden0.Items.Add(producto2);
             orden0.Items.Add(producto3);
@@ -272,9 +298,9 @@ namespace ScanProMovil.Services.Orders
             orden1.OrderNumber = "1001";
             orden1.OrderId = 2;
             orden1.OrderDate = DateTime.Today;
-            var producto11 = new OrderDetails { productId = "107", Cantidad = 10, OrderId = 1, OrderNumer = "1000" };
-            var producto12 = new OrderDetails { productId = "112", Cantidad = 11, OrderId = 1, OrderNumer = "1000" };
-            var producto13 = new OrderDetails { productId = "113", Cantidad = 12, OrderId = 1, OrderNumer = "1000" };
+            var producto11 = new OrderDetails { productId = "107", Cantidad = 10, OrderId = 1, OrderNumber = "1000" };
+            var producto12 = new OrderDetails { productId = "112", Cantidad = 11, OrderId = 1, OrderNumber = "1000" };
+            var producto13 = new OrderDetails { productId = "113", Cantidad = 12, OrderId = 1, OrderNumber = "1000" };
             orden1.Items.Add(producto11);
             orden1.Items.Add(producto12);
             orden1.Items.Add(producto13);
