@@ -1,4 +1,4 @@
-<api type="debug" assembly-name="ScanProMovil" mvid="a207251c64b440ab887333c067ab369a">
+<api type="debug" assembly-name="ScanProMovil" mvid="154aede91f6a484c96b99e90882ab6f8">
   <java-to-managed>
     <entry java-name="crc642bf794391a6f072b/MainActivity" managed-name="ScanProMovil.MainActivity, ScanProMovil" managed-type-token-id="33554454" />
     <entry java-name="crc642bf794391a6f072b/MainApplication" managed-name="ScanProMovil.MainApplication, ScanProMovil" managed-type-token-id="33554455" />

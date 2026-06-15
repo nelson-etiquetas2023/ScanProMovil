@@ -14,6 +14,10 @@ namespace ScanProMovil.ViewModels
     public partial class OrderViewModel : ObservableObject
     {
         [ObservableProperty]
+        private bool refreshListOrders = true;
+
+
+        [ObservableProperty]
         private string searchText = string.Empty;
 
         [ObservableProperty]

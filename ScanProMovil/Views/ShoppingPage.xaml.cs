@@ -20,10 +20,11 @@ public partial class ShoppingPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-            
-        await Task.Yield();            
-        await _vm.GetOrdersLocalSqliteCommand.ExecuteAsync(null);
-      
+        if (_vm.RefreshListOrders) 
+        {
+            await Task.Yield();
+            await _vm.GetOrdersLocalSqliteCommand.ExecuteAsync(null);
+        }    
     }
 
     private async void btnAddOrders_Clicked(object? sender, EventArgs e)
@@ -65,6 +66,7 @@ public partial class ShoppingPage : ContentPage
 
     private async void btnDetailsOrders_Clicked(object? sender, EventArgs? e)
     {
+       
         // Validar la orden seleccionada.
         if (_vm.SelectedOrder == null)
         {
@@ -72,7 +74,8 @@ public partial class ShoppingPage : ContentPage
             return;
         }
 
+        _vm.RefreshListOrders = false;
         await Navigation.PushAsync(new OrderDetailsPage(_vm.SelectedOrder));
-        
+
     }
 }

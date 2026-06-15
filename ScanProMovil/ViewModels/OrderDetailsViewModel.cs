@@ -6,6 +6,10 @@ namespace ScanProMovil.ViewModels
 {
     public partial class OrderDetailsViewModel : ObservableObject
     {
+
+        [ObservableProperty]
+        public bool isLoading; 
+
         [ObservableProperty]
         private Order order = new();
 

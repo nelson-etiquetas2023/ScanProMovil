@@ -33,12 +33,6 @@
                     TextColor="White" WidthRequest="80"
                     Clicked="btnDetailsOrders_Clicked" />
 
-                <Button Text="EDIT"
-                 ImageSource="edit.png"
-                 BackgroundColor="DodgerBlue" 
-                 ContentLayout="Top, 2"
-                 TextColor="White" WidthRequest="80"/>
-                
                 <Button Text="SINC"
                  ImageSource="uploadcloud.png"
                  BackgroundColor="DodgerBlue" 
@@ -107,6 +101,7 @@
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="10"></RoundRectangle>
                         </Border.StrokeShape>
+                        <!--layuot de la tarjeta-->
                         <Grid Margin="0,0,0,10">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width=".2*" />
