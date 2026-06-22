@@ -2,6 +2,7 @@ using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Core;
 using ScanProMovil.ViewModels;
 using ScanProMovil.Views.Orders;
+using ScanProMovil.Views.Sincro;
 
 namespace ScanProMovil.Views;
 
@@ -15,6 +16,8 @@ public partial class ShoppingPage : ContentPage
 		InitializeComponent();
         _vm = vm;
         BindingContext = _vm;
+        Preferences.Set("SelectMultipleRows", false);
+
     }
 
     protected override async void OnAppearing()
@@ -24,11 +27,21 @@ public partial class ShoppingPage : ContentPage
         {
             await Task.Yield();
             await _vm.GetOrdersLocalSqliteCommand.ExecuteAsync(null);
-        }    
+        }
+
+        
+        bool selectMultiple = Preferences.Get("SelectMultipleRows", false);
+
+        if (selectMultiple)
+        {
+            //habilitar la seleccion multiple en la lista de ordenes.
+            CvOrdenes.SelectionMode = SelectionMode.Multiple;
+        }
     }
 
     private async void btnAddOrders_Clicked(object? sender, EventArgs e)
     {
+        _vm.RefreshListOrders = true;
         var page = MauiProgram.Services!.GetService<OrdersPage>();
         await Navigation.PushAsync(page!);
     }
@@ -77,5 +90,17 @@ public partial class ShoppingPage : ContentPage
         _vm.RefreshListOrders = false;
         await Navigation.PushAsync(new OrderDetailsPage(_vm.SelectedOrder));
 
+    }
+
+    private async void btnConfig_Clicked(object? sender, EventArgs? e)
+    {
+        _vm.RefreshListOrders = false;
+        await Navigation.PushAsync(new ConfigPage());
+    }
+
+    private async void btn_sincrOrdenes_Clicked(object? sender, EventArgs? e)
+    {
+        _vm.RefreshListOrders = false;
+        await Navigation.PushAsync(new SincroOrdersPage());
     }
 }

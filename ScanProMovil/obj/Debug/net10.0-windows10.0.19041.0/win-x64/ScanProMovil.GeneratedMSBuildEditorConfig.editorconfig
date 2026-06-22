@@ -116,6 +116,16 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
+[C:/Programacion/ScanProMovil/ScanProMovil/Views/Orders/ConfigPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ScanProMovil.Views.Orders.ConfigPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Orders\ConfigPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Orders\ConfigPage.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
 [C:/Programacion/ScanProMovil/ScanProMovil/Views/Orders/OrderDetailsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ScanProMovil.Views.Orders.OrderDetailsPage.xaml
@@ -181,6 +191,16 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ScanProMovil.Views.SincroDocuments.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\SincroDocuments.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\SincroDocuments.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
+[C:/Programacion/ScanProMovil/ScanProMovil/Views/Sincro/SincroOrdersPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ScanProMovil.Views.Sincro.SincroOrdersPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Sincro\SincroOrdersPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Sincro\SincroOrdersPage.xaml
 build_metadata.AdditionalFiles.Inflator = SourceGen
 build_metadata.AdditionalFiles.NoWarn = 
 build_metadata.AdditionalFiles.EnableDiagnostics = 

@@ -630,10 +630,6 @@ C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-windows10.0.19041.0\
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-windows10.0.19041.0\win-x64\qualifiers.txt
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-windows10.0.19041.0\win-x64\qualifiers.txt.intermediate
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-windows10.0.19041.0\win-x64\MultipleQualifiersPerDimensionFound.txt
-C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Maui.Controls.HotReload.Forms.dll
-C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
-C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.VisualStudio.DesignTools.TapContract.dll
-C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.VisualStudio.DesignTools.XamlTapContract.dll
 C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\MauiPopup.dll
 C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\document_info.scale-100.png
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-windows10.0.19041.0\win-x64\resizetizer\r\document_info.scale-100.png
@@ -689,3 +685,15 @@ C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-windows10.0.19041.0\
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-windows10.0.19041.0\win-x64\resizetizer\r\sheet_64px.scale-100.png
 C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\upload_document_64px.scale-100.png
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-windows10.0.19041.0\win-x64\resizetizer\r\upload_document_64px.scale-100.png
+C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\gear_24px.scale-100.png
+C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-windows10.0.19041.0\win-x64\resizetizer\r\gear_24px.scale-100.png
+C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\consumable_24px.scale-100.png
+C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\paint_brush_24px.scale-100.png
+C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\paint_brush_64px.scale-100.png
+C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-windows10.0.19041.0\win-x64\resizetizer\r\consumable_24px.scale-100.png
+C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-windows10.0.19041.0\win-x64\resizetizer\r\paint_brush_24px.scale-100.png
+C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-windows10.0.19041.0\win-x64\resizetizer\r\paint_brush_64px.scale-100.png
+C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\console_64px.scale-100.png
+C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-windows10.0.19041.0\win-x64\resizetizer\r\console_64px.scale-100.png
+C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-windows10.0.19041.0\win-x64\upload_to_the_cloud_32px.scale-100.png
+C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-windows10.0.19041.0\win-x64\resizetizer\r\upload_to_the_cloud_32px.scale-100.png

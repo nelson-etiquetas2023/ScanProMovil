@@ -355,10 +355,6 @@ C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-maccatalyst\maccatal
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\ScanProMovil.pdb
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\ScanProMovil.genruntimeconfig.cache
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\ref\ScanProMovil.dll
-C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.Controls.HotReload.Forms.dll
-C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
-C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.VisualStudio.DesignTools.TapContract.dll
-C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.VisualStudio.DesignTools.XamlTapContract.dll
 C:\Programacion\ScanProMovil\ScanProMovil\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\MauiPopup.dll
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\document_info.png
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\resizetizer\r\check_file@3x.png
@@ -379,3 +375,9 @@ C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-maccatalyst\maccatal
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\bill_64px.png
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\sheet_64px.png
 C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\upload_document_64px.png
+C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\gear_24px.png
+C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\consumable_24px.png
+C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\paint_brush_64px.png
+C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\paint_brush_24px.png
+C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\console_64px.png
+C:\Programacion\ScanProMovil\ScanProMovil\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\upload_to_the_cloud_32px.png

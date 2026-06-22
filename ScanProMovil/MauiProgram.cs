@@ -5,6 +5,8 @@ using ScanProMovil.Services.Orders;
 using ScanProMovil.ViewModels;
 using ScanProMovil.Views.Products;
 using ScanProMovil.Views;
+using ScanProMovil.Views.Orders;
+using ScanProMovil.Views.Sincro;
 
 namespace ScanProMovil
 {
@@ -32,11 +34,15 @@ namespace ScanProMovil
             builder.Services.AddSingleton <IOrderServices, OrderService>();
             builder.Services.AddTransient<ProductsViewModel>();
             builder.Services.AddTransient<OrderViewModel>();
+            builder.Services.AddTransient<OrderConfigViewModel>();
+            builder.Services.AddTransient<SincroOrdersViewModel>();
 
             builder.Services.AddTransient<GestionProducts>();
             builder.Services.AddTransient<ProductDetails>();
             builder.Services.AddTransient<OrdersPage>();
+            builder.Services.AddTransient<ConfigPage>();
             builder.Services.AddTransient<ShoppingPage>();
+            builder.Services.AddTransient<SincroOrdersPage>();
             builder.Services.AddSingleton<MainPage>();
             
             builder

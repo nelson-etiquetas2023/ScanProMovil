@@ -51,6 +51,22 @@
         <member name="P:ScanProMovil.ViewModels.ComprasViewModel.DeactivateOrderCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ScanProMovil.ViewModels.ComprasViewModel.DeactivateOrder"/>.</summary>
         </member>
+        <member name="T:ScanProMovil.ViewModels.OrderConfigViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.OrderConfigViewModel.SelectMultipleRows">
+            <inheritdoc cref="F:ScanProMovil.ViewModels.OrderConfigViewModel.selectMultipleRows"/>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.OrderConfigViewModel.MaxOrdersProcess">
+            <inheritdoc cref="F:ScanProMovil.ViewModels.OrderConfigViewModel.maxOrdersProcess"/>
+        </member>
+        <member name="F:ScanProMovil.ViewModels.OrderConfigViewModel.saveConfigCommand">
+            <summary>The backing field for <see cref="P:ScanProMovil.ViewModels.OrderConfigViewModel.SaveConfigCommand"/>.</summary>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.OrderConfigViewModel.SaveConfigCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:ScanProMovil.ViewModels.OrderConfigViewModel.SaveConfig"/>.</summary>
+        </member>
         <member name="T:ScanProMovil.ViewModels.OrderDetailsViewModel">
             <inheritdoc/>
             <inheritdoc/>
@@ -165,6 +181,22 @@
         </member>
         <member name="P:ScanProMovil.ViewModels.ProductsViewModel.BuscarProductosCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ScanProMovil.ViewModels.ProductsViewModel.BuscarProductos"/>.</summary>
+        </member>
+        <member name="T:ScanProMovil.ViewModels.SincroOrdersViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.SincroOrdersViewModel.Logs">
+            <inheritdoc cref="F:ScanProMovil.ViewModels.SincroOrdersViewModel.logs"/>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.SincroOrdersViewModel.ConnectionInternet">
+            <inheritdoc cref="F:ScanProMovil.ViewModels.SincroOrdersViewModel.connectionInternet"/>
+        </member>
+        <member name="F:ScanProMovil.ViewModels.SincroOrdersViewModel.executeTestSincroCommand">
+            <summary>The backing field for <see cref="P:ScanProMovil.ViewModels.SincroOrdersViewModel.ExecuteTestSincroCommand"/>.</summary>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.SincroOrdersViewModel.ExecuteTestSincroCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:ScanProMovil.ViewModels.SincroOrdersViewModel.ExecuteTestSincro"/>.</summary>
         </member>
         <member name="T:ScanProMovil.ViewModels.UsersViewModel">
             <inheritdoc/>
@@ -327,6 +359,12 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedOrder">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedOrder" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectMultipleRows">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectMultipleRows" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MaxOrdersProcess">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MaxOrdersProcess" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsLoading">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsLoading" generated properties.</summary>
         </member>
@@ -360,6 +398,12 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.LastUpdated">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "LastUpdated" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Logs">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Logs" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConnectionInternet">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConnectionInternet" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EntryNameUser">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EntryNameUser" generated properties.</summary>
         </member>
@@ -377,6 +421,12 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedOrder">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedOrder" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectMultipleRows">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectMultipleRows" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MaxOrdersProcess">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MaxOrdersProcess" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsLoading">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsLoading" generated properties.</summary>
@@ -410,6 +460,12 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.LastUpdated">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "LastUpdated" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Logs">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Logs" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConnectionInternet">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConnectionInternet" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EntryNameUser">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EntryNameUser" generated properties.</summary>

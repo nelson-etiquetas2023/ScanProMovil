@@ -33,11 +33,25 @@
                     TextColor="White" WidthRequest="80"
                     Clicked="btnDetailsOrders_Clicked" />
 
-                <Button Text="SINC"
-                 ImageSource="uploadcloud.png"
-                 BackgroundColor="DodgerBlue" 
-                 ContentLayout="Top, 2"
-                 TextColor="White" WidthRequest="80"/>
+                <Button 
+                        x:Name="btnConfig"
+                        Text="CONF"       
+                        ImageSource="gear_24px.png"
+                        BackgroundColor="DodgerBlue" 
+                        ContentLayout="Top, 2"
+                        TextColor="White" WidthRequest="80"
+                        Clicked="btnConfig_Clicked" />
+
+                <Button 
+                    x:Name="btn_sincrOrdenes"
+                    Text="SINC"
+                    ImageSource="uploadcloud.png"
+                    BackgroundColor="DodgerBlue" 
+                    ContentLayout="Top, 2"
+                    TextColor="White" 
+                    WidthRequest="80"
+                    Clicked="btn_sincrOrdenes_Clicked"
+                    />
                 
                 <Button 
                     Text="DELETE"
@@ -87,7 +101,7 @@
         </Grid>
         <!--Lista de Ordenes -->
         <CollectionView Grid.Row="2"
-            x:Name="collectionView"
+            x:Name="CvOrdenes"
             EmptyView="No Data..."
             ItemsLayout="VerticalList"
             SelectionMode="Single"
