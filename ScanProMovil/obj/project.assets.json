@@ -2,10 +2,10 @@
   "version": 4,
   "targets": {
     "net10.0-android": {
-      "CommunityToolkit.Maui/14.2.2": {
+      "CommunityToolkit.Maui/15.0.0": {
         "type": "package",
         "dependencies": {
-          "CommunityToolkit.Maui.Core": "14.2.2",
+          "CommunityToolkit.Maui.Core": "15.0.0",
           "Microsoft.Maui.Controls": "10.0.60"
         },
         "compile": {
@@ -19,7 +19,7 @@
           }
         }
       },
-      "CommunityToolkit.Maui.Core/14.2.2": {
+      "CommunityToolkit.Maui.Core/15.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Core": "10.0.60",
@@ -2722,10 +2722,10 @@
       }
     },
     "net10.0-android/android-arm64": {
-      "CommunityToolkit.Maui/14.2.2": {
+      "CommunityToolkit.Maui/15.0.0": {
         "type": "package",
         "dependencies": {
-          "CommunityToolkit.Maui.Core": "14.2.2",
+          "CommunityToolkit.Maui.Core": "15.0.0",
           "Microsoft.Maui.Controls": "10.0.60"
         },
         "compile": {
@@ -2739,7 +2739,7 @@
           }
         }
       },
-      "CommunityToolkit.Maui.Core/14.2.2": {
+      "CommunityToolkit.Maui.Core/15.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Core": "10.0.60",
@@ -5442,10 +5442,10 @@
       }
     },
     "net10.0-android/android-x64": {
-      "CommunityToolkit.Maui/14.2.2": {
+      "CommunityToolkit.Maui/15.0.0": {
         "type": "package",
         "dependencies": {
-          "CommunityToolkit.Maui.Core": "14.2.2",
+          "CommunityToolkit.Maui.Core": "15.0.0",
           "Microsoft.Maui.Controls": "10.0.60"
         },
         "compile": {
@@ -5459,7 +5459,7 @@
           }
         }
       },
-      "CommunityToolkit.Maui.Core/14.2.2": {
+      "CommunityToolkit.Maui.Core/15.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Maui.Core": "10.0.60",
@@ -8163,10 +8163,10 @@
     }
   },
   "libraries": {
-    "CommunityToolkit.Maui/14.2.2": {
-      "sha512": "sagTZG18AiH+Fa+9thGf4R6urm0uboV69ppWVgwpPevKbGVIvOdt+0Tw9lCZ8+3jEEEoc6JOYGWnvD85E/yEDg==",
+    "CommunityToolkit.Maui/15.0.0": {
+      "sha512": "dJCyivk3FdztJ2YrRFPsI3eNf2eoBUj5dHNb9svLWip5WFWhNa3z773WMjnxnACSbm6lwFlTAviJSMCWA8pKuQ==",
       "type": "package",
-      "path": "communitytoolkit.maui/14.2.2",
+      "path": "communitytoolkit.maui/15.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -8174,7 +8174,7 @@
         "analyzers/dotnet/cs/CommunityToolkit.Maui.Analyzers.CodeFixes.dll",
         "analyzers/dotnet/cs/CommunityToolkit.Maui.Analyzers.dll",
         "analyzers/dotnet/cs/CommunityToolkit.Maui.SourceGenerators.dll",
-        "communitytoolkit.maui.14.2.2.nupkg.sha512",
+        "communitytoolkit.maui.15.0.0.nupkg.sha512",
         "communitytoolkit.maui.nuspec",
         "icon.png",
         "lib/net10.0-android36.0/CommunityToolkit.Maui.dll",
@@ -8190,15 +8190,15 @@
         "lib/net10.0/CommunityToolkit.Maui.xml"
       ]
     },
-    "CommunityToolkit.Maui.Core/14.2.2": {
-      "sha512": "EIArK0oa/DyWiNbWjD2be6fgZ7+ZNj4RjO+5tqtaN8ZZo3DVvT6urHWj63cKkQjCgiNxzSm/j/3dmTAf+NC6yw==",
+    "CommunityToolkit.Maui.Core/15.0.0": {
+      "sha512": "0M63tW8RIDuGM2nUXmBphWpZtUwWvtNTF7ROcXBZzL65aYG+/Kw8FWVSWo4ikkf9MLqJjPm2YQO3qxxl49RrJw==",
       "type": "package",
-      "path": "communitytoolkit.maui.core/14.2.2",
+      "path": "communitytoolkit.maui.core/15.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "ReadMe.txt",
-        "communitytoolkit.maui.core.14.2.2.nupkg.sha512",
+        "communitytoolkit.maui.core.15.0.0.nupkg.sha512",
         "communitytoolkit.maui.core.nuspec",
         "icon.png",
         "lib/net10.0-android36.0/CommunityToolkit.Maui.Core.dll",
@@ -12152,7 +12152,7 @@
   },
   "projectFileDependencyGroups": {
     "net10.0-android": [
-      "CommunityToolkit.Maui >= 14.2.2",
+      "CommunityToolkit.Maui >= 15.0.0",
       "CommunityToolkit.Mvvm >= 8.4.2",
       "Microsoft.Data.Sqlite >= 10.0.10",
       "Microsoft.Extensions.Http >= 10.0.10",
@@ -12219,7 +12219,7 @@
         "dependencies": {
           "CommunityToolkit.Maui": {
             "target": "Package",
-            "version": "[14.2.2, )"
+            "version": "[15.0.0, )"
           },
           "CommunityToolkit.Mvvm": {
             "target": "Package",

@@ -70,7 +70,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Maui" Version="14.2.2" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="15.0.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
 		<PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.10" />
 		<PackageReference Include="Microsoft.Extensions.Http" Version="10.0.10" />
@@ -85,6 +85,15 @@
 	</ItemGroup>
 	
 	<ItemGroup>
+	  <Compile Update="Views\Compras\AddComprasPage.xaml.cs">
+	    <DependentUpon>AddComprasPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Compras\DetailsComprasPage.xaml.cs">
+	    <DependentUpon>DetailsComprasPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Compras\SincroComprasPage.xaml.cs">
+	    <DependentUpon>SincroComprasPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\Products\GestionProducts.xaml.cs">
 	    <DependentUpon>GestionProducts.xaml</DependentUpon>
 	  </Compile>
@@ -97,7 +106,19 @@
 	  <MauiXaml Update="Views\CodeQrScan.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Compras\AddComprasPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Compras\ComprasIndexPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Compras\ConfigComprasPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Compras\DetailsComprasPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Compras\SincroComprasPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\OrdersPage.xaml">

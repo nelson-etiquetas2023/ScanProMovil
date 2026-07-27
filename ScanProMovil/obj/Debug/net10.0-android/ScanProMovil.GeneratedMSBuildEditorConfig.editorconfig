@@ -104,11 +104,51 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
+[C:/Programacion/ScanProMovil/ScanProMovil/Views/Compras/AddComprasPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ScanProMovil.Views.Compras.AddComprasPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Compras\AddComprasPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Compras\AddComprasPage.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
 [C:/Programacion/ScanProMovil/ScanProMovil/Views/Compras/ComprasIndexPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ScanProMovil.Views.Compras.ComprasIndexPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\Compras\ComprasIndexPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\Compras\ComprasIndexPage.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
+[C:/Programacion/ScanProMovil/ScanProMovil/Views/Compras/ConfigComprasPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ScanProMovil.Views.Compras.ConfigComprasPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Compras\ConfigComprasPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Compras\ConfigComprasPage.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
+[C:/Programacion/ScanProMovil/ScanProMovil/Views/Compras/DetailsComprasPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ScanProMovil.Views.Compras.DetailsComprasPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Compras\DetailsComprasPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Compras\DetailsComprasPage.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
+[C:/Programacion/ScanProMovil/ScanProMovil/Views/Compras/SincroComprasPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ScanProMovil.Views.Compras.SincroComprasPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Compras\SincroComprasPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Compras\SincroComprasPage.xaml
 build_metadata.AdditionalFiles.Inflator = SourceGen
 build_metadata.AdditionalFiles.NoWarn = 
 build_metadata.AdditionalFiles.EnableDiagnostics = 

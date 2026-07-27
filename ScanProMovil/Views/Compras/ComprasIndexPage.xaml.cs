@@ -36,22 +36,31 @@ public partial class ComprasIndexPage : ContentPage
 
     private async void btnAddOrders_Clicked(object? sender, EventArgs? e)
     {
-
+        //Validar la orden de Compra Seleccionada.
+        _vm.RefreshListOrders = true;
+        var page = MauiProgram.Services!.GetService<AddComprasPage>();
+        await Navigation.PushAsync(page!);
     }
 
     private async void btnDetailsOrders_Clicked(object? sender, EventArgs? e)
     {
-
+        _vm.RefreshListOrders = true;
+        var page = MauiProgram.Services!.GetService<DetailsComprasPage>();
+        await Navigation.PushAsync(page!);
     }
 
     private async void btnConfig_Clicked(object? sender, EventArgs? e)
     {
-
+        _vm.RefreshListOrders = true;
+        var page = MauiProgram.Services!.GetService<ConfigComprasPage>();
+        await Navigation.PushAsync(page!);
     }
 
     private async void btn_sincrOrdenes_Clicked(object? sender, EventArgs? e)
     {
-
+        _vm.RefreshListOrders = true;
+        var page = MauiProgram.Services!.GetService<SincroComprasPage>();
+        await Navigation.PushAsync(page!);
     }
 
     private async void btnDeleteOrder_Clicked(object? sender, EventArgs? e)

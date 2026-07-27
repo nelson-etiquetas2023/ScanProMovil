@@ -33,6 +33,9 @@ namespace ScanProMovil.ViewModels
         [ObservableProperty]
         private int totalOrders;
 
+        [ObservableProperty]
+        private Order? selectedOrder;
+
         IComprasService Service;
 
         public ComprasViewModel(IComprasService service)

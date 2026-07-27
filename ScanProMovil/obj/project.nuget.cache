@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "PJ0bf+6uHes=",
+  "dgSpecHash": "U+sNZ2iVxUk=",
   "success": true,
   "projectFilePath": "C:\\Programacion\\ScanProMovil\\ScanProMovil\\ScanProMovil.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Npino.DC\\.nuget\\packages\\communitytoolkit.maui\\14.2.2\\communitytoolkit.maui.14.2.2.nupkg.sha512",
-    "C:\\Users\\Npino.DC\\.nuget\\packages\\communitytoolkit.maui.core\\14.2.2\\communitytoolkit.maui.core.14.2.2.nupkg.sha512",
+    "C:\\Users\\Npino.DC\\.nuget\\packages\\communitytoolkit.maui\\15.0.0\\communitytoolkit.maui.15.0.0.nupkg.sha512",
+    "C:\\Users\\Npino.DC\\.nuget\\packages\\communitytoolkit.maui.core\\15.0.0\\communitytoolkit.maui.core.15.0.0.nupkg.sha512",
     "C:\\Users\\Npino.DC\\.nuget\\packages\\communitytoolkit.mvvm\\8.4.2\\communitytoolkit.mvvm.8.4.2.nupkg.sha512",
     "C:\\Users\\Npino.DC\\.nuget\\packages\\googlegson\\2.13.1.1\\googlegson.2.13.1.1.nupkg.sha512",
     "C:\\Users\\Npino.DC\\.nuget\\packages\\microsoft.data.sqlite\\10.0.10\\microsoft.data.sqlite.10.0.10.nupkg.sha512",

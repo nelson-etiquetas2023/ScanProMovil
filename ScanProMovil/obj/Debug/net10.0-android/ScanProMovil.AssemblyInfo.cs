@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ScanProMovil")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+8fc0d41d60b24bf13e5093132c48cb2a4c09e62b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+98852c27ce06771194d6d6a56d1e59dbe817ee77")]
 [assembly: System.Reflection.AssemblyProductAttribute("ScanProMovil")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ScanProMovil")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
