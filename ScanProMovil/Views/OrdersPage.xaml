@@ -34,7 +34,7 @@
                     </Grid>
                 </VerticalStackLayout>
             </Border>
-            <!--Detalle de la orden-->
+                <!--Detalle de la orden-->
             <Grid ColumnSpacing="0" RowSpacing="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>
@@ -51,12 +51,12 @@
                     <Label Text="Action" FontAttributes="Bold" Grid.Column="2" VerticalOptions="Center" ></Label>
                 </Grid>
                 <CollectionView x:Name="ItemsCollection" 
-                        Grid.Row="1" 
-                        SelectionMode="None" 
-                        ItemsSource="{Binding NewOrder.Items}"
-                        ItemsLayout="VerticalList" 
-                        ItemSizingStrategy="MeasureAllItems" 
-                        HeightRequest="280" HorizontalOptions="Fill">
+                            Grid.Row="1" 
+                            SelectionMode="None" 
+                            ItemsSource="{Binding NewOrder.Items}"
+                            ItemsLayout="VerticalList" 
+                            ItemSizingStrategy="MeasureAllItems" 
+                            HeightRequest="280" HorizontalOptions="Fill">
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="models:OrderDetails">
                             <Grid Padding="15">
@@ -68,15 +68,15 @@
                                 <Label Text="{Binding productId}" Grid.Column="0" HorizontalOptions="End" />
                                 <Label Text="{Binding Cantidad}" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="End"/>
                                 <Button x:Name="Btn_DeleteRow" 
-                                        Text="x" 
-                                        Grid.Column="2" 
-                                        WidthRequest="36" 
-                                        HeightRequest="28" 
-                                        HorizontalOptions="End" 
-                                        VerticalOptions="Center"
-                                        Clicked="btn_RemoveProducts_Clicked"
-                                        CommandParameter="{Binding .}"
-                                        />
+                                            Text="x" 
+                                            Grid.Column="2" 
+                                            WidthRequest="36" 
+                                            HeightRequest="28" 
+                                            HorizontalOptions="End" 
+                                            VerticalOptions="Center"
+                                            Clicked="btn_RemoveProducts_Clicked"
+                                            CommandParameter="{Binding .}"
+                                            />
                             </Grid>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>

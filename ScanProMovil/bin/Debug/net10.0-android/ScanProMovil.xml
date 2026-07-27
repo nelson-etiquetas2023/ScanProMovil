@@ -4,6 +4,33 @@
         <name>ScanProMovil</name>
     </assembly>
     <members>
+        <member name="T:ScanProMovil.ViewModels.AddComprasViewModels">
+            <inheritdoc/>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.AddComprasViewModels.RefreshListOrders">
+            <inheritdoc cref="F:ScanProMovil.ViewModels.AddComprasViewModels.refreshListOrders"/>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.AddComprasViewModels.SearchText">
+            <inheritdoc cref="F:ScanProMovil.ViewModels.AddComprasViewModels.searchText"/>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.AddComprasViewModels.IsLoading">
+            <inheritdoc cref="F:ScanProMovil.ViewModels.AddComprasViewModels.isLoading"/>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.AddComprasViewModels.LoadingMessage">
+            <inheritdoc cref="F:ScanProMovil.ViewModels.AddComprasViewModels.loadingMessage"/>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.AddComprasViewModels.Ordenes">
+            <inheritdoc cref="F:ScanProMovil.ViewModels.AddComprasViewModels.ordenes"/>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.AddComprasViewModels.TotalOrders">
+            <inheritdoc cref="F:ScanProMovil.ViewModels.AddComprasViewModels.totalOrders"/>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.AddComprasViewModels.NewOrder">
+            <inheritdoc cref="F:ScanProMovil.ViewModels.AddComprasViewModels.newOrder"/>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.AddComprasViewModels.SelectedOrder">
+            <inheritdoc cref="F:ScanProMovil.ViewModels.AddComprasViewModels.selectedOrder"/>
+        </member>
         <member name="T:ScanProMovil.ViewModels.ComprasViewModel">
             <inheritdoc/>
             <inheritdoc/>
@@ -399,6 +426,9 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TotalOrders">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TotalOrders" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NewOrder">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NewOrder" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedOrder">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedOrder" generated properties.</summary>
         </member>
@@ -416,9 +446,6 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Order">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Order" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NewOrder">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NewOrder" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Producto">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Producto" generated properties.</summary>
@@ -462,6 +489,9 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TotalOrders">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TotalOrders" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NewOrder">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NewOrder" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedOrder">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedOrder" generated properties.</summary>
         </member>
@@ -479,9 +509,6 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Order">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Order" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NewOrder">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NewOrder" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Producto">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Producto" generated properties.</summary>
