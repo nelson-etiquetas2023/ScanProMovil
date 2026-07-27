@@ -1,56 +1,79 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Microsoft.Data.Sqlite;
 using ScanProMovil.Models;
 using ScanProMovil.Services.Compras;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 namespace ScanProMovil.ViewModels
 {
     public partial class ComprasViewModel : ObservableObject
     {
         [ObservableProperty]
-        private ObservableCollection<Order> orders = new();
+        private bool refreshListOrders = true;
 
         [ObservableProperty]
-        private ObservableCollection<OrderDetails> orderDetails = new();
+        private string searchText = string.Empty;
 
         [ObservableProperty]
-        private Order selectedOrder = new();
+        public bool isLoading;
 
-        IComprasService Service { get; set; }
+        [ObservableProperty]
+        private string loadingMessage = string.Empty;
+
+        private List<Order> _allOrders = new();
+
+        [ObservableProperty]
+        private ObservableCollection<Order> ordenes = [];
+
+        [ObservableProperty]
+        public ObservableCollection<Order> FilteredOrders { get; } = new();
+
+        [ObservableProperty]
+        private int totalOrders;
+
+        IComprasService Service;
+
         public ComprasViewModel(IComprasService service)
         {
             this.Service = service;
         }
 
-        [RelayCommand]
-        public void GetOrders()
-        {
-
-        }
 
         [RelayCommand]
-        public void SincroOrder()
+        public async Task GetOrdersLocalSqlite()
         {
+            if (IsLoading)
+                return;
 
-        }
+            try
+            {
+                IsLoading = true;
+                loadingMessage = "Cargando ordenes...";
+                Debug.WriteLine("Loading ON");
 
-        [RelayCommand]
-        public void UpdateOrder()
-        {
+                await Task.Delay(1000);
 
-        }
+                var result = await Service.GetOrdersLocalSqliteAsync();
+                _allOrders = result;
 
-        [RelayCommand]
-        public void DeleteOrder()
-        {
-        
-        }
+                Ordenes = new
+                    ObservableCollection<Order>(_allOrders);
 
-        [RelayCommand]
-        public void DeactivateOrder() 
-        {
-        
+                TotalOrders = _allOrders.Count;
+
+            }
+            catch (SqliteException ex)
+            {
+                Debug.Write("error al obtener los datos locales, error:" + ex.Message);
+            }
+            finally
+            {
+                IsLoading = false;
+                loadingMessage = string.Empty;
+                Debug.WriteLine("Loading OFF");
+            }
         }
     }
 }

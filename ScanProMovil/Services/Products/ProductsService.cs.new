@@ -1,0 +1,108 @@
+using ScanProMovil.Models;
+using System.Diagnostics;
+using System.Text;
+using System.Text.Json;
+
+namespace ScanProMovil.Services.Products
+{
+	public class ProductsService : IProductsService
+	{
+		private readonly IHttpClientFactory httpClient;
+
+		private static readonly JsonSerializerOptions jsonOptions = new JsonSerializerOptions()
+		{
+			PropertyNameCaseInsensitive = true,
+			WriteIndented = true
+		};
+
+		public ProductsService(IHttpClientFactory httpClient)
+		{
+			this.httpClient = httpClient;
+		}
+
+		public async Task<List<Product>> GetProducts()
+		{
+			try
+			{
+				var url = "api/products/getproducts";
+				var clientHttp = httpClient.CreateClient("scanpro");
+				using var response = await clientHttp.GetAsync(url);
+
+				if (!response.IsSuccessStatusCode)
+				{
+					Debug.WriteLine($"No se pudieron obtener productos. Código: {(int)response.StatusCode}");
+					return new List<Product>();
+				}
+
+				var json = await response.Content.ReadAsStringAsync();
+				if (string.IsNullOrWhiteSpace(json)) return new List<Product>();
+
+				var products = await JsonSerializer.DeserializeAsync<List<Product>>(
+					new MemoryStream(Encoding.UTF8.GetBytes(json)), jsonOptions);
+
+				return products ?? new List<Product>();
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine($"Error al obtener productos: {ex.Message}");
+				return new List<Product>();
+			}
+		}
+
+		public Product AddProducts(Product producto)
+		{
+			if (producto is null)
+			{
+				producto = new Product();
+			}
+
+			producto.Product_Name ??= "Producto sin nombre";
+			return producto;
+		}
+
+		public bool DeleteProducts(string productid)
+		{
+			return !string.IsNullOrWhiteSpace(productid);
+		}
+
+		public Product GetPorductById(string productid)
+		{
+			if (string.IsNullOrWhiteSpace(productid))
+			{
+				return new Product();
+			}
+
+			try
+			{
+				var products = GetProducts().GetAwaiter().GetResult();
+				return products.FirstOrDefault(p =>
+					string.Equals(p.Product_Id.ToString(), productid, StringComparison.OrdinalIgnoreCase)) ?? new Product();
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine($"Error al buscar producto por Id: {ex.Message}");
+				return new Product();
+			}
+		}
+
+		public async Task<bool> UpdateProducts(int id, Product producto)
+		{
+			try
+			{
+				var parametros = new ParametrosUpdateProducts(id, producto ?? new Product());
+				var url = "api/products/updateproducts";
+				var json = JsonSerializer.Serialize(parametros, jsonOptions);
+				var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+				var clientHttp = httpClient.CreateClient("scanpro");
+				using var response = await clientHttp.PutAsync(url, jsonContent);
+
+				return response.IsSuccessStatusCode;
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine($"Error al actualizar producto: {ex.Message}");
+				return false;
+			}
+		}
+	}
+}

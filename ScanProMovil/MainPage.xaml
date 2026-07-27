@@ -14,24 +14,24 @@
                 ColumnSpacing="3" 
                 Background="#f0f0f0">
                 
-                <!--Sqlite -->
+                <!--Compras-->
                 <VerticalStackLayout 
                     Grid.Row="0" 
                     Grid.Column="0" 
                     HorizontalOptions="Center">
-                    <Image Source="search_in_cloud_50px.png" WidthRequest="100" HeightRequest="100" >
+                    <Image Source="buy_50px.png" WidthRequest="100" HeightRequest="100" >
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="SqliteModule" />
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Compras" />
                         </Image.GestureRecognizers>
                     </Image>
-                    <Label Text="Sqlite" FontSize="16" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Label Text="Compras" FontSize="16" FontAttributes="Bold" HorizontalOptions="Center" />
                 </VerticalStackLayout>
                 <!--Products-->
                 <VerticalStackLayout 
                     Grid.Row="0" 
                     Grid.Column="1" 
                     HorizontalOptions="Center">
-                    <Image Source="account_50px.png" WidthRequest="100" HeightRequest="100">
+                    <Image Source="package_delivery_logistics_50px.png" WidthRequest="100" HeightRequest="100">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnTapProducts" />
                         </Image.GestureRecognizers>

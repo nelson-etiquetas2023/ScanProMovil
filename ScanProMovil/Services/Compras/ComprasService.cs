@@ -1,9 +1,181 @@
-﻿using ScanProMovil.Models;
+﻿using Microsoft.Data.Sqlite;
+using ScanProMovil.Models;
+using System.Diagnostics;
+using System.Text.Json;
 
 namespace ScanProMovil.Services.Compras
 {
     public class ComprasService : IComprasService
     {
+
+        private readonly string dbPath = Path.Combine(FileSystem.AppDataDirectory, "scanpro.db");
+        private readonly string connectionString;
+        public IHttpClientFactory httpFactory { get; set; }
+        private static readonly JsonSerializerOptions jsonOptions = new JsonSerializerOptions()
+        {
+            PropertyNameCaseInsensitive = true,
+            WriteIndented = true
+        };
+        public ComprasService(IHttpClientFactory HttpFactory)
+        {
+            connectionString = $"Data Source={dbPath}";
+            this.httpFactory = HttpFactory;
+            //CreateTableOrdersLocalSqlite();
+            //FillDataExampleLocalSqllite();
+        }
+
+        public void FillDataExampleLocalSqllite()
+        {
+            try
+            {
+                var conn = new SqliteConnection(connectionString);
+                conn.Open();
+
+                var comandoHeader = conn.CreateCommand();
+                comandoHeader.CommandText = @"
+                INSERT INTO HeaderCompras (OrderNumber, OrderDate)
+                VALUES (@OrderNumber, @OrderDate);
+                SELECT last_insert_rowid();";
+
+                var comandoDetalle = conn.CreateCommand();
+                comandoDetalle.CommandText = @"INSERT INTO DetalleCompras (OrderId, OrderNumber, 
+                ProductId, Cantidad)
+                VALUES (@OrderId, @OrderNumber, @ProductId, @Cantidad);";
+
+                // Datos de ejemplo para las 3 filas
+                var orders = new[]
+                {
+                    new { OrderNumber = "ORD-001", ProductId = "PROD-100", Cantidad = 10.0 },
+                    new { OrderNumber = "ORD-002", ProductId = "PROD-200", Cantidad = 5.5 },
+                    new { OrderNumber = "ORD-003", ProductId = "PROD-300", Cantidad = 3.0 },
+                };
+
+                foreach (var order in orders)
+                {
+                    // 1) Insertar en HeaderCompras y obtener el OrderId autogenerado
+                    comandoHeader.Parameters.Clear();
+                    comandoHeader.Parameters.AddWithValue("@OrderNumber", order.OrderNumber);
+                    comandoHeader.Parameters.AddWithValue("@OrderDate", DateTime.Now);
+
+                    long newOrderId = (long)comandoHeader.ExecuteScalar()!;
+
+                    // 2) Insertar el detalle asociado a ese OrderId
+                    comandoDetalle.Parameters.Clear();
+                    comandoDetalle.Parameters.AddWithValue("@OrderId", newOrderId);
+                    comandoDetalle.Parameters.AddWithValue("@OrderNumber", order.OrderNumber);
+                    comandoDetalle.Parameters.AddWithValue("@ProductId", order.ProductId);
+                    comandoDetalle.Parameters.AddWithValue("@Cantidad", order.Cantidad);
+
+                    comandoDetalle.ExecuteNonQuery();
+                }
+
+                Debug.WriteLine("Se insertaron las 3 órdenes correctamente...");
+            }
+            catch (SqliteException ex)
+            {
+                Debug.Write("error al incluir data de ejemplo en las tablas de compras, " +
+                    "error code =>" + ex.Message);
+                
+            }
+        }
+
+        public void CreateTableOrdersLocalSqlite()
+        {
+            try
+            {
+                var connection = new SqliteConnection(connectionString);
+                connection.Open();
+                var command = connection.CreateCommand();
+
+                command.CommandText = @"CREATE TABLE HeaderCompras(" +
+                                       "OrderId INTEGER PRIMARY KEY AUTOINCREMENT," +
+                                       "OrderNumber TEXT NOT NULL," +
+                                       "OrderDate DATETIME);" +
+                                       "CREATE TABLE DetalleCompras(" +
+                                       "DetailId INTEGER PRIMARY KEY AUTOINCREMENT," +
+                                       "OrderId INTEGER NOT NULL," +
+                                       "OrderNumber TEXT NOT NULL," +
+                                       "ProductId TEXT NOT NULL," +
+                                       "Cantidad DOUBLE," +
+                                       "FOREIGN KEY (OrderId) REFERENCES HeaderCompras (OrderId) ON DELETE CASCADE" +
+                                       ")";
+
+                command.ExecuteNonQuery();
+                Debug.Write("se crearon las tablas de sqlite correcamente...");
+            }
+            catch (SqliteException ex)
+            {
+                Debug.WriteLine("Error al tratar de crear las tablas de sqlite en el dispositivo, " +
+                    "code error => " + ex.Message);
+             
+            }
+        }
+        public async Task<List<Order>> GetOrdersLocalSqliteAsync()
+        {
+            var ordenes = new Dictionary<int, Order>();
+
+            try
+            {
+                //crea la cobnexion a sqlite db local del zebra.
+                var connection = new SqliteConnection(connectionString);
+
+                await connection.OpenAsync();
+                using (var comando = connection.CreateCommand())
+                {
+                    comando.CommandText = @"SELECT a.orderId, a.orderNumber, a.orderDate, b.productId, b.cantidad " +
+                                           "FROM HeaderCompras a LEFT JOIN DetalleCompras b ON a.orderId = b.orderId " +
+                                           "Order By a.OrderNumber DESC";
+
+                    using (var reader = await comando.ExecuteReaderAsync())
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            var IndexCol = reader.GetOrdinal("orderId");
+
+                            var orderId = reader.GetInt32(IndexCol);
+
+                            if (!ordenes.TryGetValue(orderId, out Order? order))
+                            {
+                                //guardar la orden
+                                order = new Order
+                                {
+                                    OrderId = orderId,
+                                    OrderNumber = reader.GetString(1),
+                                    OrderDate = reader.GetDateTime(2)
+                                };
+
+                                ordenes.Add(orderId, order);
+                            }
+                            //Guardar los items de productos
+                            var IndexColProductId = reader.GetOrdinal("productId");
+
+
+                            if (!reader.IsDBNull(IndexColProductId))
+                            {
+                                var ProductIdValue = reader.GetString(IndexColProductId);
+                                var item = new OrderDetails
+                                {
+                                    productId = ProductIdValue,
+                                    Cantidad = reader.GetInt32(reader.GetOrdinal("Cantidad")),
+                                    OrderId = orderId,
+                                    OrderNumber = order.OrderNumber
+                                };
+                                order.Items.Add(item);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SqliteException ex)
+            {
+                Debug.WriteLine("Error en sqlite, service [OrderService-Metodo:" +
+                    "'GetOrdersLocalSqliteAsync']" + " => " + ex.Message);
+                throw;
+            }
+
+            return ordenes.Values.ToList();
+        }
+
         public bool DeactivateOrder(string Orderid)
         {
             throw new NotImplementedException();
@@ -33,5 +205,7 @@ namespace ScanProMovil.Services.Compras
         {
             throw new NotImplementedException();
         }
+
+        
     }
 }

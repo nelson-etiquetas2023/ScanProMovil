@@ -12,6 +12,7 @@ public class MauiHybridWebView
 		__md_methods = 
 			"n_onSizeChanged:(IIII)V:GetOnSizeChanged_IIIIHandler\n" +
 			"n_onAttachedToWindow:()V:GetOnAttachedToWindowHandler\n" +
+			"n_onDetachedFromWindow:()V:GetOnDetachedFromWindowHandler\n" +
 			"";
 		mono.android.Runtime.register ("Microsoft.Maui.Platform.MauiHybridWebView, Microsoft.Maui", MauiHybridWebView.class, __md_methods);
 	}
@@ -69,6 +70,13 @@ public class MauiHybridWebView
 	}
 
 	private native void n_onAttachedToWindow ();
+
+	public void onDetachedFromWindow ()
+	{
+		n_onDetachedFromWindow ();
+	}
+
+	private native void n_onDetachedFromWindow ();
 
 	private java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)

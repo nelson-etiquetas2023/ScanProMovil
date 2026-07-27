@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Programacion\\ScanProMovil\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{CEB2A02E-47BD-ECE2-79F0-9CBEE9C2E461}|ScanProMovil\\ScanProMovil.csproj|c:\\programacion\\scanpromovil\\scanpromovil\\views\\sincro\\sincroorderspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CEB2A02E-47BD-ECE2-79F0-9CBEE9C2E461}|ScanProMovil\\ScanProMovil.csproj|solutionrelative:scanpromovil\\views\\sincro\\sincroorderspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CEB2A02E-47BD-ECE2-79F0-9CBEE9C2E461}|ScanProMovil\\ScanProMovil.csproj|c:\\programacion\\scanpromovil\\scanpromovil\\viewmodels\\sincroordersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CEB2A02E-47BD-ECE2-79F0-9CBEE9C2E461}|ScanProMovil\\ScanProMovil.csproj|solutionrelative:scanpromovil\\viewmodels\\sincroordersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CEB2A02E-47BD-ECE2-79F0-9CBEE9C2E461}|ScanProMovil\\ScanProMovil.csproj|c:\\programacion\\scanpromovil\\scanpromovil\\views\\sincro\\sincroorderspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{CEB2A02E-47BD-ECE2-79F0-9CBEE9C2E461}|ScanProMovil\\ScanProMovil.csproj|solutionrelative:scanpromovil\\views\\sincro\\sincroorderspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -22,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 405,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,44 +17,19 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SincroOrdersPage.xaml.cs",
-              "DocumentMoniker": "C:\\Programacion\\ScanProMovil\\ScanProMovil\\Views\\Sincro\\SincroOrdersPage.xaml.cs",
-              "RelativeDocumentMoniker": "ScanProMovil\\Views\\Sincro\\SincroOrdersPage.xaml.cs",
-              "ToolTip": "C:\\Programacion\\ScanProMovil\\ScanProMovil\\Views\\Sincro\\SincroOrdersPage.xaml.cs",
-              "RelativeToolTip": "ScanProMovil\\Views\\Sincro\\SincroOrdersPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-17T15:40:36.768Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SincroOrdersPage.xaml",
-              "DocumentMoniker": "C:\\Programacion\\ScanProMovil\\ScanProMovil\\Views\\Sincro\\SincroOrdersPage.xaml",
-              "RelativeDocumentMoniker": "ScanProMovil\\Views\\Sincro\\SincroOrdersPage.xaml",
-              "ToolTip": "C:\\Programacion\\ScanProMovil\\ScanProMovil\\Views\\Sincro\\SincroOrdersPage.xaml",
-              "RelativeToolTip": "ScanProMovil\\Views\\Sincro\\SincroOrdersPage.xaml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABIAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-06-17T15:40:29.73Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SincroOrdersViewModel.cs",
-              "DocumentMoniker": "C:\\Programacion\\ScanProMovil\\ScanProMovil\\ViewModels\\SincroOrdersViewModel.cs",
-              "RelativeDocumentMoniker": "ScanProMovil\\ViewModels\\SincroOrdersViewModel.cs",
-              "ToolTip": "C:\\Programacion\\ScanProMovil\\ScanProMovil\\ViewModels\\SincroOrdersViewModel.cs",
-              "RelativeToolTip": "ScanProMovil\\ViewModels\\SincroOrdersViewModel.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAIwBoAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-17T18:14:44.461Z"
             }
           ]
         },
@@ -77,26 +39,12 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            }
-          ]
-        },
-        {
-          "DockedHeight": 316,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{c9c0ae26-aa77-11d2-b3f0-0000f87570ee}"
             }
           ]
         },
         {
-          "DockedHeight": 259,
+          "DockedHeight": 316,
           "SelectedChildIndex": -1,
           "Children": [
             {
@@ -110,7 +58,7 @@
           ]
         },
         {
-          "DockedHeight": 103,
+          "DockedHeight": 259,
           "SelectedChildIndex": -1,
           "Children": [
             {

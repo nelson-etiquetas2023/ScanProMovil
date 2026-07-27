@@ -10,7 +10,11 @@ public class MauiRecyclerView_3
 	public static final String __md_methods;
 	static {
 		__md_methods = 
+			"n_onAttachedToWindow:()V:GetOnAttachedToWindowHandler\n" +
+			"n_onDetachedFromWindow:()V:GetOnDetachedFromWindowHandler\n" +
+			"n_onVisibilityChanged:(Landroid/view/View;I)V:GetOnVisibilityChanged_Landroid_view_View_IHandler\n" +
 			"n_onTouchEvent:(Landroid/view/MotionEvent;)Z:GetOnTouchEvent_Landroid_view_MotionEvent_Handler\n" +
+			"n_dispatchTouchEvent:(Landroid/view/MotionEvent;)Z:GetDispatchTouchEvent_Landroid_view_MotionEvent_Handler\n" +
 			"n_onInterceptTouchEvent:(Landroid/view/MotionEvent;)Z:GetOnInterceptTouchEvent_Landroid_view_MotionEvent_Handler\n" +
 			"n_onLayout:(ZIIII)V:GetOnLayout_ZIIIIHandler\n" +
 			"";
@@ -41,12 +45,40 @@ public class MauiRecyclerView_3
 		}
 	}
 
+	public void onAttachedToWindow ()
+	{
+		n_onAttachedToWindow ();
+	}
+
+	private native void n_onAttachedToWindow ();
+
+	public void onDetachedFromWindow ()
+	{
+		n_onDetachedFromWindow ();
+	}
+
+	private native void n_onDetachedFromWindow ();
+
+	public void onVisibilityChanged (android.view.View p0, int p1)
+	{
+		n_onVisibilityChanged (p0, p1);
+	}
+
+	private native void n_onVisibilityChanged (android.view.View p0, int p1);
+
 	public boolean onTouchEvent (android.view.MotionEvent p0)
 	{
 		return n_onTouchEvent (p0);
 	}
 
 	private native boolean n_onTouchEvent (android.view.MotionEvent p0);
+
+	public boolean dispatchTouchEvent (android.view.MotionEvent p0)
+	{
+		return n_dispatchTouchEvent (p0);
+	}
+
+	private native boolean n_dispatchTouchEvent (android.view.MotionEvent p0);
 
 	public boolean onInterceptTouchEvent (android.view.MotionEvent p0)
 	{

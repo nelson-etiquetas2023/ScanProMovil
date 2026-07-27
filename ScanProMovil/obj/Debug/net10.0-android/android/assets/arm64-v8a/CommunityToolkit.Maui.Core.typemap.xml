@@ -1,4 +1,4 @@
-<api type="debug" assembly-name="CommunityToolkit.Maui.Core" mvid="e85dc2bc1fec4bd1b82269f5f28ddf4d">
+<api type="debug" assembly-name="CommunityToolkit.Maui.Core" mvid="40b7e53bfcad4cfa98cf0612d66e8f2e">
   <java-to-managed>
     <entry java-name="crc64d6358e7bf64fbac4/OfflineSpeechToTextImplementation_SpeechRecognitionListener" managed-name="CommunityToolkit.Maui.Media.OfflineSpeechToTextImplementation+SpeechRecognitionListener, CommunityToolkit.Maui.Core" managed-type-token-id="33554562" />
     <entry java-name="crc64d6358e7bf64fbac4/RecognitionSupportCallback" managed-name="CommunityToolkit.Maui.Media.RecognitionSupportCallback, CommunityToolkit.Maui.Core" managed-type-token-id="33554440" />

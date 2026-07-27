@@ -1,4 +1,5 @@
 ﻿using ScanProMovil.Views;
+using ScanProMovil.Views.Compras;
 
 namespace ScanProMovil
 {
@@ -98,6 +99,18 @@ namespace ScanProMovil
             var page = MauiProgram.Services!.GetService<ShoppingPage>();
             await Navigation.PushAsync(page!);
             
+        }
+
+        private async void TapGestureRecognizer_Compras(object? sender, TappedEventArgs? e)
+        {
+            if (sender is Image img)
+            {
+                await img.FadeToAsync(0.5, 100); // baja opacidad
+                await img.FadeToAsync(1, 100);   // vuelve a normal
+            }
+
+            var page = MauiProgram.Services!.GetService<ComprasIndexPage>();
+            await Navigation.PushAsync(page!);
         }
     }
 }
