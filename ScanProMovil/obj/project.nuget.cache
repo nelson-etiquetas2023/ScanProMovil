@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "U+sNZ2iVxUk=",
+  "dgSpecHash": "yB9/2WpznDs=",
   "success": true,
   "projectFilePath": "C:\\Programacion\\ScanProMovil\\ScanProMovil\\ScanProMovil.csproj",
   "expectedPackageFiles": [
@@ -38,7 +38,7 @@
     "C:\\Users\\Npino.DC\\.nuget\\packages\\plugin.maui.popup\\2.0.0\\plugin.maui.popup.2.0.0.nupkg.sha512",
     "C:\\Users\\Npino.DC\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.11\\sqlitepclraw.bundle_e_sqlite3.2.1.11.nupkg.sha512",
     "C:\\Users\\Npino.DC\\.nuget\\packages\\sqlitepclraw.core\\2.1.11\\sqlitepclraw.core.2.1.11.nupkg.sha512",
-    "C:\\Users\\Npino.DC\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3.android\\2.1.12-pre20260709125052\\sqlitepclraw.lib.e_sqlite3.android.2.1.12-pre20260709125052.nupkg.sha512",
+    "C:\\Users\\Npino.DC\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3.android\\2.1.12\\sqlitepclraw.lib.e_sqlite3.android.2.1.12.nupkg.sha512",
     "C:\\Users\\Npino.DC\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.11\\sqlitepclraw.provider.e_sqlite3.2.1.11.nupkg.sha512",
     "C:\\Users\\Npino.DC\\.nuget\\packages\\xamarin.android.glide\\4.16.0.14\\xamarin.android.glide.4.16.0.14.nupkg.sha512",
     "C:\\Users\\Npino.DC\\.nuget\\packages\\xamarin.android.glide.annotations\\4.16.0.14\\xamarin.android.glide.annotations.4.16.0.14.nupkg.sha512",

@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Programacion\\ScanProMovil\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{CEB2A02E-47BD-ECE2-79F0-9CBEE9C2E461}|ScanProMovil\\ScanProMovil.csproj|c:\\programacion\\scanpromovil\\scanpromovil\\views\\orderspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{CEB2A02E-47BD-ECE2-79F0-9CBEE9C2E461}|ScanProMovil\\ScanProMovil.csproj|solutionrelative:scanpromovil\\views\\orderspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CEB2A02E-47BD-ECE2-79F0-9CBEE9C2E461}|ScanProMovil\\ScanProMovil.csproj|c:\\programacion\\scanpromovil\\scanpromovil\\viewmodels\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CEB2A02E-47BD-ECE2-79F0-9CBEE9C2E461}|ScanProMovil\\ScanProMovil.csproj|solutionrelative:scanpromovil\\viewmodels\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CEB2A02E-47BD-ECE2-79F0-9CBEE9C2E461}|ScanProMovil\\ScanProMovil.csproj|c:\\programacion\\scanpromovil\\scanpromovil\\views\\orderspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CEB2A02E-47BD-ECE2-79F0-9CBEE9C2E461}|ScanProMovil\\ScanProMovil.csproj|solutionrelative:scanpromovil\\views\\orderspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -81,108 +68,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "be08992b-3c19-4611-990d-15dc202aeb59",
-        "Display": 1,
-        "X": 510,
-        "Y": -2,
-        "Width": 1418,
-        "Height": 905,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OrdersPage.xaml",
-              "DocumentMoniker": "C:\\Programacion\\ScanProMovil\\ScanProMovil\\Views\\OrdersPage.xaml",
-              "RelativeDocumentMoniker": "ScanProMovil\\Views\\OrdersPage.xaml",
-              "ToolTip": "C:\\Programacion\\ScanProMovil\\ScanProMovil\\Views\\OrdersPage.xaml",
-              "RelativeToolTip": "ScanProMovil\\Views\\OrdersPage.xaml",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFQAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-07-27T21:46:21.614Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "dae91154-51e3-4bcd-9d5f-ba00a8c52685",
-        "Display": 1,
-        "X": 266,
-        "Y": 205,
-        "Width": 1418,
-        "Height": 559,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OrdersPage.xaml.cs",
-              "DocumentMoniker": "C:\\Programacion\\ScanProMovil\\ScanProMovil\\Views\\OrdersPage.xaml.cs",
-              "RelativeDocumentMoniker": "ScanProMovil\\Views\\OrdersPage.xaml.cs",
-              "ToolTip": "C:\\Programacion\\ScanProMovil\\ScanProMovil\\Views\\OrdersPage.xaml.cs",
-              "RelativeToolTip": "ScanProMovil\\Views\\OrdersPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-27T22:01:38.252Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "d5418850-c598-4351-8576-4e9c09aa2e2e",
-        "Display": 1,
-        "X": -5,
-        "Y": 359,
-        "Width": 1440,
-        "Height": 678,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "OrderViewModel.cs",
-              "DocumentMoniker": "C:\\Programacion\\ScanProMovil\\ScanProMovil\\ViewModels\\OrderViewModel.cs",
-              "RelativeDocumentMoniker": "ScanProMovil\\ViewModels\\OrderViewModel.cs",
-              "ToolTip": "C:\\Programacion\\ScanProMovil\\ScanProMovil\\ViewModels\\OrderViewModel.cs",
-              "RelativeToolTip": "ScanProMovil\\ViewModels\\OrderViewModel.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAqwBcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-27T22:12:19.814Z",
-              "EditorCaption": ""
             }
           ]
         }

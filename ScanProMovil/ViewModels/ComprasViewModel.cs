@@ -22,19 +22,19 @@ namespace ScanProMovil.ViewModels
         [ObservableProperty]
         private string loadingMessage = string.Empty;
 
-        private List<Order> _allOrders = new();
+        private List<OrdenCompra> _allOrders = new();
 
         [ObservableProperty]
-        private ObservableCollection<Order> ordenes = [];
+        private ObservableCollection<OrdenCompra> ordenes = [];
 
         [ObservableProperty]
-        public ObservableCollection<Order> FilteredOrders { get; } = new();
+        public ObservableCollection<OrdenCompra> FilteredOrders { get; } = new();
 
         [ObservableProperty]
         private int totalOrders;
 
         [ObservableProperty]
-        private Order? selectedOrder;
+        private OrdenCompra? selectedOrder;
 
         IComprasService Service;
 
@@ -61,8 +61,7 @@ namespace ScanProMovil.ViewModels
                 var result = await Service.GetOrdersLocalSqliteAsync();
                 _allOrders = result;
 
-                Ordenes = new
-                    ObservableCollection<Order>(_allOrders);
+                Ordenes = new ObservableCollection<OrdenCompra>(_allOrders);
 
                 TotalOrders = _allOrders.Count;
 

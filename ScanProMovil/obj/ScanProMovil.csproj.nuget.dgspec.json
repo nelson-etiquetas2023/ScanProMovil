@@ -90,7 +90,7 @@
             },
             "SQLitePCLRaw.lib.e_sqlite3.android": {
               "target": "Package",
-              "version": "[2.1.12-pre20260709125052, )"
+              "version": "[2.1.12, )"
             }
           },
           "imports": [

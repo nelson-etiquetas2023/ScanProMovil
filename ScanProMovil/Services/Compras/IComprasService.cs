@@ -1,18 +1,18 @@
 ﻿
 using ScanProMovil.Models;
-using System.Security.Cryptography;
 
 namespace ScanProMovil.Services.Compras
 {
     public interface IComprasService
     {
+        Task<bool> SaveOrdersLocalSqliteAsync(OrdenCompra order);
         void CreateTableOrdersLocalSqlite();
         void FillDataExampleLocalSqllite();
-        Task<List<Order>> GetOrdersLocalSqliteAsync();
-        Task<List<Order>> getOrders();
-        Order getOrderById(string OrderId);
-        bool SincroOrder(string OrderId);
-        Order UpdateOrder(Order order);
+        Task<List<OrdenCompra>> GetOrdersLocalSqliteAsync();
+        Task<List<OrdenCompra>> getOrders();
+        OrdenCompra getOrderById(string OrderId);
+        Task<bool> SendPurchaseOrde(OrdenCompra order);
+        OrdenCompra UpdateOrder(OrdenCompra order);
         bool DeleteOrder(string OrderId);
         bool DeactivateOrder(string Orderid);
     }

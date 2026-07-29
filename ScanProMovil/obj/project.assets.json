@@ -704,7 +704,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3.android/2.1.12-pre20260709125052": {
+      "SQLitePCLRaw.lib.e_sqlite3.android/2.1.12": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/SQLitePCLRaw.lib.e_sqlite3.android.dll": {
@@ -3424,7 +3424,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3.android/2.1.12-pre20260709125052": {
+      "SQLitePCLRaw.lib.e_sqlite3.android/2.1.12": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/SQLitePCLRaw.lib.e_sqlite3.android.dll": {
@@ -6144,7 +6144,7 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.lib.e_sqlite3.android/2.1.12-pre20260709125052": {
+      "SQLitePCLRaw.lib.e_sqlite3.android/2.1.12": {
         "type": "package",
         "compile": {
           "lib/net6.0-android31.0/SQLitePCLRaw.lib.e_sqlite3.android.dll": {
@@ -9742,10 +9742,10 @@
         "sqlitepclraw.core.nuspec"
       ]
     },
-    "SQLitePCLRaw.lib.e_sqlite3.android/2.1.12-pre20260709125052": {
-      "sha512": "Rl5jaY6nOoJd+dI/frMR4ls6uIyvHqp1luGgw5Wndi15adHucHbF3mdPOb1PrEyEAS3Y9WWy7ee9mrkiqYI+vg==",
+    "SQLitePCLRaw.lib.e_sqlite3.android/2.1.12": {
+      "sha512": "ZiUfCiq4kpazZc2fyyhezYvOpqE1XQfFmgP4AVoAF+eK4jVwHFeh7oYVrPPJGk2CSJBuX4APAS3n1dUiTSKWeg==",
       "type": "package",
-      "path": "sqlitepclraw.lib.e_sqlite3.android/2.1.12-pre20260709125052",
+      "path": "sqlitepclraw.lib.e_sqlite3.android/2.1.12",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -9753,7 +9753,7 @@
         "lib/net6.0-android31.0/SQLitePCLRaw.lib.e_sqlite3.android.dll",
         "lib/net6.0-android31.0/SQLitePCLRaw.lib.e_sqlite3.android.xml",
         "lib/netstandard2.0/SQLitePCLRaw.lib.e_sqlite3.android.dll",
-        "sqlitepclraw.lib.e_sqlite3.android.2.1.12-pre20260709125052.nupkg.sha512",
+        "sqlitepclraw.lib.e_sqlite3.android.2.1.12.nupkg.sha512",
         "sqlitepclraw.lib.e_sqlite3.android.nuspec"
       ]
     },
@@ -12160,7 +12160,7 @@
       "Microsoft.Maui.Controls >= 10.0.90",
       "Microsoft.NET.ILLink.Tasks >= 10.0.10",
       "Plugin.Maui.Popup >= 2.0.0",
-      "SQLitePCLRaw.lib.e_sqlite3.android >= 2.1.12-pre20260709125052"
+      "SQLitePCLRaw.lib.e_sqlite3.android >= 2.1.12"
     ]
   },
   "packageFolders": {
@@ -12253,7 +12253,7 @@
           },
           "SQLitePCLRaw.lib.e_sqlite3.android": {
             "target": "Package",
-            "version": "[2.1.12-pre20260709125052, )"
+            "version": "[2.1.12, )"
           }
         },
         "imports": [

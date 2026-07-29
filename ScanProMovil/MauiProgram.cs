@@ -37,6 +37,8 @@ namespace ScanProMovil
             builder.Services.AddTransient<OrderConfigViewModel>();
             builder.Services.AddTransient<SincroOrdersViewModel>();
             builder.Services.AddTransient<ComprasViewModel>();
+         
+
             builder.Services.AddTransient<AddComprasViewModels>();
             //Injeccion de Pagina XAML.
             builder.Services.AddTransient<GestionProducts>();

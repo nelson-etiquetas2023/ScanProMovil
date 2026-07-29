@@ -1,6 +1,7 @@
 ﻿using Microsoft.Data.Sqlite;
 using ScanProMovil.Models;
 using System.Diagnostics;
+using System.Text;
 using System.Text.Json;
 
 namespace ScanProMovil.Services.Compras
@@ -22,6 +23,112 @@ namespace ScanProMovil.Services.Compras
             this.httpFactory = HttpFactory;
             //CreateTableOrdersLocalSqlite();
             //FillDataExampleLocalSqllite();
+        }
+
+        public async Task<bool> SaveOrdersLocalSqliteAsync(OrdenCompra order)
+        {
+            try
+            {
+                //conexion principal para todos los comandos sqlite.
+                using (var connection = new SqliteConnection(connectionString))
+                {
+                    await connection.OpenAsync();
+                    //Guardar el Encabezado de la Orden.
+                    using (var command1 = connection.CreateCommand())
+                    {
+                        command1.CommandText = @"INSERT INTO HeaderCompras (OrderNumber,OrderDate) 
+                                                    VALUES ($order,$date)";
+
+                        command1.Parameters.AddWithValue("$order", order.Numero);
+                        command1.Parameters.AddWithValue("$date", order.Fecha);
+                        await command1.ExecuteNonQueryAsync();
+                    }
+                    //devolver el id autoincrement de la bd. sqlite.
+                    int autoid = 0;
+                    using (var cmd = connection.CreateCommand())
+                    {
+                        cmd.CommandText = "SELECT last_insert_rowid()";
+                        object? scalar = await cmd.ExecuteScalarAsync();
+
+                        long id = 0;
+                        if (scalar is long l) id = l;
+                        else if (scalar is int i) id = i;
+                        else if (scalar is DBNull || scalar == null) id = 0;
+                        else id = Convert.ToInt64(scalar);
+                        autoid = (int)id;
+                    }
+                    //listar las ordenes por la consola.
+                    using (var command = connection.CreateCommand())
+                    {
+                        command.CommandText = "SELECT * FROM HeaderCompras;";
+                        using (var reader = command.ExecuteReader())
+                        {
+                            // Ejemplo: mostrar todas las columnas.
+                            Debug.WriteLine("Header de la tabla Orden Compra:");
+                            Debug.WriteLine("================================");
+                            int rows = 0;
+                            while (reader.Read())
+                            {
+                                Debug.WriteLine(
+                                    $"Id: {reader["OrderId"]}, " +
+                                    $"Number: {reader["OrderNumber"]}, " +
+                                    $"Date: {reader["OrderDate"]}"
+                                );
+                                rows += 1;
+                            }
+                            Debug.WriteLine("Tota Filas:" + Convert.ToString(rows));
+                            Debug.WriteLine("=====================");
+                        }
+                    }
+                    //Guardar los items de las ordenes.
+                    using (var command2 = connection.CreateCommand())
+                    {
+                        command2.CommandText = @"INSERT INTO DetalleCompras (OrderId, OrderNumber,ProductId,Cantidad) 
+                                                VALUES ($orderId,$orderNumber,$productid,$cantidad)";
+
+                        foreach (var item in order.Items)
+                        {
+                            command2.Parameters.Clear();
+                            command2.Parameters.AddWithValue("$orderId", autoid);
+                            command2.Parameters.AddWithValue("$orderNumber", order.Numero);
+                            command2.Parameters.AddWithValue("$productid", item.Product_id);
+                            command2.Parameters.AddWithValue("$cantidad", item.Cantidad);
+                            await command2.ExecuteNonQueryAsync();
+                        }
+                        //ver el detalle de los items por consola.
+                        using (var command = connection.CreateCommand())
+                        {
+                            command.CommandText = "SELECT * FROM DetalleCompras;";
+                            using (var reader = command.ExecuteReader())
+                            {
+                                // Ejemplo: mostrar todas las columnas.
+                                Debug.WriteLine("Items:       ");
+                                Debug.WriteLine("=============");
+                                int rows = 0;
+                                while (reader.Read())
+                                {
+
+                                    Debug.WriteLine(
+                                        $"Id: {reader["OrderId"]}, " +
+                                        $"Number: {reader["OrderNumber"]}, " +
+                                        $"product id: {reader["productid"]}" +
+                                        $"cantidad: {reader["cantidad"]}"
+                                    );
+                                    rows += 1;
+                                }
+                                Debug.WriteLine("Tota Filas:" + Convert.ToString(rows));
+                                Debug.WriteLine("=====================");
+                            }
+                        }
+                    }
+                    return true;
+                }
+            }
+            catch (SqliteException ex)
+            {
+                Debug.WriteLine("error sqlite:" + ex.Message);
+                return false;
+            }
         }
 
         public void FillDataExampleLocalSqllite()
@@ -110,9 +217,9 @@ namespace ScanProMovil.Services.Compras
              
             }
         }
-        public async Task<List<Order>> GetOrdersLocalSqliteAsync()
+        public async Task<List<OrdenCompra>> GetOrdersLocalSqliteAsync()
         {
-            var ordenes = new Dictionary<int, Order>();
+            var ordenes = new Dictionary<int, OrdenCompra>();
 
             try
             {
@@ -134,14 +241,14 @@ namespace ScanProMovil.Services.Compras
 
                             var orderId = reader.GetInt32(IndexCol);
 
-                            if (!ordenes.TryGetValue(orderId, out Order? order))
+                            if (!ordenes.TryGetValue(orderId, out OrdenCompra? order))
                             {
                                 //guardar la orden
-                                order = new Order
+                                order = new OrdenCompra
                                 {
                                     OrderId = orderId,
-                                    OrderNumber = reader.GetString(1),
-                                    OrderDate = reader.GetDateTime(2)
+                                    Numero = reader.GetString(1),
+                                    Fecha = reader.GetDateTime(2)
                                 };
 
                                 ordenes.Add(orderId, order);
@@ -153,12 +260,12 @@ namespace ScanProMovil.Services.Compras
                             if (!reader.IsDBNull(IndexColProductId))
                             {
                                 var ProductIdValue = reader.GetString(IndexColProductId);
-                                var item = new OrderDetails
+                                var item = new DetalleCompra
                                 {
-                                    productId = ProductIdValue,
+                                    Product_id = ProductIdValue,
                                     Cantidad = reader.GetInt32(reader.GetOrdinal("Cantidad")),
                                     OrderId = orderId,
-                                    OrderNumber = order.OrderNumber
+                                    Numero = order.Numero
                                 };
                                 order.Items.Add(item);
                             }
@@ -186,26 +293,47 @@ namespace ScanProMovil.Services.Compras
             throw new NotImplementedException();
         }
 
-        public Order getOrderById(string OrderId)
+        public OrdenCompra getOrderById(string OrderId)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<Order>> getOrders()
+        public Task<List<OrdenCompra>> getOrders()
         {
             throw new NotImplementedException();
         }
 
-        public bool SincroOrder(string OrderId)
+        public async Task<bool> SendPurchaseOrde(OrdenCompra order)
+        {
+            var url = $"api/ordencompra/addorder";
+            var clienteHttp = httpFactory.CreateClient("scanpro");
+
+            // Serializar el objeto a JSON
+            var json = JsonSerializer.Serialize(order, jsonOptions);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+
+            // Enviar la orden por POST
+            var response = await clienteHttp.PostAsync(url, content);
+            // Validar respuesta
+            if (response.IsSuccessStatusCode)
+            {
+                return true; // Orden enviada correctamente
+            }
+            else
+            {
+                // Manejo de error: puedes leer el contenido para más detalle
+                var error = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Error al enviar orden: {error}");
+                return false;
+            }
+        }
+
+        public OrdenCompra UpdateOrder(OrdenCompra order)
         {
             throw new NotImplementedException();
         }
 
-        public Order UpdateOrder(Order order)
-        {
-            throw new NotImplementedException();
-        }
-
-        
+       
     }
 }

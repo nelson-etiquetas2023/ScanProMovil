@@ -63,13 +63,13 @@
                 <!--Items de la Orden -->
                 <HorizontalStackLayout>
                     <Image Source="package_delivery_logistics_64px.png" 
-                   WidthRequest="32" 
-                   HeightRequest="32"/>
+                        WidthRequest="32" 
+                        HeightRequest="32"/>
                     <Label  Text="Items:"  
-                    FontSize="14" 
-                    TextColor="CadetBlue" 
-                    FontAttributes="Bold" 
-                    Margin="10"/>
+                            FontSize="14" 
+                            TextColor="CadetBlue" 
+                            FontAttributes="Bold" 
+                            Margin="10"/>
                 </HorizontalStackLayout>
 
                 <BoxView Grid.ColumnSpan="3" HeightRequest="1" BackgroundColor="LightGray"

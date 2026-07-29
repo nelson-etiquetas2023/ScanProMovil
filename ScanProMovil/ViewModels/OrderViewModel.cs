@@ -15,7 +15,6 @@ namespace ScanProMovil.ViewModels
         [ObservableProperty]
         private bool refreshListOrders = true;
 
-
         [ObservableProperty]
         private string searchText = string.Empty;
 

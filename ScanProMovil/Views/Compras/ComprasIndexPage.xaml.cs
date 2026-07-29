@@ -1,4 +1,5 @@
 using ScanProMovil.ViewModels;
+using ScanProMovil.Views.Orders;
 
 namespace ScanProMovil.Views.Compras;
 
@@ -44,9 +45,15 @@ public partial class ComprasIndexPage : ContentPage
 
     private async void btnDetailsOrders_Clicked(object? sender, EventArgs? e)
     {
-        _vm.RefreshListOrders = true;
-        var page = MauiProgram.Services!.GetService<DetailsComprasPage>();
-        await Navigation.PushAsync(page!);
+        // Validar la orden seleccionada.
+        if (_vm.SelectedOrder == null)
+        {
+            await DisplayAlertAsync("Warning", "Tiene que seleccionar una orden de la Lista...", "Ok.");
+            return;
+        }
+
+        _vm.RefreshListOrders = false;
+        await Navigation.PushAsync(new DetailsComprasPage(_vm.SelectedOrder));
     }
 
     private async void btnConfig_Clicked(object? sender, EventArgs? e)
