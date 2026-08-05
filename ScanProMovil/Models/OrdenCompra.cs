@@ -9,7 +9,7 @@ namespace ScanProMovil.Models
         public int OrderId { get; set; }
         public string Numero { get; set; } = null!; //PK
         public DateTime Fecha { get; set; }
-        public string Descripcion { get; set; } = "";
+        public string Description { get; set; } = "";
         public bool Sincro { get; set; }
         public string Tipo_Documento { get; set; } = "";
         public double Subtotal { get; set; }

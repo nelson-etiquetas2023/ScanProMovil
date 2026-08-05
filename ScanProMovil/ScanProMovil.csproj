@@ -77,6 +77,7 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.90" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.10" />
 		<PackageReference Include="Plugin.Maui.Popup" Version="2.0.0" />
+		<PackageReference Include="sqlite-net-pcl" Version="1.11.285" />
 	</ItemGroup>
 
 	<!-- Target-framework specific package pins to resolve vulnerabilities -->
@@ -94,8 +95,8 @@
 	  <Compile Update="Views\Compras\SincroComprasPage.xaml.cs">
 	    <DependentUpon>SincroComprasPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Views\Products\GestionProducts.xaml.cs">
-	    <DependentUpon>GestionProducts.xaml</DependentUpon>
+	  <Compile Update="Views\Products\SincroProductsPage.xaml.cs">
+	    <DependentUpon>SincroProductsPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
@@ -130,10 +131,13 @@
 	  <MauiXaml Update="Views\Orders\OrderDetailsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\ProductsPage.xaml">
+	  <MauiXaml Update="Views\Products\ProductsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Products\GestionProducts.xaml">
+	  <MauiXaml Update="Views\Products\SincroProductsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Products\LocalDataProductsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Products\ProductDetails.xaml">

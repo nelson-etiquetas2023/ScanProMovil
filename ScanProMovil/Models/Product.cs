@@ -1,16 +1,20 @@
-﻿using System.Collections.ObjectModel;
+﻿using SQLite;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace ScanProMovil.Models
 {
+    [Table("productos")]
     public class Product
     {
         [Key]
         public int Product_Id { get; set; }
+        public string product_code { get; set; } = "";
         public string Product_Name { get; set; } = String.Empty;
         public string Product_Type { get; set; } = string.Empty;
         public string Unidad { get; set; } = string.Empty;
         public decimal Price { get; set; }
+        public decimal Costo { get; set; }
         public string CodeBar { get; set; } = string.Empty;
         public ObservableCollection<ProductImagen> Images { get; set; } = new();
     }

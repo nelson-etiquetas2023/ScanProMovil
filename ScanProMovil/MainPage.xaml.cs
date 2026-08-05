@@ -1,5 +1,6 @@
 ﻿using ScanProMovil.Views;
 using ScanProMovil.Views.Compras;
+using ScanProMovil.Views.Products;
 
 namespace ScanProMovil
 {

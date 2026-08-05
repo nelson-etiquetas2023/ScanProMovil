@@ -93,17 +93,17 @@
         </Grid>
         <!--Lista de Ordenes -->
         <CollectionView Grid.Row="2"
-    x:Name="CvOrdenes"
-    EmptyView="No Data..."
-    ItemsLayout="VerticalList"
-    SelectionMode="Single"
-    ItemsSource="{Binding Ordenes}"
-    SelectedItem="{Binding SelectedOrder, Mode=TwoWay}">
+            x:Name="CvOrdenes"
+            EmptyView="No Data..."
+            ItemsLayout="VerticalList"
+            SelectionMode="Single"
+            ItemsSource="{Binding Ordenes}"
+            SelectedItem="{Binding SelectedOrder, Mode=TwoWay}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:OrdenCompra">
                     <Border Margin="1" 
-            Stroke="gray"
-            StrokeThickness="1">
+                        Stroke="gray"
+                        StrokeThickness="1">
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="10"></RoundRectangle>
                         </Border.StrokeShape>

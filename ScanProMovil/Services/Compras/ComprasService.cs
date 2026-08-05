@@ -1,8 +1,8 @@
 ﻿using Microsoft.Data.Sqlite;
 using ScanProMovil.Models;
 using System.Diagnostics;
-using System.Text;
 using System.Text.Json;
+using System.Net.Http.Json;
 
 namespace ScanProMovil.Services.Compras
 {
@@ -149,13 +149,13 @@ namespace ScanProMovil.Services.Compras
                 ProductId, Cantidad)
                 VALUES (@OrderId, @OrderNumber, @ProductId, @Cantidad);";
 
-                // Datos de ejemplo para las 3 filas
-                var orders = new[]
-                {
-                    new { OrderNumber = "ORD-001", ProductId = "PROD-100", Cantidad = 10.0 },
-                    new { OrderNumber = "ORD-002", ProductId = "PROD-200", Cantidad = 5.5 },
-                    new { OrderNumber = "ORD-003", ProductId = "PROD-300", Cantidad = 3.0 },
-                };
+                        // Datos de ejemplo para las 3 filas
+                        var orders = new[]
+                        {
+                            new { OrderNumber = "ORD-001", ProductId = "PROD-100", Cantidad = 10.0 },
+                            new { OrderNumber = "ORD-002", ProductId = "PROD-200", Cantidad = 5.5 },
+                            new { OrderNumber = "ORD-003", ProductId = "PROD-300", Cantidad = 3.0 },
+                        };
 
                 foreach (var order in orders)
                 {
@@ -303,37 +303,51 @@ namespace ScanProMovil.Services.Compras
             throw new NotImplementedException();
         }
 
-        public async Task<bool> SendPurchaseOrde(OrdenCompra order)
-        {
-            var url = $"api/ordencompra/addorder";
-            var clienteHttp = httpFactory.CreateClient("scanpro");
-
-            // Serializar el objeto a JSON
-            var json = JsonSerializer.Serialize(order, jsonOptions);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-
-            // Enviar la orden por POST
-            var response = await clienteHttp.PostAsync(url, content);
-            // Validar respuesta
-            if (response.IsSuccessStatusCode)
-            {
-                return true; // Orden enviada correctamente
-            }
-            else
-            {
-                // Manejo de error: puedes leer el contenido para más detalle
-                var error = await response.Content.ReadAsStringAsync();
-                Console.WriteLine($"Error al enviar orden: {error}");
-                return false;
-            }
-        }
-
         public OrdenCompra UpdateOrder(OrdenCompra order)
         {
             throw new NotImplementedException();
         }
 
+        public async Task<bool> SendPurchaseOrder(OrdenCompra order, CancellationToken cancellationToken = default)
+        {
+            // NUEVO: Validación del parámetro
+            ArgumentNullException.ThrowIfNull(order);
+
+            try
+            {
+                var url = $"api/ordencompra/addorder";
+                var clienteHttp = httpFactory.CreateClient("scanpro");
+                var responseServer = await clienteHttp.PostAsJsonAsync(url,order,
+                    jsonOptions,cancellationToken);
+                // Igual que antes
+                if (responseServer.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+              
+                var error = await responseServer.Content.ReadAsStringAsync(cancellationToken);
+                Debug.WriteLine($"HTTP {(int)responseServer.StatusCode}: {error}");
+                return false;
+              
+            }
+            catch (HttpRequestException ex)
+            {
+                Debug.WriteLine($"Error HTTP: {ex.Message}");
+                return false;
+            }
+            catch (TaskCanceledException)
+            {
+                Debug.WriteLine("La petición excedió el tiempo de espera.");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+
+       
        
     }
 }

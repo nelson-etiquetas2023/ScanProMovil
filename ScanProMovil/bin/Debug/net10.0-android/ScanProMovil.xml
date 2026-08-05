@@ -135,6 +135,19 @@
         <member name="P:ScanProMovil.ViewModels.ComprasViewModelx.DeactivateOrderCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ScanProMovil.ViewModels.ComprasViewModelx.DeactivateOrder"/>.</summary>
         </member>
+        <member name="T:ScanProMovil.ViewModels.Compras.SincroComprasViewModels">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.Compras.SincroComprasViewModels.Orden">
+            <inheritdoc cref="F:ScanProMovil.ViewModels.Compras.SincroComprasViewModels.orden"/>
+        </member>
+        <member name="F:ScanProMovil.ViewModels.Compras.SincroComprasViewModels.sendPurchaseOrderCommand">
+            <summary>The backing field for <see cref="P:ScanProMovil.ViewModels.Compras.SincroComprasViewModels.SendPurchaseOrderCommand"/>.</summary>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.Compras.SincroComprasViewModels.SendPurchaseOrderCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:ScanProMovil.ViewModels.Compras.SincroComprasViewModels.SendPurchaseOrderAsync"/>.</summary>
+        </member>
         <member name="T:ScanProMovil.ViewModels.DetailsComprasViewModels">
             <inheritdoc/>
             <inheritdoc/>
@@ -262,6 +275,31 @@
         </member>
         <member name="P:ScanProMovil.ViewModels.ProductDetailsViewModel.SaveProductsCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:ScanProMovil.ViewModels.ProductDetailsViewModel.SaveProductsAsync"/>.</summary>
+        </member>
+        <member name="T:ScanProMovil.ViewModels.Products.ProductsLocalViewModels">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.Products.ProductsLocalViewModels.Productos">
+            <inheritdoc cref="F:ScanProMovil.ViewModels.Products.ProductsLocalViewModels.productos"/>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.Products.ProductsLocalViewModels.IsBusy">
+            <inheritdoc cref="F:ScanProMovil.ViewModels.Products.ProductsLocalViewModels.isBusy"/>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.Products.ProductsLocalViewModels.SearchText">
+            <inheritdoc cref="F:ScanProMovil.ViewModels.Products.ProductsLocalViewModels.searchText"/>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.Products.ProductsLocalViewModels.SelectedProduct">
+            <inheritdoc cref="F:ScanProMovil.ViewModels.Products.ProductsLocalViewModels.selectedProduct"/>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.Products.ProductsLocalViewModels.TotalProducts">
+            <inheritdoc cref="F:ScanProMovil.ViewModels.Products.ProductsLocalViewModels.totalProducts"/>
+        </member>
+        <member name="F:ScanProMovil.ViewModels.Products.ProductsLocalViewModels.searchProductsCommand">
+            <summary>The backing field for <see cref="P:ScanProMovil.ViewModels.Products.ProductsLocalViewModels.SearchProductsCommand"/>.</summary>
+        </member>
+        <member name="P:ScanProMovil.ViewModels.Products.ProductsLocalViewModels.SearchProductsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:ScanProMovil.ViewModels.Products.ProductsLocalViewModels.SearchProducts"/>.</summary>
         </member>
         <member name="T:ScanProMovil.ViewModels.ProductsViewModel">
             <inheritdoc/>
@@ -487,6 +525,9 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.OrderDetails">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "OrderDetails" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Orden">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Orden" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Order">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Order" generated properties.</summary>
         </member>
@@ -498,6 +539,15 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Producto">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Producto" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Productos">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Productos" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedProduct">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedProduct" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TotalProducts">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TotalProducts" generated properties.</summary>
@@ -550,6 +600,9 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.OrderDetails">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "OrderDetails" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Orden">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Orden" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Order">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Order" generated properties.</summary>
         </member>
@@ -561,6 +614,15 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Producto">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Producto" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Productos">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Productos" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedProduct">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedProduct" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TotalProducts">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TotalProducts" generated properties.</summary>

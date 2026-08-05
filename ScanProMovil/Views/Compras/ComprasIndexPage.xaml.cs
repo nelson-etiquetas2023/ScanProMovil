@@ -1,5 +1,6 @@
+using ScanProMovil.Services.Compras;
 using ScanProMovil.ViewModels;
-using ScanProMovil.Views.Orders;
+using ScanProMovil.ViewModels.Compras;
 
 namespace ScanProMovil.Views.Compras;
 
@@ -65,8 +66,28 @@ public partial class ComprasIndexPage : ContentPage
 
     private async void btn_sincrOrdenes_Clicked(object? sender, EventArgs? e)
     {
-        _vm.RefreshListOrders = true;
+        // Validar la orden seleccionada.
+        if (_vm.SelectedOrder == null)
+        {
+            await DisplayAlertAsync("Warning", "Tiene que seleccionar una orden de la Lista...", "Ok.");
+            return;
+        }
+        //esta pagina no refresca a lista de ordenes.
+        _vm.RefreshListOrders = false;
+
+        //resolver el servico de compras desde contenedor DI
+        var serviceSincro = MauiProgram.Services!.GetService<IComprasService>();
+
+        //crear el viewmodel con injeccion de servicio + orden.
+        var vmSincro = new SincroComprasViewModels(serviceSincro!, _vm.SelectedOrder);
+
+        //creo la pagina desde el contenedo DI con la vm
+        //que tiene el servicio + orden seleccionada.
+
         var page = MauiProgram.Services!.GetService<SincroComprasPage>();
+        page!.BindingContext = vmSincro;
+
+
         await Navigation.PushAsync(page!);
     }
 

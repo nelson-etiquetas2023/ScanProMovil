@@ -91,6 +91,10 @@
             "SQLitePCLRaw.lib.e_sqlite3.android": {
               "target": "Package",
               "version": "[2.1.12, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.11.285, )"
             }
           },
           "imports": [

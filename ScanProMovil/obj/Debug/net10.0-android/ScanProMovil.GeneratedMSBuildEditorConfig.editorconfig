@@ -184,21 +184,11 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[C:/Programacion/ScanProMovil/ScanProMovil/Views/ProductsPage.xaml]
+[C:/Programacion/ScanProMovil/ScanProMovil/Views/Products/LocalDataProductsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = ScanProMovil.Views.ProductsPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\ProductsPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\ProductsPage.xaml
-build_metadata.AdditionalFiles.Inflator = SourceGen
-build_metadata.AdditionalFiles.NoWarn = 
-build_metadata.AdditionalFiles.EnableDiagnostics = 
-build_metadata.AdditionalFiles.LineInfo = 
-
-[C:/Programacion/ScanProMovil/ScanProMovil/Views/Products/GestionProducts.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = ScanProMovil.Views.Products.GestionProducts.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\Products\GestionProducts.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\Products\GestionProducts.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ScanProMovil.Views.Products.LocalDataProductsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Products\LocalDataProductsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Products\LocalDataProductsPage.xaml
 build_metadata.AdditionalFiles.Inflator = SourceGen
 build_metadata.AdditionalFiles.NoWarn = 
 build_metadata.AdditionalFiles.EnableDiagnostics = 
@@ -209,6 +199,26 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ScanProMovil.Views.Products.ProductDetails.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\Products\ProductDetails.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\Products\ProductDetails.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
+[C:/Programacion/ScanProMovil/ScanProMovil/Views/Products/ProductsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ScanProMovil.Views.Products.ProductsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Products\ProductsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Products\ProductsPage.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
+[C:/Programacion/ScanProMovil/ScanProMovil/Views/Products/SincroProductsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ScanProMovil.Views.Products.SincroProductsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Products\SincroProductsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Products\SincroProductsPage.xaml
 build_metadata.AdditionalFiles.Inflator = SourceGen
 build_metadata.AdditionalFiles.NoWarn = 
 build_metadata.AdditionalFiles.EnableDiagnostics = 

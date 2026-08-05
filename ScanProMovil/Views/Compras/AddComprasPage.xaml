@@ -10,14 +10,56 @@
     <ScrollView>
         <VerticalStackLayout>
             <!--Numero de Orden -->
-            <Entry x:Name="txtOrderNumberEntry" 
-                   Placeholder="Ingrese el numero de orden" 
-                   FontAttributes="Bold" 
-                   Text="{Binding NewOrder.Numero}"/>
+            <HorizontalStackLayout>
+                <Label Text="Orden Numero:" FontAttributes="Bold" />
+                <Border Stroke="Black"
+                    StrokeThickness="1"
+                    StrokeShape="Rectangle"
+                    Margin="5" HeightRequest="46">
+                    <Entry x:Name="txtOrderNumberEntry" 
+                        Placeholder="Ingrese el numero de orden" 
+                        FontAttributes="Bold"
+                        WidthRequest="165"
+                        Text="{Binding NewOrder.Numero}"
+                        />
+                </Border>
+            </HorizontalStackLayout>
             <!--Fecha de la Orden -->
-            <DatePicker x:Name="txtOrderDateEntry" 
-            FontAttributes="Bold" 
-            Date="{Binding NewOrder.Fecha}"/>
+            <HorizontalStackLayout VerticalOptions="Start">
+                <Label Text="Fecha:" WidthRequest="135" FontAttributes="Bold" Margin="0,7" />
+                <DatePicker x:Name="txtOrderDateEntry" 
+                    FontAttributes="Bold" 
+                    Date="{Binding NewOrder.Fecha}" TextColor ="red"/>
+            </HorizontalStackLayout>
+            <!--Description Orden Compra-->
+            <VerticalStackLayout>
+                <Label Text="Descripcion de la orden:" FontAttributes="Bold"/>
+                <Border Stroke="Black"
+                    StrokeThickness="1"
+                    StrokeShape="Rectangle"
+                    Margin="5">
+                    <Entry x:Name="txt_description"
+                        Placeholder="Ingrese Descripción..."
+                        Text="{Binding NewOrder.Description}" />
+                </Border>
+            </VerticalStackLayout>
+            <!-- Datos del proveedor -->
+            <Label Text="Datos del proveedor" FontAttributes="Bold"/>
+            <HorizontalStackLayout>
+                <Border Stroke="Black"
+                    StrokeThickness="1"
+                    StrokeShape="Rectangle"
+                    Margin="5">
+                    <Entry x:Name="txt_supplyName"
+                        Placeholder="Ingrese Supply Name..."
+                        Text="{Binding NewOrder.Supply_Name}" 
+                        WidthRequest="250" />
+                </Border>
+                <Button x:Name="btn_supplySearch" 
+                        Text="..."
+                        Clicked="SearchSupplyData"/>
+            </HorizontalStackLayout>
+           
             <!--Add Product-->
             <Border Margin="5" 
                 Padding="10" 
@@ -25,10 +67,14 @@
                 StrokeThickness="1">
                 <VerticalStackLayout>
                     <Label Text="Agregar Productos" FontAttributes="Bold" />
-                    <Grid ColumnDefinitions="100,80,80" ColumnSpacing="12">
-                        <Entry x:Name="txtProductIdEntry" Placeholder="id producto" WidthRequest="100" Grid.Column="0" />
-                        <Entry x:Name="txtQuantityEntry" Placeholder="cantidad" WidthRequest="100" Grid.Column="1" />
-                        <Button x:Name="btnAddProduct" Text="Add" Clicked="btn_AddProducts_Clicked" Grid.Column="2" />
+                    <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="100,80,80" ColumnSpacing="12">
+                        <Entry x:Name="txtProductIdEntry" Placeholder="id producto" WidthRequest="100" Grid.Row="0" Grid.Column="0" />
+                        <Entry x:Name="txtQuantityEntry" Placeholder="cantidad" WidthRequest="100" Grid.Row="0" Grid.Column="1" />
+                        <Button x:Name="btnAddProduct" Text="Add" Clicked="btn_AddProducts_Clicked" Grid.Row="0" Grid.Column="2" />
+                        <Entry 
+                            Placeholder="Nombre del producto" 
+                            Grid.Row="1" 
+                            Grid.ColumnSpan="3" x:Name="txt_NameProducts" /> 
                     </Grid>
                 </VerticalStackLayout>
             </Border>
@@ -81,16 +127,51 @@
                 </CollectionView>
             </Grid>
             <!--Summary-->
-            <Label Text="Totales:" FontAttributes="Bold" Margin="10"/>
+            <BoxView 
+      HeightRequest="0.5"
+      HorizontalOptions="Fill"
+      Color="LightGray"
+      Margin="0,10"/>
+
+            <Label Text="TOTALES => " FontAttributes="Bold" Margin="10"/>
             <BoxView 
                 HeightRequest="0.5"
                 HorizontalOptions="Fill"
                 Color="LightGray"
                 Margin="0,10"/>
-            <Label Text="Numero de Filas: "/>
-            <Label x:Name="TotalRowsEntry" FontAttributes="Bold"/>
-            <Label Text="Total Cantidad : "/>
-            <Label x:Name="TotalCantEntry" FontAttributes="Bold"/>
+
+                    <!--<Label Text="Numero de Filas: "/>
+                    <Label x:Name="TotalRowsEntry" FontAttributes="Bold"/>
+                    <Label Text="Total Cantidad : "/>
+                    <Label x:Name="TotalCantEntry" FontAttributes="Bold"/>-->
+            <!--Total Cantidad -->
+            <HorizontalStackLayout>
+                <Border Margin="5" 
+                    Padding="10" 
+                    StrokeShape="RoundRectangle 6" 
+                    StrokeThickness="1" BackgroundColor="LightGray">
+                    <VerticalStackLayout>
+                        <Label Text="Renglones : "/>
+                        <Label Text="133" FontAttributes="Bold"/>
+
+                    </VerticalStackLayout>
+                </Border>
+                <Border Margin="5" 
+                    Padding="10" 
+                    StrokeShape="RoundRectangle 6" 
+                    StrokeThickness="1" BackgroundColor="LightGray">
+                    <VerticalStackLayout>
+                        <Label Text="Total Costo : "/>
+                        <Label Text="$2085,88" FontAttributes="Bold"/>
+
+                    </VerticalStackLayout>
+                </Border>
+
+
+
+            </HorizontalStackLayout>
+            
+           
             <HorizontalStackLayout 
                 HorizontalOptions="Center"
                 Margin="10">
@@ -109,13 +190,18 @@
                     VerticalOptions="Center"
                     TextColor="blue"/>
             </HorizontalStackLayout>
+            <BoxView 
+    HeightRequest="0.5"
+    HorizontalOptions="Fill"
+    Color="LightGray"
+    Margin="0,10"/>
             <HorizontalStackLayout>
                 <Button 
                     x:Name="Btn_Save_Order"
                     Text="Guardar"  
                     Margin="20"
-                    Clicked="Btn_Save_Order_Clicked" />
-                <Button Text="Cancelar" Margin="20" />
+                    Clicked="Btn_Save_Order_Clicked" FontSize="18" />
+                <Button Text="Cancelar" Margin="20" FontSize="18" />
             </HorizontalStackLayout>
         </VerticalStackLayout>
     </ScrollView>

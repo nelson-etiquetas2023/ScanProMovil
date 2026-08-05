@@ -11,7 +11,7 @@ namespace ScanProMovil.Services.Compras
         Task<List<OrdenCompra>> GetOrdersLocalSqliteAsync();
         Task<List<OrdenCompra>> getOrders();
         OrdenCompra getOrderById(string OrderId);
-        Task<bool> SendPurchaseOrde(OrdenCompra order);
+        Task<bool> SendPurchaseOrder(OrdenCompra order, CancellationToken cancellationToken = default);
         OrdenCompra UpdateOrder(OrdenCompra order);
         bool DeleteOrder(string OrderId);
         bool DeactivateOrder(string Orderid);

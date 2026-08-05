@@ -20,8 +20,8 @@ public partial class AddComprasPage : ContentPage
     {
         double totcantidad = _vm.NewOrder.Items.Sum(x => x.Cantidad);
         totalrows = _vm.NewOrder.Items.Count();
-        TotalCantEntry.Text = Convert.ToString(totcantidad);
-        TotalRowsEntry.Text = Convert.ToString(totalrows);
+        //TotalCantEntry.Text = Convert.ToString(totcantidad);
+        //TotalRowsEntry.Text = Convert.ToString(totalrows);
     }
 
     private async void btn_AddProducts_Clicked(object? sender, EventArgs? e)
@@ -42,6 +42,7 @@ public partial class AddComprasPage : ContentPage
         _vm.NewOrder.Items.Add(item);
         txtProductIdEntry.Text = string.Empty;
         txtQuantityEntry.Text = string.Empty;
+        txt_NameProducts.Text = string.Empty;
         txtProductIdEntry.Focus();
         UpdateGrandTotal();
     }
@@ -77,5 +78,24 @@ public partial class AddComprasPage : ContentPage
 
         //navega de vuelta al index de orders
         await Navigation.PopAsync();
+    }
+
+    private async void SearchSupplyData(object? sender, EventArgs? e)
+    {
+        string option = await DisplayActionSheetAsync("Seleccion un proveedor:","Cancelar"
+            ,null,"Supply Santo Domingo","Todo Express","Supply-Todo");
+
+        switch (option) 
+        {
+            case "Supply Santo Domingo":
+                txt_supplyName.Text = "Supply Santo Domingo";
+                break;   
+            case "Todo Express":
+                txt_supplyName.Text = "Todo Express";
+                break;
+            case "Supply-Todo":
+                txt_supplyName.Text = "Supply-Todo";
+                break;
+        }
     }
 }

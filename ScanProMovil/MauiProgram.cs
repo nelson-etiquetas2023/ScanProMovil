@@ -1,14 +1,19 @@
-﻿using Microsoft.Extensions.Logging;
-using CommunityToolkit.Maui;
-using ScanProMovil.Services.Products;
-using ScanProMovil.Services.Orders;
-using ScanProMovil.ViewModels;
-using ScanProMovil.Views.Products;
-using ScanProMovil.Views;
-using ScanProMovil.Views.Orders;
-using ScanProMovil.Views.Sincro;
-using ScanProMovil.Views.Compras;
+﻿using CommunityToolkit.Maui;
+using Microsoft.Extensions.Logging;
+using Microsoft.Maui.Handlers;
+using ScanProMovil.Models;
 using ScanProMovil.Services.Compras;
+using ScanProMovil.Services.Orders;
+using ScanProMovil.Services.Products;
+using ScanProMovil.ViewModels;
+using ScanProMovil.ViewModels.Compras;
+using ScanProMovil.ViewModels.Products;
+using ScanProMovil.Views;
+using ScanProMovil.Views.Compras;
+using ScanProMovil.Views.Orders;
+using ScanProMovil.Views.Products;
+using ScanProMovil.Views.Sincro;
+
 
 namespace ScanProMovil
 {
@@ -37,8 +42,8 @@ namespace ScanProMovil
             builder.Services.AddTransient<OrderConfigViewModel>();
             builder.Services.AddTransient<SincroOrdersViewModel>();
             builder.Services.AddTransient<ComprasViewModel>();
-         
-
+            builder.Services.AddTransient<SincroComprasViewModels>();
+            builder.Services.AddTransient<ProductsLocalViewModels>();   
             builder.Services.AddTransient<AddComprasViewModels>();
             //Injeccion de Pagina XAML.
             builder.Services.AddTransient<GestionProducts>();
@@ -52,6 +57,7 @@ namespace ScanProMovil
             builder.Services.AddTransient<DetailsComprasPage>();
             builder.Services.AddTransient<ConfigComprasPage>();
             builder.Services.AddTransient<SincroComprasPage>();
+            builder.Services.AddTransient<LocalDataProductsPage>();
             builder.Services.AddSingleton<MainPage>();
             //Inyeccion de los servicios
             builder.Services.AddSingleton<IProductsService, ProductsService>();
@@ -67,9 +73,21 @@ namespace ScanProMovil
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            EntryHandler.Mapper.AppendToMapping("NoUnderline", (handler, view) =>
+            {
+#if ANDROID
+                // Quitar el subrayado (línea inferior)
+                handler.PlatformView.BackgroundTintList =
+                    Android.Content.Res.ColorStateList.ValueOf(Android.Graphics.Color.Transparent);
+
+                // Opcional: quitar también el fondo por defecto
+                handler.PlatformView.SetBackgroundColor(Android.Graphics.Color.Transparent);
+#endif
+            });
+
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             var app = builder.Build();
