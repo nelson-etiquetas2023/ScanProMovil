@@ -20,15 +20,16 @@
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="10"></RoundRectangle>
                     </Border.StrokeShape>
+                    <!--**Entry de Escanear Productos**-->
                     <Entry 
                         x:Name="SearchEntry"
                         Text="{Binding SearchText}"
                         Placeholder="Buscar Productos..." 
                         FontAttributes="Bold" 
                         WidthRequest="220"
-                        HeightRequest="50" 
+                        HeightRequest="50"
                         TextChanged="searchEntry_TextChanged"
-                        />
+                        Completed="searchEntry_Completed"/>
                 </Border>
                 <Button 
                     Text="Reload" 

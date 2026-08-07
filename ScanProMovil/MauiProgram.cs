@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Maui;
+﻿using Android.Graphics.Drawables;
+using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
 using Microsoft.Maui.Handlers;
 using ScanProMovil.Models;
@@ -82,6 +83,11 @@ namespace ScanProMovil
 
                 // Opcional: quitar también el fondo por defecto
                 handler.PlatformView.SetBackgroundColor(Android.Graphics.Color.Transparent);
+
+                DatePickerHandler.Mapper.AppendToMapping("NoUnderline", (handler, view) =>
+                {
+                    handler.PlatformView.Background = new ColorDrawable(Android.Graphics.Color.Transparent);
+                });
 #endif
             });
 

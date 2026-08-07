@@ -30,6 +30,8 @@ namespace ScanProMovil.Services.Products
 
         public async Task<List<Product>> SearchProductsLocal(string searchText)
         {
+
+
             if (searchText == "") return await GetProductsLocal();
             
             return await database.Table<Product>()

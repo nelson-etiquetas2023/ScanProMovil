@@ -12,14 +12,19 @@
             <!--Numero de Orden -->
             <HorizontalStackLayout>
                 <Label Text="Orden Numero:" FontAttributes="Bold" />
-                <Border Stroke="Black"
+                <Border 
+                    Margin="5,5,5,5"
+                    Stroke="Grey"
                     StrokeThickness="1"
-                    StrokeShape="Rectangle"
-                    Margin="5" HeightRequest="46">
+                    Background="White">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10"></RoundRectangle>
+                    </Border.StrokeShape>
+                    
                     <Entry x:Name="txtOrderNumberEntry" 
                         Placeholder="Ingrese el numero de orden" 
                         FontAttributes="Bold"
-                        WidthRequest="165"
+                        WidthRequest="170"
                         Text="{Binding NewOrder.Numero}"
                         />
                 </Border>
@@ -27,39 +32,66 @@
             <!--Fecha de la Orden -->
             <HorizontalStackLayout VerticalOptions="Start">
                 <Label Text="Fecha:" WidthRequest="135" FontAttributes="Bold" Margin="0,7" />
-                <DatePicker x:Name="txtOrderDateEntry" 
-                    FontAttributes="Bold" 
-                    Date="{Binding NewOrder.Fecha}" TextColor ="red"/>
+                <Border 
+                    Margin="5,5,5,5"
+                    Stroke="Grey"
+                    StrokeThickness="1"
+                    Background="White" WidthRequest="170">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10"></RoundRectangle>
+                    </Border.StrokeShape>
+                    <Grid ColumnDefinitions="Auto,*">
+                        <Image
+                            Source="edit.png"
+                            WidthRequest="22"
+                            Grid.Column="0"/>
+                        <DatePicker x:Name="txtOrderDateEntry" 
+                            FontAttributes="Bold" 
+                            Date="{Binding NewOrder.Fecha}" 
+                            TextColor ="Black" Grid.Column="1"/>
+                    </Grid>
+                </Border>
             </HorizontalStackLayout>
             <!--Description Orden Compra-->
             <VerticalStackLayout>
                 <Label Text="Descripcion de la orden:" FontAttributes="Bold"/>
-                <Border Stroke="Black"
+                <Border 
+                    Margin="5,5,5,5"
+                    Stroke="Grey"
                     StrokeThickness="1"
-                    StrokeShape="Rectangle"
-                    Margin="5">
+                    Background="White" 
+                    WidthRequest="302"
+                    >
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10"></RoundRectangle>
+                    </Border.StrokeShape>
+
                     <Entry x:Name="txt_description"
                         Placeholder="Ingrese Descripción..."
-                        Text="{Binding NewOrder.Description}" />
+                        Text="{Binding NewOrder.Description}"/>
                 </Border>
             </VerticalStackLayout>
             <!-- Datos del proveedor -->
             <Label Text="Datos del proveedor" FontAttributes="Bold"/>
             <HorizontalStackLayout>
-                <Border Stroke="Black"
+                <Border 
+                    Margin="10,5,5,5"
+                    Stroke="Grey"
                     StrokeThickness="1"
-                    StrokeShape="Rectangle"
-                    Margin="5">
+                    Background="White" 
+                    WidthRequest="245">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10"></RoundRectangle>
+                    </Border.StrokeShape>
                     <Entry x:Name="txt_supplyName"
                         Placeholder="Ingrese Supply Name..."
                         Text="{Binding NewOrder.Supply_Name}" 
-                        WidthRequest="250" />
+                        WidthRequest="240" />
                 </Border>
                 <Button x:Name="btn_supplySearch" 
                         Text="..."
-                        Clicked="SearchSupplyData"/>
+                        Clicked="SearchSupplyData" WidthRequest="50"/>
             </HorizontalStackLayout>
-           
             <!--Add Product-->
             <Border Margin="5" 
                 Padding="10" 
@@ -67,18 +99,56 @@
                 StrokeThickness="1">
                 <VerticalStackLayout>
                     <Label Text="Agregar Productos" FontAttributes="Bold" />
-                    <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="100,80,80" ColumnSpacing="12">
-                        <Entry x:Name="txtProductIdEntry" Placeholder="id producto" WidthRequest="100" Grid.Row="0" Grid.Column="0" />
-                        <Entry x:Name="txtQuantityEntry" Placeholder="cantidad" WidthRequest="100" Grid.Row="0" Grid.Column="1" />
+                    <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,*,65">
+                        <!--ID PRODUCTO-->
+                        <Border 
+                            Margin="0,5,0,5"
+                            Stroke="Grey"
+                            StrokeThickness="1"
+                            Background="White"  
+                            Grid.Row="0" 
+                            Grid.Column="0" WidthRequest="110">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="10"></RoundRectangle>
+                            </Border.StrokeShape>
+                            <Entry x:Name="txtProductIdEntry" 
+                                   Placeholder="id producto" 
+                                   WidthRequest="110" Completed="txtProductIdEntry_Completed"  />
+                        </Border>
+                        <!--Cantidad-->
+                        <Border 
+                            Margin="5,5,5,5"
+                            Stroke="Grey"
+                            StrokeThickness="1"
+                            Background="White" Grid.Row="0" 
+                            Grid.Column="1">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="10"></RoundRectangle>
+                            </Border.StrokeShape>
+                            <Entry x:Name="txtQuantityEntry" 
+                                   Placeholder="cantidad" />
+                        </Border>
+                        <!--Boton de agregar productos-->
                         <Button x:Name="btnAddProduct" Text="Add" Clicked="btn_AddProducts_Clicked" Grid.Row="0" Grid.Column="2" />
-                        <Entry 
-                            Placeholder="Nombre del producto" 
+                        <!--Descripcion del producto-->
+                        <Border 
+                            Margin="0,5,0,5"
+                            Stroke="Grey"
+                            StrokeThickness="1"
+                            Background="White" 
                             Grid.Row="1" 
-                            Grid.ColumnSpan="3" x:Name="txt_NameProducts" /> 
+                            Grid.ColumnSpan="3">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="10"></RoundRectangle>
+                            </Border.StrokeShape>
+                            <Entry 
+                                Placeholder="Nombre del producto" 
+                                 x:Name="txt_NameProducts" />
+                        </Border>
                     </Grid>
                 </VerticalStackLayout>
             </Border>
-            <!--Detalle de la orden-->
+            <!--Encabezado Detalle de la orden-->
             <Grid ColumnSpacing="0" RowSpacing="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>
@@ -96,7 +166,8 @@
                 </Grid>
                 <CollectionView x:Name="ItemsCollection" 
                     Grid.Row="1" 
-                    SelectionMode="None" 
+                    SelectionMode="None" EmptyView="no data..."
+                               
                     ItemsSource="{Binding NewOrder.Items}"
                     ItemsLayout="VerticalList" 
                     ItemSizingStrategy="MeasureAllItems" 

@@ -67,6 +67,7 @@ namespace ScanProMovil.ViewModels.Products
             try
             {
                 IsBusy = true;
+                await Task.Delay(TimeSpan.FromMilliseconds(200));
                 var FilteredProducts = await service.SearchProductsLocal(SearchText);
                 Productos.Clear();
                 foreach (var item in FilteredProducts)

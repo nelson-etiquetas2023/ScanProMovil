@@ -98,4 +98,10 @@ public partial class AddComprasPage : ContentPage
                 break;
         }
     }
+
+    private void txtProductIdEntry_Completed(object? sender, EventArgs? e)
+    {
+        //pasar al campo cantidad
+        txtQuantityEntry.Focus();
+    }
 }
